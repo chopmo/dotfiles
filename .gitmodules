@@ -1,5 +1,4 @@
 [submodule ".vim/bundle/tcomment_vim"]
-	ignore = dirty
 	path = .vim/bundle/tcomment_vim
 	url = git://github.com/tomtom/tcomment_vim.git
 [submodule ".vim/bundle/vim-coffee-script"]
@@ -24,6 +23,6 @@
 	path = .vim/bundle/vim-textobj-rubyblock
 	url = https://github.com/nelstrom/vim-textobj-rubyblock.git
 [submodule ".vim/bundle/vim-textobj-user"]
-	ignore = dirty
 	path = .vim/bundle/vim-textobj-user
 	url = git://github.com/kana/vim-textobj-user.git
+	ignore = dirty
