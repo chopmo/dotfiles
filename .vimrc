@@ -186,7 +186,7 @@ map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
 
 nnoremap <leader><leader> <c-^>
 
-nnoremap <leader>t :CommandT<cr> nnoremap <leader>gs :Gstatus<cr>
+" nnoremap <leader>t :CommandT<cr> nnoremap <leader>gs :Gstatus<cr>
 
 set clipboard=unnamed
 set macmeta
@@ -353,9 +353,9 @@ function! RunNearestTest()
     call RunTestFile(":" . spec_line_number)
 endfunction
 
-map <leader>t :call RunTestFile()<cr>
-map <leader>T :call RunNearestTest()<cr>
-map <leader>a :call RunTests('')<cr>
+" map <leader>t :call RunTestFile()<cr>
+" map <leader>T :call RunNearestTest()<cr>
+" map <leader>a :call RunTests('')<cr>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
