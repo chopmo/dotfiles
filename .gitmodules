@@ -26,3 +26,9 @@
 	path = .vim/bundle/vim-textobj-user
 	url = git://github.com/kana/vim-textobj-user.git
 	ignore = dirty
+[submodule ".vim/bundle/tslime_vim"]
+	path = .vim/bundle/tslime_vim
+	url = git://github.com/jgdavey/tslime.vim.git
+[submodule ".vim/bundle/vim-turbux"]
+	path = .vim/bundle/vim-turbux
+	url = git://github.com/jgdavey/vim-turbux.git
