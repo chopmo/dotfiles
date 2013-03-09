@@ -120,6 +120,7 @@ alias gd='clear; git diff'
 alias gs='git status -sb'
 
 alias ss='b/rspec spec'
+alias ssff='b/rspec --fail-fast spec'
 
 alias px='ps aux | grep '
 alias restart='touch tmp/restart.txt'
