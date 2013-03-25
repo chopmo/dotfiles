@@ -1,0 +1,2 @@
+export PATH=/Users/jtj/.rbenv/shims:/Users/jtj/.rbenv/bin:$PATH
+export POW_TIMEOUT=7200
