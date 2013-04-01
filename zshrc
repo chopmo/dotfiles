@@ -34,8 +34,8 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 ## Make sure the brew stuff is before the builtins (eg. ctags)
-export PATH=/usr/local/bin:$PATH:~/bin
-export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH=/usr/local/share/npm/bin:/usr/local/bin:$PATH:~/bin
+# export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
@@ -56,7 +56,7 @@ alias c="cheat"
 
 alias pw='powder'
 
-alias git=hub
+# alias git=hub
 
 # Set editors
 # export EDITOR="emacs -q -nw"
