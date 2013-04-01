@@ -189,7 +189,7 @@ nnoremap <leader><leader> <c-^>
 " nnoremap <leader>t :CommandT<cr> nnoremap <leader>gs :Gstatus<cr>
 
 set clipboard=unnamed
-set macmeta
+" set macmeta
 
 set number
 set numberwidth=5
@@ -355,7 +355,7 @@ endfunction
 
 " map <leader>t :call RunTestFile()<cr>
 " map <leader>T :call RunNearestTest()<cr>
-map <leader>a :call RunTests('')<cr>
+" map <leader>a :call RunTests('')<cr>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
