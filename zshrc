@@ -87,6 +87,10 @@ function uservm {
     export PS1="<RVM> [ \$(~/.rvm/bin/rvm-prompt) - \$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/') - \w ] $ "
 }
 
+function dns {
+  dig $1 @$2 a +short
+}
+
 function userbenv {
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
@@ -125,6 +129,7 @@ alias ssff='b/rspec --fail-fast spec'
 alias px='ps aux | grep '
 alias restart='touch tmp/restart.txt'
 alias r=rails
+alias z=zeus
 
 alias ci='git commit -m'
 alias aa='git add --all'
