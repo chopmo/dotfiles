@@ -34,6 +34,7 @@ map <Leader>rv :Rview<cr>
 
 map <Leader>d :!mkdir -p %:h<cr>
 map <Leader>c :Ack 
+map <Leader>C :Ack <cword><CR>
 map <Leader>j :ta<space>
 map <Leader>J :ts<space>
 
