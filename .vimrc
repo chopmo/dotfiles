@@ -38,6 +38,12 @@ map <Leader>C :Ack <cword><CR>
 map <Leader>j :ta<space>
 map <Leader>J :ts<space>
 
+if exists(":Tabularize")
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a: :Tabularize /:\zs<CR>
+  vmap <Leader>a: :Tabularize /:\zs<CR>
+endif
 
 map <C-n> :cn<cr>
 map <C-p> :cp<cr>
