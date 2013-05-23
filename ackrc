@@ -3,6 +3,9 @@
 --type-add=js=.js.erb
 --type-add=css=.sass
 --type-set=slim=.slim
+--type-set=coffeescript=.coffee
+--type-set=eco=.eco
+--type-set=rabl=.rabl
 --type-add=scala=.scala
 --type-add=xml=.jelly
 # --type-add=haxe=.hx
