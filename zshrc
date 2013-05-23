@@ -34,8 +34,8 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 ## Make sure the brew stuff is before the builtins (eg. ctags)
-export PATH=/usr/local/bin:$PATH:~/bin
-export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH=/usr/local/share/npm/bin:/usr/local/bin:$PATH:~/bin
+# export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
@@ -56,7 +56,7 @@ alias c="cheat"
 
 alias pw='powder'
 
-alias git=hub
+# alias git=hub
 
 # Set editors
 # export EDITOR="emacs -q -nw"
@@ -85,6 +85,10 @@ export LC_ALL=en_US.UTF-8
 function uservm {
     [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
     export PS1="<RVM> [ \$(~/.rvm/bin/rvm-prompt) - \$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/') - \w ] $ "
+}
+
+function dns {
+  dig $1 @$2 a +short
 }
 
 function userbenv {
@@ -125,6 +129,7 @@ alias ssff='b/rspec --fail-fast spec'
 alias px='ps aux | grep '
 alias restart='touch tmp/restart.txt'
 alias r=rails
+alias z=zeus
 
 alias ci='git commit -m'
 alias aa='git add --all'

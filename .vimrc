@@ -34,9 +34,16 @@ map <Leader>rv :Rview<cr>
 
 map <Leader>d :!mkdir -p %:h<cr>
 map <Leader>c :Ack 
+map <Leader>C :Ack <cword><CR>
 map <Leader>j :ta<space>
 map <Leader>J :ts<space>
 
+if exists(":Tabularize")
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a: :Tabularize /:\zs<CR>
+  vmap <Leader>a: :Tabularize /:\zs<CR>
+endif
 
 map <C-n> :cn<cr>
 map <C-p> :cp<cr>
@@ -189,7 +196,7 @@ nnoremap <leader><leader> <c-^>
 " nnoremap <leader>t :CommandT<cr> nnoremap <leader>gs :Gstatus<cr>
 
 set clipboard=unnamed
-set macmeta
+" set macmeta
 
 set number
 set numberwidth=5
@@ -355,7 +362,7 @@ endfunction
 
 " map <leader>t :call RunTestFile()<cr>
 " map <leader>T :call RunNearestTest()<cr>
-map <leader>a :call RunTests('')<cr>
+" map <leader>a :call RunTests('')<cr>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -409,4 +416,4 @@ fun! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 
-autocmd FileType c,cpp,java,php,ruby,haml,slim,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+autocmd FileType c,cpp,java,php,ruby,haml,slim,python,javascript autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
