@@ -405,7 +405,8 @@ let g:netrw_winsize   = 30
 set nocursorcolumn
 set nocursorline
 syntax sync minlines=256
-let g:turbux_command_prefix = 'bundle exec'
+" let g:turbux_command_prefix = 'bundle exec'
+let g:turbux_command_rspec = 'zeus test --fail-fast'
 
 
 " Remove trailing whitespace on save

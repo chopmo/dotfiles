@@ -124,7 +124,7 @@ alias gd='clear; git diff'
 alias gs='git status -sb'
 
 alias ss='b/rspec spec'
-alias ssff='b/rspec --fail-fast spec'
+alias ssff='z test --fail-fast spec'
 
 alias px='ps aux | grep '
 alias restart='touch tmp/restart.txt'
@@ -134,6 +134,8 @@ alias z=zeus
 alias ci='git commit -m'
 alias aa='git add --all'
 alias st='git st'
+
+alias remigrate='z rake db:rollback && z rake db:migrate && z rake db:test:clone'
 
 PROMPT='%{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%d %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 unsetopt correct_all
