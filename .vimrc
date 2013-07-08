@@ -8,7 +8,6 @@
 "	      for Amiga:  s:.vimrc
 "  for MS-DOS and Win32:  $VIM\_vimrc
 "	    for OpenVMS:  sys$login:.vimrc
-
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -418,3 +417,7 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 
 autocmd FileType c,cpp,java,php,ruby,haml,slim,python,javascript autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+
+" au BufRead,BufNewFile *.rb syn match log /.*Rails\.logger.*/
+" au BufRead,BufNewFile *.rb hi log ctermfg=darkgrey
+
