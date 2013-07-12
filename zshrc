@@ -71,7 +71,7 @@ alias maintain_rails_tags='while [ true ]; do rails_tags; sleep 120; done'
 alias accept='bundle exec rspec --drb spec/acceptance/*_spec.rb'
 
 alias sp='run_accept.sh'
-alias mig='b/rake db:migrate && b/rake db:test:clone'
+alias mig='z rake db:migrate && z rake db:test:clone'
 alias dep='git push && b/cap deploy'
 alias be='bundle exec'
 alias rs='rails server thin'
