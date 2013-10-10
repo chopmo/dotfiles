@@ -434,4 +434,5 @@ endfunction
 :command! PromoteToLet :call PromoteToLet()
 :map <leader>p :PromoteToLet<cr>
 
-:set guioptions=egm
+set guioptions=egm
+set autoread
