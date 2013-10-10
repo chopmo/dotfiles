@@ -131,7 +131,16 @@ alias restart='touch tmp/restart.txt'
 alias r=rails
 alias z=zeus
 
-alias ci='git commit -m'
+# alias ci='git commit -m'
+
+function ci() {
+  if [ -n "$1" ]; then 
+    git commit -m "$*"
+  else
+    git commit
+  fi
+}
+
 alias aa='git add --all'
 alias st='git st'
 
@@ -170,13 +179,14 @@ export RUBY_HEAP_FREE_MIN=500000
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+export PATH=/usr/local/share/npm/bin:$PATH
 
-function rmb {
+function remove_obsolete_branches {
   current_branch=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
   if [ "$current_branch" != "master" ]; then
     echo "WARNING: You are on branch $current_branch, NOT master."
   fi
-    echo "Fetching merged branches..."
+  echo "Fetching merged branches..."
   git remote prune origin
   remote_branches=$(git branch -r --merged | grep -v '/master$' | grep -v '/production$'| grep -v "/$current_branch$")
   local_branches=$(git branch --merged | grep -v 'master$' | grep -v 'production$' | grep -v "$current_branch$")
