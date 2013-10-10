@@ -421,3 +421,17 @@ autocmd FileType c,cpp,java,php,ruby,haml,slim,python,javascript autocmd BufWrit
 " au BufRead,BufNewFile *.rb syn match log /.*Rails\.logger.*/
 " au BufRead,BufNewFile *.rb hi log ctermfg=darkgrey
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PROMOTE VARIABLE TO RSPEC LET
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! PromoteToLet()
+  :normal! dd
+  " :exec '?^\s*it\>'
+  :normal! P
+  :.s/\(\w\+\) = \(.*\)$/let(:\1) { \2 }/
+  :normal ==
+endfunction
+:command! PromoteToLet :call PromoteToLet()
+:map <leader>p :PromoteToLet<cr>
+
+:set guioptions=egm
