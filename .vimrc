@@ -50,6 +50,7 @@ map <C-p> :cp<cr>
 imap <C-l> <space>=><space>
 
 set cursorline
+set nocursorcolumn
 set confirm
 set hidden
 set wildmenu
@@ -95,6 +96,8 @@ inoremap <C-U> <C-G>u<C-U>
 
 " Insert a blank line below without entering insert mode
 nnoremap <C-J> o<esc>
+
+nnoremap <C-l> <C-l>zz
 
 " Switch syntax highlighting on, when the terminal has colors Also switch on
 " highlighting the last used search pattern.
@@ -401,8 +404,6 @@ let g:netrw_preview   = 1
 " let g:netrw_liststyle = 3
 let g:netrw_winsize   = 30
 
-set nocursorcolumn
-set nocursorline
 syntax sync minlines=256
 " let g:turbux_command_prefix = 'bundle exec'
 let g:turbux_command_rspec = 'zeus test --fail-fast'
@@ -416,7 +417,7 @@ fun! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 
-autocmd FileType c,cpp,java,php,ruby,haml,slim,python,javascript autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+autocmd FileType c,cpp,java,php,ruby,haml,slim,python,javascript,eruby,coffee autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 " au BufRead,BufNewFile *.rb syn match log /.*Rails\.logger.*/
 " au BufRead,BufNewFile *.rb hi log ctermfg=darkgrey
