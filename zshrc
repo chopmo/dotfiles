@@ -98,6 +98,21 @@ function userbenv {
     export PS1="<rbenv> [ \$(rbenv version-name) - \$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/') - \w ] $ "
 }
 
+function switch_gomore_branch {
+    echo "Checking out branch $1"
+    git co $1 || return
+
+    echo "Stopping zeus"
+    kill `pgrep zeus`
+
+    echo "Recreating DBs"
+    b/rake db:drop db:create db:schema:load db:test:clone
+
+    echo "Creating demo data"
+    b/rake db:demo_data
+
+    echo "Done."
+}
 
 # Not used yet - found here: http://unix.stackexchange.com/questions/13464/is-there-a-way-to-find-a-file-in-an-inverse-recursive-search
 upsearch () {
