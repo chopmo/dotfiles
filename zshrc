@@ -30,6 +30,11 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
+__git_files () { 
+  _wanted files expl 'local files' _files  
+}
+
+alias git=hub
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,6 +114,20 @@ function switch_gomore_branch {
     b/rake db:drop db:create db:schema:load db:test:clone
 
     echo "Creating demo data"
+    b/rake db:demo_data
+
+    echo "Done."
+}
+
+function recreate_gomore_db {
+    echo "Recreating DBs and loading schema"
+    b/rake db:drop db:create db:schema:load 
+
+    
+    echo "Cloning test db"
+    b/rake db:test:clone 
+    
+    echo "Creating test data"
     b/rake db:demo_data
 
     echo "Done."
