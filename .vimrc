@@ -31,7 +31,8 @@ map <Leader>rc :Rcontroller<cr>
 map <Leader>rm :Rmodel<cr>
 map <Leader>rv :Rview<cr>
 
-map <Leader>d :!mkdir -p %:h<cr>
+" map <Leader>d :!mkdir -p %:h<cr>
+nmap <silent> <leader>d <Plug>DashSearch
 map <Leader>c :Ack 
 map <Leader>C :Ack <cword><CR>
 map <Leader>j :ta<space>
@@ -97,7 +98,7 @@ inoremap <C-U> <C-G>u<C-U>
 " Insert a blank line below without entering insert mode
 nnoremap <C-J> o<esc>
 
-nnoremap <C-l> <C-l>zz
+nnoremap <C-l> zz
 
 " Switch syntax highlighting on, when the terminal has colors Also switch on
 " highlighting the last used search pattern.
@@ -155,8 +156,11 @@ set cmdheight=2
 
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
-map <leader>v :view %%
+map <leader>v :vsp %%
 
+" Unmap <Plug>SaveWinPosn binding
+" unmap <leader>swp
+map <leader>s :sp %%
 
 " Make <leader>' switch between ' and "
 nnoremap <leader>' ""yls<c-r>={'"': "'", "'": '"'}[@"]<cr><esc>
@@ -171,7 +175,7 @@ function! ShowRoutes()
   " Delete everything
   :normal 1GdG
   " Put routes output in buffer
-  :0r! rake -s routes
+  :0r! ~/.rbenv/shims/zeus rake -s routes
   " Size window to number of lines (1 plus rake output length)
   :exec ":normal " . line("$") . "_ "
   " Move cursor to bottom
@@ -179,15 +183,16 @@ function! ShowRoutes()
   " Delete empty trailing line
   :normal dd
 endfunction
+
 map <leader>gR :call ShowRoutes()<cr>
 map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
 map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
 map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
 map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
+map <leader>ga :CommandTFlush<cr>\|:CommandT app/assets<cr>
+map <leader>gj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
 map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
-map <leader>gp :CommandTFlush<cr>\|:CommandT public<cr>
-map <leader>gs :CommandTFlush<cr>\|:CommandT public/stylesheets/sass<cr>
-map <leader>gf :CommandTFlush<cr>\|:CommandT features<cr>
+map <leader>gt :CommandTFlush<cr>\|:CommandTTag<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
 map <leader>gs :topleft 100 :split db/schema.rb<cr>
 map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
@@ -195,10 +200,7 @@ map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
 
 nnoremap <leader><leader> <c-^>
 
-" nnoremap <leader>t :CommandT<cr> nnoremap <leader>gs :Gstatus<cr>
-
 set clipboard=unnamed
-" set macmeta
 
 set number
 set numberwidth=5
@@ -361,11 +363,6 @@ function! RunNearestTest()
     let spec_line_number = line('.')
     call RunTestFile(":" . spec_line_number)
 endfunction
-
-" map <leader>t :call RunTestFile()<cr>
-" map <leader>T :call RunNearestTest()<cr>
-" map <leader>a :call RunTests('')<cr>
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RENAME CURRENT FILE
