@@ -26,6 +26,7 @@ map <Leader>R :e $MYVIMRC<cr>
 map <Leader>w :w<cr>
 map <Leader>W :wa<cr>
 
+
 map <Leader>rr :A<cr>
 map <Leader>rc :Rcontroller<cr>
 map <Leader>rm :Rmodel<cr>
@@ -65,6 +66,9 @@ set nocompatible
 
 set ignorecase
 set smartcase
+
+set splitright
+set splitbelow
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -432,5 +436,9 @@ endfunction
 :command! PromoteToLet :call PromoteToLet()
 :map <leader>p :PromoteToLet<cr>
 
-set guioptions=egm
+set guioptions=egmc
 set autoread
+
+" Execute current line of vimscript
+nnoremap <F2> :exe getline(".")<CR>
+
