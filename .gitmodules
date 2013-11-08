@@ -47,3 +47,6 @@
 [submodule ".vim/bundle/dash"]
 	path = .vim/bundle/dash
 	url = https://github.com/rizzatti/dash.vim.git
+[submodule ".vim/bundle/vim-turbux"]
+	path = .vim/bundle/vim-turbux
+	url = git@github.com:barsoom/vim-turbux.git
