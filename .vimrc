@@ -1,4 +1,4 @@
-" An example for a vimrc file.
+"An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
 " Last change:	2008 Dec 17
@@ -66,9 +66,6 @@ set nocompatible
 
 set ignorecase
 set smartcase
-
-set splitright
-set splitbelow
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -195,10 +192,11 @@ map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
 map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
 map <leader>ga :CommandTFlush<cr>\|:CommandT app/assets<cr>
 map <leader>gj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
+map <leader>gs :CommandTFlush<cr>\|:CommandT spec<cr>
 map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
 map <leader>gt :CommandTFlush<cr>\|:CommandTTag<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
-map <leader>gs :topleft 100 :split db/schema.rb<cr>
+map <leader>gS :topleft 100 :split db/schema.rb<cr>
 map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
 map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
 
@@ -407,7 +405,8 @@ let g:netrw_winsize   = 30
 
 syntax sync minlines=256
 " let g:turbux_command_prefix = 'bundle exec'
-let g:turbux_command_rspec = 'zeus test --fail-fast'
+" let g:turbux_command_rspec = 'zeus test --fail-fast'
+let g:turbux_command_rspec = 'script/turbux_rspec'
 
 
 " Remove trailing whitespace on save
@@ -441,4 +440,7 @@ set autoread
 
 " Execute current line of vimscript
 nnoremap <F2> :exe getline(".")<CR>
+
+set splitright
+" set splitbelow
 
