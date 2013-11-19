@@ -1,0 +1,53 @@
+# vim: filetype=zsh
+alias git=hub
+alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
+alias webrick='ruby -e "require '\''webrick'\'';include WEBrick; server = HTTPServer.new( {:DocumentRoot => '\''./'\'', :Port => 5001} ); ['\''INT'\'', '\''TERM'\''].each do |signal|; trap(signal) { server.shutdown }; end; server.start"'
+
+alias rails_tags='ctags -a -e -f TAGS --tag-relative -R app lib vendor'
+alias maintain_rails_tags='while [ true ]; do rails_tags; sleep 120; done'
+
+alias accept='bundle exec rspec --drb spec/acceptance/*_spec.rb'
+
+alias sp='run_accept.sh'
+alias mig='z rake db:migrate && z rake db:test:prepare'
+alias dep='git push && b/cap deploy'
+alias be='bundle exec'
+alias rs='rails server thin'
+
+# Aliases
+alias ls="/bin/ls -G"
+alias ll="ls -laGFh"
+alias reinit="source ~/.zshrc"
+
+alias de="RAILS_ENV=development"
+alias te="RAILS_ENV=test"
+alias pe="RAILS_ENV=production"
+
+alias deploy="git push && b/cap deploy"
+alias glo="git log --oneline"
+alias gdc="clear; git diff --cached"
+alias c="cheat"
+
+alias pw='powder'
+
+alias dstore-clean='find . -type f -name .DS_Store -print0 | xargs -0 rm'
+alias rtags="ctags -e -R app lib vendor tasks"
+
+alias emacs='TERM=xterm-256color /Applications/Emacs.app/Contents/MacOS/Emacs -nw'
+
+alias gp='git pull'
+alias gd='clear; git diff'
+alias gs='git status -sb'
+
+alias ss='b/rspec spec'
+alias ssff='z test --fail-fast spec'
+
+alias px='ps aux | grep '
+alias restart='touch tmp/restart.txt'
+alias r=rails
+alias z=zeus
+# alias ci='git commit -m'
+alias aa='git add --all'
+alias st='git st'
+
+alias remigrate='z rake db:rollback && z rake db:migrate && z rake db:test:clone'
