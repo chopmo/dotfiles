@@ -26,10 +26,6 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
-__git_files () { 
-  _wanted files expl 'local files' _files  
-}
-
 
 source $ZSH/oh-my-zsh.sh
 
@@ -49,50 +45,8 @@ export LC_ALL=en_US.UTF-8
 function dns {
   dig $1 @$2 a +short
 }
-
-function switch_gomore_branch {
-    echo "Checking out branch $1"
-    git co $1 || return
-
-    echo "Stopping zeus"
-    kill `pgrep zeus`
-
-    echo "Recreating DBs"
-    b/rake db:drop db:create db:structure:load db:test:clone
-
-    echo "Creating demo data"
-    b/rake db:demo_data
-
-    echo "Done."
-}
-
-function recreate_gomore_db {
-    echo "Recreating DBs and loading structure.sql"
-    b/rake db:drop db:create db:structure:load 
-
-    
-    echo "Preparing test db"
-    b/rake db:test:prepare 
-    
-    echo "Creating test data"
-    b/rake db:demo_data
-
-    echo "Done."
-}
-
-# Not used yet - found here: http://unix.stackexchange.com/questions/13464/is-there-a-way-to-find-a-file-in-an-inverse-recursive-search
-upsearch () {
-  slashes=${PWD//[^\/]/}
-  directory=$PWD
-  for (( n=${#slashes}; n>0; --n ))
-  do
-    test -e $directory/$1 && echo $directory/$1 && return
-    directory=$directory/..
-  done
-}
-
+# 
 export LSCOLORS=gxfxcxdxbxegedabagacad
-
 
 function ci() {
   if [ -n "$1" ]; then 
@@ -103,74 +57,20 @@ function ci() {
 }
 
 
-PROMPT='%{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%d %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
+PROMPT='%{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%d %{$fg_bold[blue]%}%{$fg_bold[blue]%} % %{$reset_color%}'
 unsetopt correct_all
-export HAXE_LIBRARY_PATH="$(brew --prefix)/share/haxe/std"
 
 CDPATH=.:/Users/jtj/wb:/Users/jtj/projects
 
-function gg() {
-    git commit -v -a -m "$*"
-}
-
-function bgem() {
-    path=`bundle show $1`
-    cd $path
-    vim .
-}
-
-# Faster Rails startup - from https://gist.github.com/1688857?utm_source=rubyweekly&utm_medium=email
-export RUBY_HEAP_MIN_SLOTS=1000000
-export RUBY_HEAP_SLOTS_INCREMENT=1000000
-export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-export RUBY_GC_MALLOC_LIMIT=1000000000
-export RUBY_HEAP_FREE_MIN=500000
-
-
-# export S3_KEY='0RXXR2PMPGNEYMM8EW02'
-# export S3_SECRET='r0k4RQkv9SpY+8H0V+wJYFWMpNDh9i6r5DyzCpgX'
-# export S3_REGION='us-east-1'  
-# export S3_BUCKET='dk.workingbits.dts'
-
-
 export PATH=/usr/local/share/npm/bin:$PATH
-
-function remove_obsolete_branches {
-  current_branch=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
-  if [ "$current_branch" != "master" ]; then
-    echo "WARNING: You are on branch $current_branch, NOT master."
-  fi
-  echo "Fetching merged branches..."
-  git remote prune origin
-  remote_branches=$(git branch -r --merged | grep -v '/master$' | grep -v '/production$'| grep -v "/$current_branch$")
-  local_branches=$(git branch --merged | grep -v 'master$' | grep -v 'production$' | grep -v "$current_branch$")
-  if [ -z "$remote_branches" ] && [ -z "$local_branches" ]; then
-    echo "No existing branches have been merged into $current_branch."
-  else
-    echo "This will remove the following branches:"
-    if [ -n "$remote_branches" ]; then
-      echo "$remote_branches"
-    fi
-    if [ -n "$local_branches" ]; then
-      echo "$local_branches"
-    fi
-    echo -n "Continue? (y/n): "
-    read -q choice
-    echo
-    if [ "$choice" = "y" ]; then
-      # Remove remote branches
-      git push origin `git branch -r --merged | grep -v '/master$' | grep -v '/production$' | grep -v "/$current_branch$" | sed 's/origin\//:/g' | tr -d '\n'`
-      # Remove local branches
-      git branch -d `git branch --merged | grep -v 'master$' | grep -v 'production$' |grep -v "$current_branch$" | sed 's/origin\///g' | tr -d '\n'`
-    else
-      echo "No branches removed."
-    fi
-  fi
-}
 
 function editconflicts() { 
   vim +/"<<<<<<<" $( git diff --name-only --diff-filter=U | xargs )
 }
 
 source $HOME/.aliases
+
+__git_files () { 
+  _wanted files expl 'local files' _files  
+}
 
