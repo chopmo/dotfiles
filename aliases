@@ -1,5 +1,4 @@
 # vim: filetype=zsh
-alias git=hub
 alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
 alias webrick='ruby -e "require '\''webrick'\'';include WEBrick; server = HTTPServer.new( {:DocumentRoot => '\''./'\'', :Port => 5001} ); ['\''INT'\'', '\''TERM'\''].each do |signal|; trap(signal) { server.shutdown }; end; server.start"'
 
@@ -45,7 +44,7 @@ alias ssff='z test --fail-fast spec'
 alias px='ps aux | grep '
 alias restart='touch tmp/restart.txt'
 alias r=rails
-alias z=zeus
+alias z='bundle exec zeus'
 # alias ci='git commit -m'
 alias aa='git add --all'
 alias st='git st'
