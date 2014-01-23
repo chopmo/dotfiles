@@ -23,9 +23,16 @@ colorscheme solarized
 
 let mapleader = ","
 map <Leader>R :e $MYVIMRC<cr>
+map <Leader>Z :e ~/.zshrc<cr>
+map <Leader>A :e ~/.aliases<cr>
 map <Leader>w :w<cr>
 map <Leader>W :wa<cr>
 
+map <Leader>h :normal "x:s/ =>/:/"
+
+
+" Rails stuff
+map <Leader>rt :Rtags<cr>
 
 map <Leader>rr :A<cr>
 map <Leader>rc :Rcontroller<cr>
@@ -196,7 +203,7 @@ map <leader>gs :CommandTFlush<cr>\|:CommandT spec<cr>
 map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
 map <leader>gt :CommandTFlush<cr>\|:CommandTTag<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
-map <leader>gS :topleft 100 :split db/schema.rb<cr>
+map <leader>gS :topleft 100 :split db/structure.sql<cr>
 map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
 map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
 
