@@ -220,8 +220,14 @@ set wildignore=*.wav,*.jpg,*.png,*.mp3,public/system/**
 
 set autowriteall
 
+" Execute current line of vimscript
+nnoremap <F2> :exe getline(".")<CR>
+
 " Remove trailing whitespace
 :nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+" Convert ruby hash 1.8 -> 1.9
+:nnoremap <silent> <F3> :s/:\([^ ]*\)\(\s*\)=>/\1:/g<CR>
 
 " Highlight trailing whitespace
 " :highlight ExtraWhitespace ctermbg=red guibg=red
@@ -446,8 +452,6 @@ endfunction
 set guioptions=egmc
 set autoread
 
-" Execute current line of vimscript
-nnoremap <F2> :exe getline(".")<CR>
 
 set splitright
 " set splitbelow
