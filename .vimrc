@@ -216,7 +216,7 @@ set number
 set numberwidth=5
 
 let g:CommandTMaxHeight=15
-set wildignore=*.wav,*.jpg,*.png,*.mp3,public/system/**
+set wildignore=*.wav,*.jpg,*.png,*.mp3,public/**,tmp/**,log/**
 
 set autowriteall
 
