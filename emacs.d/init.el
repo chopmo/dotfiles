@@ -5,30 +5,45 @@
                               "~/.emacs.d/org2blog"
                               "~/.emacs.d/lib/twittering-mode-2.0.0") load-path))
 
-(load "env")
+; (load "env")
 
-(require 'org-install)
-(require 'org-latex)
+; (require 'org-install)
+; (require 'org-latex)
 
-(require 'thrift-mode)
+; (require 'thrift-mode)
 
-(require 'rspec-mode)
-(global-set-key '[f7] 'rspec-verify)
-(global-set-key (kbd "C-M-S-r") '(lambda () (interactive) (call-interactively (key-binding "\C-c,r"))))
-(global-set-key [(meta x)] 'execute-extended-command)
+; (require 'rspec-mode)
+; (global-set-key '[f7] 'rspec-verify)
+; (global-set-key (kbd "C-M-S-r") '(lambda () (interactive) (call-interactively (key-binding "\C-c,r"))))
+; (global-set-key [(meta x)] 'execute-extended-command)
 
-(require 'pivotal-tracker)
-(require 'autopair)
+; (require 'pivotal-tracker)
+; (require 'autopair)
 
 ;;; Load ELPA
 ;;; =========
 (require 'package)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
-(require 'scss-mode)
-(require 'markdown-mode)
+(defvar my-packages '(starter-kit
+                      starter-kit-lisp
+                      starter-kit-bindings
+                      starter-kit-eshell
+                      clojure-mode
+                      clojure-test-mode
+                      cider))
 
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(dolist (p my-packages)
+  (when (not (package-installed-p p))
+    (package-install p)))
+
+
+; (require 'scss-mode)
+; (require 'markdown-mode)
+; 
+; (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 
 ;;; UTF-8 encoding
@@ -41,73 +56,73 @@
 
 ;;; Ruby support
 ;;; ============
-(autoload 'ruby-mode "ruby-mode" "Major mode for ruby files" t)
-(add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Capfile" . ruby-mode))
-(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
-(add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))
-
-(add-hook 'ruby-mode-hook
-          '(lambda ()
-                                        ;(inf-ruby-keys)
-             ;; Undo ruby-mode shortcut overwrites
-             (define-key ruby-mode-map "\e\C-p" nil)
-             (define-key ruby-mode-map "\e\C-n" nil)
-             (define-key ruby-mode-map (kbd "M-C-h") nil)))
+; (autoload 'ruby-mode "ruby-mode" "Major mode for ruby files" t)
+; (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
+; (add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
+; (add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
+; (add-to-list 'auto-mode-alist '("Capfile" . ruby-mode))
+; (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
+; (add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))
+; 
+; (add-hook 'ruby-mode-hook
+;           '(lambda ()
+;                                         ;(inf-ruby-keys)
+;              ;; Undo ruby-mode shortcut overwrites
+;              (define-key ruby-mode-map "\e\C-p" nil)
+;              (define-key ruby-mode-map "\e\C-n" nil)
+;              (define-key ruby-mode-map (kbd "M-C-h") nil)))
 
 
 (require 'color-theme-ir-black)
 (color-theme-ir-black)
 
-(require 'twittering-mode)
-(load "twitter-filter.el")
-(setq twittering-icon-mode nil)
-(setq twittering-timer-interval 300)         ; Update your timeline each 300 seconds (5 minutes)
-(setq twittering-url-show-status nil)        ; Keeps the echo area from showing all the http processes
-(setq twittering-use-master-password t)
-(setq twittering-number-of-tweets-on-retrieval 50)
-(setq twittering-status-format "%i %s,  %@:\n%FILL[  ]{%T %R}\n ")
-
-                                        ; Now choose color-theme-solarized-light
-                                        ; Now choose color-theme-solarized-dark
-
-                                        ; Scala support
-(add-hook 'scala-mode-hook
-          (lambda ()
-            (setq imenu-create-index-function 'scala-imenu-create-index)))
-
-
-(require 'rvm)
-(add-to-list 'load-path "~/.emacs.d/lib/rdebug")
-(require 'rdebug)
-
-(require 'yari)
-(global-set-key (kbd "M-C-y") 'yari)
-
-                                        ; (load "js2.el")
-
-(require 'sunrise-commander)
-
-;;; Support for a few other formats
-;;; ===============================
-                                        ; (autoload 'haml-mode "haml-mode" "" t)
-(autoload 'sass-mode "sass-mode" "" t)
-
-(require 'haml-mode)
-
-(autoload 'yaml-mode "yaml-mode" "" t)
-(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-
-(require 'aes)
-(aes-enable-auto-decryption)
-
-(require 'epa-file)
-(epa-file-enable)
+; (require 'twittering-mode)
+; (load "twitter-filter.el")
+; (setq twittering-icon-mode nil)
+; (setq twittering-timer-interval 300)         ; Update your timeline each 300 seconds (5 minutes)
+; (setq twittering-url-show-status nil)        ; Keeps the echo area from showing all the http processes
+; (setq twittering-use-master-password t)
+; (setq twittering-number-of-tweets-on-retrieval 50)
+; (setq twittering-status-format "%i %s,  %@:\n%FILL[  ]{%T %R}\n ")
+; 
+;                                         ; Now choose color-theme-solarized-light
+;                                         ; Now choose color-theme-solarized-dark
+; 
+;                                         ; Scala support
+; (add-hook 'scala-mode-hook
+;           (lambda ()
+;             (setq imenu-create-index-function 'scala-imenu-create-index)))
+; 
+; 
+; (require 'rvm)
+; (add-to-list 'load-path "~/.emacs.d/lib/rdebug")
+; (require 'rdebug)
+; 
+; (require 'yari)
+; (global-set-key (kbd "M-C-y") 'yari)
+; 
+;                                         ; (load "js2.el")
+; 
+; (require 'sunrise-commander)
+; 
+; ;;; Support for a few other formats
+; ;;; ===============================
+;                                         ; (autoload 'haml-mode "haml-mode" "" t)
+; (autoload 'sass-mode "sass-mode" "" t)
+; 
+; (require 'haml-mode)
+; 
+; (autoload 'yaml-mode "yaml-mode" "" t)
+; (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+; 
+; (require 'aes)
+; (aes-enable-auto-decryption)
+; 
+; (require 'epa-file)
+; (epa-file-enable)
 
 (load "ido-init.el")
-(load "init-scala.el")
+; (load "init-scala.el")
 (load "dired-init.el")
 
                                         ; (load "init-org.el")
@@ -145,23 +160,23 @@
 ;; (remove-hook 'write-file-hooks 'untabify-before-write)
 
 
-(defun open-rails-project (root-dir)
-  (interactive "D")
-  (let ((root-dir (if (string-match "/$" root-dir) root-dir (concat root-dir "/")))
-        (paths '("app/models/*.rb"
-                 "app/controllers/*.rb"
-                 "app/helpers/*.rb"
-                 "app/mailers/*.rb"
-                 "app/views/*"
-                 "config/routes.rb"
-                 "config/database.yml"
-                 "db/schema.rb"
-                 "config/locales/*.yml"
-                 "spec/acceptance/*.rb" ; This may be a bit project-specific...
-                 "Gemfile"
-                 )))
-    (dolist (p paths)
-      (find-file (concat root-dir p) t))))
+; (defun open-rails-project (root-dir)
+;   (interactive "D")
+;   (let ((root-dir (if (string-match "/$" root-dir) root-dir (concat root-dir "/")))
+;         (paths '("app/models/*.rb"
+;                  "app/controllers/*.rb"
+;                  "app/helpers/*.rb"
+;                  "app/mailers/*.rb"
+;                  "app/views/*"
+;                  "config/routes.rb"
+;                  "config/database.yml"
+;                  "db/schema.rb"
+;                  "config/locales/*.yml"
+;                  "spec/acceptance/*.rb" ; This may be a bit project-specific...
+;                  "Gemfile"
+;                  )))
+;     (dolist (p paths)
+;       (find-file (concat root-dir p) t))))
 
 
 ;;; Visual aids
@@ -299,17 +314,17 @@
 
 ;;; Aliases
 ;;; =======
-(defalias 'tmopen (lambda () (interactive)
-                    (eshell-command (concat "mate " buffer-file-name))))
-
-
-(defalias 'pydebug (lambda () (interactive)
-                     (insert "import pdb; pdb.set_trace() # __PYDEBUG__")
-                     (save-buffer)))
-
-(defalias 'rbdebug (lambda () (interactive)
-                     (insert "require 'debugger'; debugger # __RBDEBUG__")
-                     (save-buffer)))
+; (defalias 'tmopen (lambda () (interactive)
+;                     (eshell-command (concat "mate " buffer-file-name))))
+; 
+; 
+; (defalias 'pydebug (lambda () (interactive)
+;                      (insert "import pdb; pdb.set_trace() # __PYDEBUG__")
+;                      (save-buffer)))
+; 
+; (defalias 'rbdebug (lambda () (interactive)
+;                      (insert "require 'debugger'; debugger # __RBDEBUG__")
+;                      (save-buffer)))
 
 (defun touch ()
   (interactive)
@@ -453,17 +468,17 @@
 
 ;;; Load YAS
 ;;; ========
-(add-to-list 'load-path
-             "~/.emacs.d/yasnippet")
-(require 'yasnippet)
-(setq yas/prompt-functions '( yas/ido-prompt
-                              yas/completing-prompt))
-(yas/initialize)
-(yas/load-directory "~/.emacs.d/yasnippet/snippets")
-(yas/load-directory "~/.emacs.d/yasnippets-rails/rails-snippets")
-;; said shoulda snippets
-(yas/load-directory "~/.emacs.d/yasnippets-shoulda")
-; (yas/load-directory "~/.emacs.d/rspec-snippets")
+;; (add-to-list 'load-path
+;;              "~/.emacs.d/yasnippet")
+;; (require 'yasnippet)
+;; (setq yas/prompt-functions '( yas/ido-prompt
+;;                               yas/completing-prompt))
+;; (yas/initialize)
+;; (yas/load-directory "~/.emacs.d/yasnippet/snippets")
+;; (yas/load-directory "~/.emacs.d/yasnippets-rails/rails-snippets")
+;; ;; said shoulda snippets
+;; (yas/load-directory "~/.emacs.d/yasnippets-shoulda")
+;; ; (yas/load-directory "~/.emacs.d/rspec-snippets")
 
 ;;; A few orgmode tweaks
 ;;; ====================
@@ -477,40 +492,40 @@
 
 
                                         ; Coffee mode
-(defun coffee-custom ()
-  "coffee-mode-hook"
-  (set (make-local-variable 'tab-width) 2))
+;; (defun coffee-custom ()
+;;   "coffee-mode-hook"
+;;   (set (make-local-variable 'tab-width) 2))
 
-(add-hook 'coffee-mode-hook
-          '(lambda() (coffee-custom)))
-
-
-(add-to-list 'load-path "~/.emacs.d/vendor/coffee-mode")
-(require 'coffee-mode)
+;; (add-hook 'coffee-mode-hook
+;;           '(lambda() (coffee-custom)))
 
 
-(setq send-mail-function 'mailclient-send-it)
-(setq message-send-mail-function 'message-send-mail-with-mailclient)
-
-(require 'org2blog)
-(require 'netrc)
-
-(setq blog (netrc-machine (netrc-parse "~/.netrc") "wordpress" t))
-(setq fullofstars-blog (netrc-machine (netrc-parse "~/.netrc") "fullofstars" t))
-
-(setq org2blog/wp-blog-alist
-      '(("wordpress"
-         :url "http://chopmode.wordpress.com/xmlrpc.php"
-         :username (netrc-get blog "login")
-         :password (netrc-get blog "password"))
-        ("fullofstars"
-         :url "http://fullofstars.chopmo.dk/xmlrpc.php"
-         :username (netrc-get fullofstars-blog "login")
-         :password (netrc-get fullofstars-blog "password"))))
+;; (add-to-list 'load-path "~/.emacs.d/vendor/coffee-mode")
+;; (require 'coffee-mode)
 
 
-(setq org2blog/wp-confirm-post t)
-(setq org2blog/wp-use-sourcecode-shortcode nil)
+;; (setq send-mail-function 'mailclient-send-it)
+;; (setq message-send-mail-function 'message-send-mail-with-mailclient)
+
+;; (require 'org2blog)
+;; (require 'netrc)
+
+;; (setq blog (netrc-machine (netrc-parse "~/.netrc") "wordpress" t))
+;; (setq fullofstars-blog (netrc-machine (netrc-parse "~/.netrc") "fullofstars" t))
+
+;; (setq org2blog/wp-blog-alist
+;;       '(("wordpress"
+;;          :url "http://chopmode.wordpress.com/xmlrpc.php"
+;;          :username (netrc-get blog "login")
+;;          :password (netrc-get blog "password"))
+;;         ("fullofstars"
+;;          :url "http://fullofstars.chopmo.dk/xmlrpc.php"
+;;          :username (netrc-get fullofstars-blog "login")
+;;          :password (netrc-get fullofstars-blog "password"))))
+
+
+;; (setq org2blog/wp-confirm-post t)
+;; (setq org2blog/wp-use-sourcecode-shortcode nil)
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
@@ -651,7 +666,7 @@
 ;;             (setq buf-list (cdr buf-list)))))))
 
 
-(add-to-list 'load-path "~/.emacs.d/lib/slime")  ; your SLIME directory
-(setq inferior-lisp-program "lein repl") ; your Lisp system
-(require 'slime)
-(slime-setup)
+;; (add-to-list 'load-path "~/.emacs.d/lib/slime")  ; your SLIME directory
+;; (setq inferior-lisp-program "lein repl") ; your Lisp system
+;; (require 'slime)
+;; (slime-setup)
