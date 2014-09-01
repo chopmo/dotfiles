@@ -463,3 +463,5 @@ set autoread
 set splitright
 " set splitbelow
 
+set visualbell t_vb=
+
