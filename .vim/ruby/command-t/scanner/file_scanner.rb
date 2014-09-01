@@ -1,4 +1,4 @@
-# Copyright 2010-2011 Wincent Colaiuta. All rights reserved.
+# Copyright 2010-2014 Wincent Colaiuta. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -26,32 +26,32 @@ require 'command-t/scanner'
 
 module CommandT
   # Reads the current directory recursively for the paths to all regular files.
+  #
+  # This is an abstract superclass; the real work is done by subclasses which
+  # obtain file listings via different strategies (for examples, see the
+  # RubyFileScanner and FindFileScanner subclasses).
   class FileScanner < Scanner
     class FileLimitExceeded < ::RuntimeError; end
     attr_accessor :path
 
-    def initialize path = Dir.pwd, options = {}
+    def initialize(path = Dir.pwd, options = {})
       @paths                = {}
       @paths_keys           = []
       @path                 = path
       @max_depth            = options[:max_depth] || 15
-      @max_files            = options[:max_files] || 10_000
+      @max_files            = options[:max_files] || 30_000
       @max_caches           = options[:max_caches] || 1
       @scan_dot_directories = options[:scan_dot_directories] || false
+      @wild_ignore          = options[:wild_ignore]
+      @base_wild_ignore     = VIM::wild_ignore
     end
 
     def paths
-      return @paths[@path] if @paths.has_key?(@path)
-      begin
+      @paths[@path] || begin
         ensure_cache_under_limit
-        @paths[@path] = []
-        @depth        = 0
-        @files        = 0
-        @prefix_len   = @path.chomp('/').length
-        add_paths_for_directory @path, @paths[@path]
-      rescue FileLimitExceeded
+        @prefix_len = @path.chomp('/').length
+        nil
       end
-      @paths[@path]
     end
 
     def flush
@@ -69,33 +69,15 @@ module CommandT
       @paths_keys << @path
     end
 
-    def path_excluded? path
+    def path_excluded?(path)
       # first strip common prefix (@path) from path to match VIM's behavior
       path = path[(@prefix_len + 1)..-1]
       path = VIM::escape_for_single_quotes path
       ::VIM::evaluate("empty(expand(fnameescape('#{path}')))").to_i == 1
     end
 
-    def add_paths_for_directory dir, accumulator
-      Dir.foreach(dir) do |entry|
-        next if ['.', '..'].include?(entry)
-        path = File.join(dir, entry)
-        unless path_excluded?(path)
-          if File.file?(path)
-            @files += 1
-            raise FileLimitExceeded if @files > @max_files
-            accumulator << path[@prefix_len + 1..-1]
-          elsif File.directory?(path)
-            next if @depth >= @max_depth
-            next if (entry.match(/\A\./) && !@scan_dot_directories)
-            @depth += 1
-            add_paths_for_directory path, accumulator
-            @depth -= 1
-          end
-        end
-      end
-    rescue Errno::EACCES
-      # skip over directories for which we don't have access
+    def set_wild_ignore(ignore)
+      ::VIM::command("set wildignore=#{ignore}") if @wild_ignore
     end
   end # class FileScanner
 end # module CommandT
