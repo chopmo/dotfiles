@@ -65,7 +65,7 @@ map <C-p> :cp<cr>
 
 imap <C-l> <space>=><space>
 
-set cursorline
+set nocursorline
 set nocursorcolumn
 set confirm
 set hidden
