@@ -18,8 +18,15 @@ syntax enable
 set t_Co=256
 " colorscheme xoria256
 " set background=light
-set background=dark
-colorscheme solarized
+" set background=dark
+" colorscheme solarized
+
+if has("gui_running")
+  set background=dark
+  colorscheme solarized
+else
+  colorscheme default
+endif
 
 let mapleader = ","
 map <Leader>R :e $MYVIMRC<cr>
