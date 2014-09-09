@@ -89,7 +89,7 @@ set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " do not keep a backup file, use versions instead set noswapfile
-set nobackup
+set backup
 set noswapfile
 
 " keep 50 lines of command line history
