@@ -60,7 +60,7 @@ function ci() {
 PROMPT='%{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%d %{$fg_bold[blue]%}%{$fg_bold[blue]%} % %{$reset_color%}'
 unsetopt correct_all
 
-CDPATH=.:/Users/jtj/wb:/Users/jtj/projects:/Users/jtj/oss
+CDPATH=.:/Users/jtj/c
 
 export PATH=/usr/local/share/npm/bin:$PATH
 
