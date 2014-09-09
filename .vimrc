@@ -151,7 +151,7 @@ set nohlsearch
 " GRB: use emacs-style tab completion when selecting files, etc
 set wildmode=longest,list
 
-:set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%) 
+:set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 :hi User1 term=inverse,bold cterm=inverse,bold ctermfg=red
 
 " Remap the tab key to do autocompletion or indentation depending on the
