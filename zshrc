@@ -34,7 +34,7 @@ export PATH=/usr/local/share/npm/bin:/usr/local/bin:$PATH:~/bin
 eval "$(rbenv init -)"
 
 # Set editors
-EDITOR="vim"
+EDITOR="/Applications/MacVim.app/Contents/MacOS/Vim"
 export GEMEDITOR="vim"
 
 export LANG="en_US.UTF-8"
@@ -45,6 +45,15 @@ export LC_ALL=en_US.UTF-8
 function dns {
   dig $1 @$2 a +short
 }
+
+
+function gemedit {
+  cd `bundle show $1`
+  vim .
+  cd -
+}
+
+
 # 
 export LSCOLORS=gxfxcxdxbxegedabagacad
 
@@ -62,7 +71,7 @@ unsetopt correct_all
 
 CDPATH=.:/Users/jtj/c
 
-export PATH=/usr/local/share/npm/bin:$PATH
+export PATH=bin:/usr/local/share/npm/bin:$PATH
 
 function editconflicts() { 
   vim +/"<<<<<<<" $( git diff --name-only --diff-filter=U | xargs )
