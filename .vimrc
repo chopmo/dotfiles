@@ -18,8 +18,8 @@ syntax enable
 set t_Co=256
 " colorscheme xoria256
 " set background=light
-" set background=dark
-" colorscheme solarized
+set background=dark
+colorscheme solarized
 
 if has("gui_running")
   set background=dark
@@ -63,7 +63,7 @@ endif
 map <C-n> :cn<cr>
 map <C-p> :cp<cr>
 
-imap <C-l> <space>=><space>
+nmap <C-i> =ir
 
 set nocursorline
 set nocursorcolumn
@@ -73,6 +73,7 @@ set wildmenu
 set ignorecase
 set smartcase
 set scrolloff=3
+set showtabline=0
 
 " Use Vim settings, rather than Vi settings (much better!).  This must be
 " first, because it changes other options as a side effect.
@@ -464,4 +465,22 @@ set splitright
 " set splitbelow
 
 set visualbell t_vb=
+
+function s:Cursor_Moved()
+  let cur_pos = winline()
+  if g:last_pos == 0
+    set cul
+    let g:last_pos = cur_pos
+    return
+  endif
+  let diff = g:last_pos - cur_pos
+  if diff > 1 || diff < -1
+    set cul
+  else
+    set nocul
+  endif
+  let g:last_pos = cur_pos
+endfunction
+autocmd CursorMoved,CursorMovedI * call s:Cursor_Moved()
+let g:last_pos = 0
 
