@@ -12,7 +12,7 @@ serve = !git daemon --reuseaddr --verbose --base-path=. --export-all ./.git
 st = status
 undo = reset HEAD~1 --mixed
 up = !git pull --rebase --prune $@
-wip = !git add -u && git commit -m "WIP"
+wip = !git add -A && git commit -m "WIP"
 pullsrb = !git stash save && git pull --rebase && git stash pop && echo 'Success!'
 wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
 
@@ -45,7 +45,8 @@ pl=pull
 	user = chopmo
 	token = 54a415a21dc817968e8decf7a3b5102a
 [core]
-	excludesfile = /Users/jtj/.gitignore_global
+	editor = /usr/bin/vim
+ excludesfile = /opt/boxen/config/git/gitignore
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -56,3 +57,10 @@ pl=pull
 	default = current
 [pull]
 	rebase = true
+
+[hub]
+protocol = https
+
+
+[credential]
+helper = /opt/boxen/bin/boxen-git-credential

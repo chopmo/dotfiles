@@ -27,15 +27,21 @@ DISABLE_AUTO_UPDATE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
 
+fpath=(/opt/boxen/homebrew/share/zsh/site-functions $fpath)
+
 source $ZSH/oh-my-zsh.sh
 
 ## Make sure the brew stuff is before the builtins (eg. ctags)
 export PATH=/usr/local/share/npm/bin:/usr/local/bin:$PATH:~/bin
-eval "$(rbenv init -)"
 
 # Set editors
 EDITOR="/Applications/MacVim.app/Contents/MacOS/Vim"
+export BUNDLER_EDITOR="/Applications/MacVim.app/Contents/MacOS/Vim"
 export GEMEDITOR="vim"
+
+if [ -e $HOME/.env_keys ]; then
+  source $HOME/.env_keys
+fi
 
 export LANG="en_US.UTF-8"
 export LC_CTYPE=en_US.UTF-8
@@ -83,3 +89,5 @@ __git_files () {
   _wanted files expl 'local files' _files  
 }
 
+source /opt/boxen/env.sh
+eval "$(rbenv init -)"
