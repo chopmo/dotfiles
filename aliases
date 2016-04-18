@@ -26,6 +26,8 @@ alias deploy="git push && b/cap deploy"
 alias glo="git log --oneline"
 alias gdc="clear; git diff --cached"
 alias c="cheat"
+alias gpu="git push -u"
+alias hpu="hub pull-request"
 
 alias pw='powder'
 
@@ -50,3 +52,6 @@ alias aa='git add --all'
 alias st='git st'
 
 alias remigrate='z rake db:rollback && z rake db:migrate && z rake db:test:clone'
+alias throttle="awk '!(NR % 100)'"
+
+alias csv='column -s\; -t <'
