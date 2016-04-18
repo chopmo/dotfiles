@@ -408,9 +408,12 @@ let g:netrw_preview   = 1
 let g:netrw_winsize   = 30
 
 syntax sync minlines=256
-" let g:turbux_command_prefix = 'bundle exec'
-" let g:turbux_command_rspec = 'zeus test --fail-fast'
-let g:turbux_command_rspec = 'script/turbux_rspec'
+let g:turbux_command_rspec = 'script/turbux_test'
+
+" tslime config: 
+let g:tmux_sessionname = 'spec'
+let g:tmux_windowname = 1
+let g:tmux_panenumber = 0
 
 
 " Remove trailing whitespace on save
