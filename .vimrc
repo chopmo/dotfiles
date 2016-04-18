@@ -153,6 +153,8 @@ set wildmode=longest,list
 :set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 :hi User1 term=inverse,bold cterm=inverse,bold ctermfg=red
 
+map <leader>gb :Gblame<cr>
+
 " Remap the tab key to do autocompletion or indentation depending on the
 " context (from http://www.vim.org/tips/tip.php?tip_id=102)
 function! InsertTabWrapper()
