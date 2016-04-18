@@ -61,6 +61,8 @@ map <C-p> :cp<cr>
 
 nmap <C-i> =ir
 
+nmap <C-k> :bd<cr>
+
 set nocursorline
 set nocursorcolumn
 set confirm
