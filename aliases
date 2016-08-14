@@ -27,6 +27,7 @@ alias glo="git log --oneline"
 alias gdc="clear; git diff --cached"
 alias c="cheat"
 alias gpu="git push -u"
+alias gap="git add -p"
 alias hpu="hub pull-request"
 
 alias pw='powder'
