@@ -34,8 +34,14 @@ source $ZSH/oh-my-zsh.sh
 ## Make sure the brew stuff is before the builtins (eg. ctags)
 export PATH=/usr/local/share/npm/bin:/usr/local/bin:$PATH:~/bin
 
+source /Library/PostgreSQL/9.5/pg_env.sh
+
+## Add Android tools to path
+export PATH=$PATH:/Users/jtj/adt-bundle-mac-x86_64-20140702/sdk/platform-tools:/Users/jtj/adt-bundle-mac-x86_64-20140702/sdk/tools
+
 # Set editors
 EDITOR="/Applications/MacVim.app/Contents/MacOS/Vim"
+export EDITOR
 export BUNDLER_EDITOR="/Applications/MacVim.app/Contents/MacOS/Vim"
 export GEMEDITOR="vim"
 
@@ -60,11 +66,11 @@ function gemedit {
 }
 
 
-# 
+#
 export LSCOLORS=gxfxcxdxbxegedabagacad
 
 function ci() {
-  if [ -n "$1" ]; then 
+  if [ -n "$1" ]; then
     git commit -m "$*"
   else
     git commit
@@ -77,17 +83,45 @@ unsetopt correct_all
 
 CDPATH=.:/Users/jtj/c
 
-export PATH=bin:/usr/local/share/npm/bin:$PATH
 
-function editconflicts() { 
+function editconflicts() {
   vim +/"<<<<<<<" $( git diff --name-only --diff-filter=U | xargs )
 }
 
 source $HOME/.aliases
 
-__git_files () { 
-  _wanted files expl 'local files' _files  
+__git_files () {
+  _wanted files expl 'local files' _files
 }
 
 source /opt/boxen/env.sh
 eval "$(rbenv init -)"
+
+MYSQL=/usr/local/mysql/bin
+export PATH=$PATH:$MYSQL
+export PATH=/opt/chefdk/bin:$PATH
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
+
+# $(boot2docker shellinit)
+
+export PATH=./bin:$PATH
+
+# export RUBY_HEAP_MIN_SLOTS=2000000
+# export RUBY_HEAP_SLOTS_INCREMENT=500000
+# export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+# export RUBY_GC_MALLOC_LIMIT=70000000
+# export RUBY_FREE_MIN=100000
+
+export GOMORE_DIR="/Users/jtj/c/gomore"
+
+
+expand-aliases() {
+  unset 'functions[_expand-aliases]'
+  functions[_expand-aliases]=$BUFFER
+  (($+functions[_expand-aliases])) &&
+    BUFFER=${functions[_expand-aliases]#$'\t'} &&
+    CURSOR=$#BUFFER
+}
+
+zle -N expand-aliases
+bindkey '\e^E' expand-aliases
