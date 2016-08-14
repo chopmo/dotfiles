@@ -35,9 +35,9 @@
                       clojure-test-mode
                       cider))
 
-(dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
+;; (dolist (p my-packages)
+;;   (when (not (package-installed-p p))
+;;     (package-install p)))
 
 
 ; (require 'scss-mode)
@@ -73,8 +73,8 @@
 ;              (define-key ruby-mode-map (kbd "M-C-h") nil)))
 
 
-(require 'color-theme-ir-black)
-(color-theme-ir-black)
+;; (require 'color-theme-ir-black)
+;; (color-theme-ir-black)
 
 ; (require 'twittering-mode)
 ; (load "twitter-filter.el")
