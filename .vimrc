@@ -20,6 +20,9 @@ if has("gui_running")
   "set background=light
   "colorscheme solarized
   colorscheme darkblue
+
+  " Disable Ruby popup docs
+  setlocal balloonexpr=
 else
   colorscheme default
 endif
