@@ -114,6 +114,7 @@ inoremap <C-U> <C-G>u<C-U>
 
 " Insert a blank line below without entering insert mode
 nnoremap <C-J> o<esc>
+nnoremap K i<cr><esc>l
 
 nnoremap <C-l> zz
 
