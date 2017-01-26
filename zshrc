@@ -27,7 +27,7 @@ DISABLE_AUTO_UPDATE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
 
-fpath=(/opt/boxen/homebrew/share/zsh/site-functions $fpath)
+fpath=(/usr/local/share/zsh/site-functions $fpath)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -94,7 +94,6 @@ __git_files () {
   _wanted files expl 'local files' _files
 }
 
-source /opt/boxen/env.sh
 eval "$(rbenv init -)"
 
 MYSQL=/usr/local/mysql/bin
