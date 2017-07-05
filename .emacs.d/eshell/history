@@ -1,0 +1,5 @@
+cd 
+cd gomore
+cd c/gomore
+which rspec
+exit

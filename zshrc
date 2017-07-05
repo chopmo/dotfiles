@@ -32,7 +32,7 @@ fpath=(/usr/local/share/zsh/site-functions $fpath)
 source $ZSH/oh-my-zsh.sh
 
 ## Make sure the brew stuff is before the builtins (eg. ctags)
-export PATH=/usr/local/share/npm/bin:/usr/local/bin:$PATH:~/bin
+export PATH=/usr/local/smlnj/bin:/usr/local/share/npm/bin:/usr/local/bin:$PATH:~/bin
 
 source /Library/PostgreSQL/9.5/pg_env.sh
 
