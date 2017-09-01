@@ -95,3 +95,10 @@
 (global-set-key (kbd "s-0") (lambda () (interactive)
                               (delete-window)
                               (balance-windows)))
+
+;; Eyebrowse workspace manager: https://github.com/wasamasa/eyebrowse
+(eyebrowse-mode t)
+(eyebrowse-setup-opinionated-keys)
+
+(global-set-key (kbd "M-[") 'eyebrowse-prev-window-config)
+(global-set-key (kbd "M-]") 'eyebrowse-next-window-config)
