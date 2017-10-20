@@ -1,0 +1,14 @@
+;; Emacs-W3 HTTP cookies file
+;; Automatically generated file!!! DO NOT EDIT!!!
+
+(setq url-cookie-storage
+ '(("gomore.dk"
+  [url-cookie "ga_client_id" "e5d1a158-f217-4426-883a-f306befcaddd" "Sat, 10 Aug 2019 08:00:03 -0000" "/" "gomore.dk" nil]))
+)
+(setq url-cookie-secure-storage
+ 'nil)
+
+;; Local Variables:
+;; version-control: never
+;; no-byte-compile: t
+;; End:

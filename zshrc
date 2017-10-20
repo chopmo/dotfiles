@@ -32,15 +32,15 @@ fpath=(/usr/local/share/zsh/site-functions $fpath)
 source $ZSH/oh-my-zsh.sh
 
 ## Make sure the brew stuff is before the builtins (eg. ctags)
-export PATH=/usr/local/smlnj/bin:/usr/local/share/npm/bin:/usr/local/bin:$PATH:~/bin
+export PATH=~/Library/Python/3.6/bin:/usr/local/smlnj/bin:/usr/local/share/npm/bin:/usr/local/bin:$PATH:~/bin
 
-source /Library/PostgreSQL/9.5/pg_env.sh
+# source /Library/PostgreSQL/9.5/pg_env.sh
 
 ## Add Android tools to path
 export PATH=$PATH:/Users/jtj/adt-bundle-mac-x86_64-20140702/sdk/platform-tools:/Users/jtj/adt-bundle-mac-x86_64-20140702/sdk/tools
 
 # Set editors
-EDITOR="/Applications/MacVim.app/Contents/MacOS/Vim"
+EDITOR=vim
 export EDITOR
 export BUNDLER_EDITOR="/Applications/MacVim.app/Contents/MacOS/Vim"
 export GEMEDITOR="vim"
@@ -124,3 +124,7 @@ expand-aliases() {
 
 zle -N expand-aliases
 bindkey '\e^E' expand-aliases
+export PATH="/usr/local/opt/postgresql@9.4/bin:$PATH"
+
+
+HOMEBREW_NO_AUTO_UPDATE=1

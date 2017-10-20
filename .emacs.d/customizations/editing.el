@@ -105,16 +105,20 @@
 
 (global-set-key (kbd "s-.") 'jpt-toggle-mark-word-at-point)
 
-;; Danish characters
-(global-set-key (kbd "s-o") (lambda () (interactive) (insert "ø")))
-(global-set-key (kbd "s-O") (lambda () (interactive) (insert "Ø")))
-(global-set-key (kbd "s-a") (lambda () (interactive) (insert "å")))
-(global-set-key (kbd "s-A") (lambda () (interactive) (insert "Å")))
-(global-set-key (kbd "s-'") (lambda () (interactive) (insert "æ")))
-(global-set-key (kbd "s-\"") (lambda () (interactive) (insert "Æ")))
+(global-set-key (kbd "s-o") 'projectile-project-buffers-other-buffer)
 
 (global-unset-key (kbd "s-p"))
 
 (global-set-key (kbd "s-b") 'helm-buffers-list)
 
 (projectile-rails-global-mode)
+
+(global-set-key "\C-cn" (lambda () (interactive) (find-file "~/Dropbox/notes/capture.md")))
+(global-set-key "\C-cs" (lambda () (interactive) (find-file "~/Dropbox/notes/scratch.md")))
+
+(defun jpt-commit-notes ()
+  (interactive)
+  (async-shell-command "cd ~/Dropbox/notes; git add -A; git commit -m \"Save\""))
+
+(global-set-key "\C-cN" 'jpt-commit-notes)
+(global-set-key (kbd "s-w") 'whitespace-mode)

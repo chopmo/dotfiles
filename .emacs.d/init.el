@@ -64,7 +64,7 @@
     helm-projectile
     helm-ag
 
-    ;; enhances M-x to allow easier execution of commands. Provides
+    ;; enhances M-x to allow easier exeuction of commands. Provides
     ;; a filterable list of possible commands in the minibuffer
     ;; http://www.emacswiki.org/emacs/Smex
     ; smex
@@ -154,6 +154,8 @@
 ;; Org setup
 (load "org-setup.el")
 
+(load "sql-setup.el")
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -162,19 +164,29 @@
  '(ag-arguments
    (quote
     ("--smart-case" "--nogroup" "--column" "--ignore" "log" "--")))
+ '(cider-prompt-for-symbol nil)
+ '(cider-stacktrace-default-filters nil)
  '(coffee-tab-width 2)
+ '(custom-safe-themes
+   (quote
+    ("9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" default)))
  '(display-buffer-alist
    (quote
     (("*Async Shell Command*" display-buffer-no-window
       (nil)))))
+ '(helm-ag-base-command "ag --nocolor --nogroup --hidden")
  '(helm-buffers-fuzzy-matching t)
  '(helm-completion-in-region-fuzzy-match t)
  '(helm-mode-fuzzy-match t)
+ '(hippie-expand-try-functions-list
+   (quote
+    (try-expand-dabbrev try-expand-dabbrev-all-buffers try-expand-dabbrev-from-kill try-complete-lisp-symbol-partially try-complete-lisp-symbol try-expand-line-all-buffers)))
  '(linum-format "%4d")
  '(org-agenda-files (quote ("~/notes/notes.org")))
  '(package-selected-packages
    (quote
-    (clj-refactor yasnippet smex helm-ag helm-projectile helm ido-vertical-mode yaml-mode projectile-rails markdown-mode+ rspec-mode ag coffee-mode tagedit projectile paredit magit ido-ubiquitous exec-path-from-shell clojure-mode-extra-font-locking cider)))
+    (restclient restclient-helm haskell-mode json-mode magit-popup eyebrowse sml-mode clj-refactor yasnippet smex helm-ag helm-projectile helm ido-vertical-mode yaml-mode projectile-rails markdown-mode+ rspec-mode ag coffee-mode tagedit projectile paredit magit ido-ubiquitous exec-path-from-shell clojure-mode-extra-font-locking cider)))
+ '(rspec-spec-command "rspec")
  '(rspec-use-bundler-when-possible nil)
  '(ruby-insert-encoding-magic-comment nil)
  '(safe-local-variable-values
@@ -184,12 +196,14 @@
      (eval define-clojure-indent
            (for-all 1))
      (projectile-project-type . boot-clj)
-     (cider-boot-parameters . "dev")))))
+     (cider-boot-parameters . "dev"))))
+ '(sql-postgres-program "/usr/local/opt/postgresql@9.4/bin/psql"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(eyebrowse-mode-line-active ((t (:inverse-video t))))
  '(helm-selection ((t (:background "gray28" :distant-foreground "black"))))
  '(hl-line ((t (:background "#3a4a3a"))))
  '(linum ((t (:foreground "gray65")))))

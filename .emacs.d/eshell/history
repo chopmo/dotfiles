@@ -3,3 +3,23 @@ cd gomore
 cd c/gomore
 which rspec
 exit
+echo $PATH
+printenv
+printenv
+printenv
+echo $PATH
+echo $SHELL
+echo $PATH
+echo $SHELL
+echo $PATH
+echo $PATH
+cd
+cd c/gomore
+rspec
+echo $PATH
+echo $SHELL
+echo $PATH
+cd
+hpu
+alias
+exit

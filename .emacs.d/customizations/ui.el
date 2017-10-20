@@ -102,3 +102,6 @@
 
 (global-set-key (kbd "M-[") 'eyebrowse-prev-window-config)
 (global-set-key (kbd "M-]") 'eyebrowse-next-window-config)
+
+(global-unset-key (kbd "C-z"))
+(global-unset-key (kbd "s-m"))

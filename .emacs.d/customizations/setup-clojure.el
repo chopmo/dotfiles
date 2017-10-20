@@ -25,6 +25,12 @@
             (define-clojure-indent (fact 1))
             (define-clojure-indent (facts 1))))
 
+
+;; clj-refactor
+(add-hook 'clojure-mode-hook
+          (lambda ()
+            (clj-refactor-mode 1)))
+
 ;;;;
 ;; Cider
 ;;;;
@@ -72,7 +78,7 @@
 
 (defun cider-refresh ()
   (interactive)
-  (cider-interactive-eval (format "(user/reset)")))
+  (cider-interactive-eval (format "(user/restart-test-db-system)")))
 
 (defun cider-user-ns ()
   (interactive)

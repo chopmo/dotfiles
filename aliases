@@ -1,5 +1,4 @@
 # vim: filetype=zsh
-alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
 alias webrick='ruby -e "require '\''webrick'\'';include WEBrick; server = HTTPServer.new( {:DocumentRoot => '\''./'\'', :Port => 5001} ); ['\''INT'\'', '\''TERM'\''].each do |signal|; trap(signal) { server.shutdown }; end; server.start"'
 
 alias rails_tags='ctags -a -e -f TAGS --tag-relative -R app lib vendor'
