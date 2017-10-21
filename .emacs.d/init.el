@@ -2,7 +2,6 @@
 ;;
 ;; Thanks for a great starting point!!
 
-
 ;;;;
 ;; Packages
 ;;;;
@@ -223,7 +222,4 @@
 
 (ido-vertical-mode)
 
-(add-to-list 'load-path
-              "~/.emacs.d/plugins/yasnippet")
-(require 'yasnippet)
-(yas-global-mode 1)
+(display-battery-mode 1)
