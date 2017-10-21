@@ -116,9 +116,12 @@
 (global-set-key "\C-cn" (lambda () (interactive) (find-file "~/Dropbox/notes/capture.md")))
 (global-set-key "\C-cs" (lambda () (interactive) (find-file "~/Dropbox/notes/scratch.md")))
 
-(defun jpt-commit-notes ()
-  (interactive)
-  (async-shell-command "cd ~/Dropbox/notes; git add -A; git commit -m \"Save\""))
+;; TODO: This seems to be committing the wrong thing on Linux :-O
+;; (defun jpt-commit-notes ()
+;;   (interactive)
+;;   (async-shell-command "cd ~/Dropbox/notes; git add -A; git commit -m \"Save\""))
+;; (global-set-key "\C-cN" 'jpt-commit-notes)
 
-(global-set-key "\C-cN" 'jpt-commit-notes)
 (global-set-key (kbd "s-w") 'whitespace-mode)
+
+(global-set-key (kbd "s-l") 'goto-line)
