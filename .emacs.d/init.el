@@ -72,9 +72,6 @@
     ;; git integration
     magit
 
-    ;; Mobile org sync
-    org-mobile-sync
-
     ;; Mode for editing CoffeeScript
     coffee-mode
 
@@ -144,9 +141,6 @@
 ;; Langauage-specific
 (load "setup-clojure.el")
 (load "setup-js.el")
-
-;; Org setup
-(load "org-setup.el")
 
 (load "sql-setup.el")
 
