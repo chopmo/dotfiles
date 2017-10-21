@@ -63,11 +63,6 @@
     helm-projectile
     helm-ag
 
-    ;; enhances M-x to allow easier exeuction of commands. Provides
-    ;; a filterable list of possible commands in the minibuffer
-    ;; http://www.emacswiki.org/emacs/Smex
-    ; smex
-
     ;; colorful parenthesis matching
     rainbow-delimiters
 
