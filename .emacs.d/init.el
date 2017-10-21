@@ -80,6 +80,8 @@
 
     ;; Like ack but faster
     ag
+
+    yasnippet
     ))
 
 ;; On OS X, an Emacs instance started from the graphical user
@@ -214,3 +216,6 @@
 (ido-vertical-mode)
 
 (display-battery-mode 1)
+
+(require 'yasnippet)
+(yas-global-mode 1)
