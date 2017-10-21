@@ -170,7 +170,6 @@
    (quote
     (try-expand-dabbrev try-expand-dabbrev-all-buffers try-expand-dabbrev-from-kill try-complete-lisp-symbol-partially try-complete-lisp-symbol try-expand-line-all-buffers)))
  '(linum-format "%4d")
- '(org-agenda-files (quote ("~/notes/notes.org")))
  '(package-selected-packages
    (quote
     (restclient restclient-helm haskell-mode json-mode magit-popup eyebrowse sml-mode clj-refactor yasnippet smex helm-ag helm-projectile helm ido-vertical-mode yaml-mode projectile-rails markdown-mode+ rspec-mode ag coffee-mode tagedit projectile paredit magit ido-ubiquitous exec-path-from-shell clojure-mode-extra-font-locking cider)))
