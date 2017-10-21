@@ -47,6 +47,8 @@
     ;; https://github.com/clojure-emacs/cider
     cider
 
+    eyebrowse
+
     ;; allow ido usage in as many contexts as possible. see
     ;; customizations/navigation.el line 23 for a description
     ;; of ido
@@ -54,6 +56,7 @@
 
     ;; project navigation
     projectile
+    projectile-rails
 
     ;; Display results vertically for easier scanning
     ido-vertical-mode
@@ -172,7 +175,7 @@
  '(linum-format "%4d")
  '(package-selected-packages
    (quote
-    (restclient restclient-helm haskell-mode json-mode magit-popup eyebrowse sml-mode clj-refactor yasnippet smex helm-ag helm-projectile helm ido-vertical-mode yaml-mode projectile-rails markdown-mode+ rspec-mode ag coffee-mode tagedit projectile paredit magit ido-ubiquitous exec-path-from-shell clojure-mode-extra-font-locking cider)))
+    (restclient restclient-helm haskell-mode json-mode magit-popup eyebrowse sml-mode clj-refactor yasnippet smex helm-ag helm-projectile helm ido-vertical-mode yaml-mode projectile-rails markdown-mode+ rspec-mode ag coffee-mode tagedit projectile paredit magit exec-path-from-shell clojure-mode-extra-font-locking cider)))
  '(rspec-spec-command "rspec")
  '(rspec-use-bundler-when-possible nil)
  '(ruby-insert-encoding-magic-comment nil)
