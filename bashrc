@@ -122,3 +122,11 @@ if ! shopt -oq posix; then
 fi
 
 export CDPATH=.:/home/jtj/c
+
+function ci() {
+  if [ -n "$1" ]; then
+    git commit -m "$*"
+  else
+    git commit
+  fi
+}
