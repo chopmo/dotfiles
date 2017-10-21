@@ -41,9 +41,6 @@ pl=pull
   added = yellow
   changed = green
   untracked = cyan
-[github]
-	user = chopmo
-	token = 54a415a21dc817968e8decf7a3b5102a
 [core]
 	editor = /usr/bin/vim
 [difftool "sourcetree"]
