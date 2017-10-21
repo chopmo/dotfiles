@@ -22,7 +22,7 @@ pl=pull
 
 [user]
 	name = Jacob Poulsgaard Tjørnholm
-	email = chopmo@gmail.com
+	email = jacob@tjoernholm.dk
 
 [color]
   branch = auto
@@ -30,7 +30,7 @@ pl=pull
   status = auto
 [color "branch"]
   current = yellow reverse
-  local = yellow 
+  local = yellow
   remote = green
 [color "diff"]
   meta = yellow bold
@@ -46,13 +46,9 @@ pl=pull
 	token = 54a415a21dc817968e8decf7a3b5102a
 [core]
 	editor = /usr/bin/vim
- excludesfile = /opt/boxen/config/git/gitignore
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+	path =
 [push]
 	default = current
 [pull]
@@ -62,7 +58,5 @@ pl=pull
 protocol = https
 
 
-[credential]
-helper = /opt/boxen/bin/boxen-git-credential
 [diff]
 	algorithm = minimal
