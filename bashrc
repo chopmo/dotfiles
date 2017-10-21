@@ -122,6 +122,7 @@ if ! shopt -oq posix; then
 fi
 
 export CDPATH=.:/home/jtj/c
+export PATH="$HOME/.rbenv/bin:$PATH"
 
 function ci() {
   if [ -n "$1" ]; then
@@ -130,3 +131,5 @@ function ci() {
     git commit
   fi
 }
+
+eval "$(rbenv init -)"
