@@ -216,6 +216,7 @@
 (ido-vertical-mode)
 
 (display-battery-mode 1)
+(display-time-mode 1)
 
 (require 'yasnippet)
 (yas-global-mode 1)
