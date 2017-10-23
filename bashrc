@@ -122,7 +122,7 @@ if ! shopt -oq posix; then
 fi
 
 export CDPATH=.:/home/jtj/c
-export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="bin:$HOME/.rbenv/bin:$HOME/bin:$HOME/.local/bin:$PATH"
 
 function ci() {
   if [ -n "$1" ]; then
