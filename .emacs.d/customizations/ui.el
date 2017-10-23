@@ -96,6 +96,8 @@
                               (delete-window)
                               (balance-windows)))
 
+(global-set-key (kbd "s-k") 'kill-this-buffer)
+
 ;; Eyebrowse workspace manager: https://github.com/wasamasa/eyebrowse
 (eyebrowse-mode t)
 (eyebrowse-setup-opinionated-keys)
