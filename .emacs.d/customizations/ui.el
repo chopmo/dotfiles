@@ -18,9 +18,6 @@
 ;; split.
 (setq split-height-threshold 10)
 
-;; Toggle fullscreen with f11
-(global-set-key (quote [f11]) 'toggle-frame-fullscreen)
-
 ;; Show line numbers
 (global-linum-mode)
 
@@ -82,28 +79,6 @@
 ;; no bell
 (setq ring-bell-function 'ignore)
 
-(global-set-key (kbd "s-1") 'delete-other-windows)
-
-(global-set-key (kbd "s-2") (lambda () (interactive)
-                              (split-window-below)
-                              (balance-windows)))
-
-(global-set-key (kbd "s-3") (lambda () (interactive)
-                              (split-window-right)
-                              (balance-windows)))
-
-(global-set-key (kbd "s-0") (lambda () (interactive)
-                              (delete-window)
-                              (balance-windows)))
-
-(global-set-key (kbd "s-k") 'kill-this-buffer)
-
 ;; Eyebrowse workspace manager: https://github.com/wasamasa/eyebrowse
 (eyebrowse-mode t)
 (eyebrowse-setup-opinionated-keys)
-
-(global-set-key (kbd "M-[") 'eyebrowse-prev-window-config)
-(global-set-key (kbd "M-]") 'eyebrowse-next-window-config)
-
-(global-unset-key (kbd "C-z"))
-(global-unset-key (kbd "s-m"))

@@ -47,6 +47,7 @@
 (ido-ubiquitous-mode 1)
 
 ;; Shows a list of buffers
+;; TODO: I no longer use this one
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; projectile everywhere!
@@ -56,24 +57,3 @@
 (defun open-dot-emacs-file ()
   (interactive)
   (find-file "~/.emacs.d/init.el" t))
-
-(global-set-key (quote [f12]) (quote open-dot-emacs-file))
-
-(global-set-key (kbd "s-J") 'windmove-left)
-(global-set-key (kbd "s-K") 'windmove-down)
-(global-set-key (kbd "s-I") 'windmove-up)
-(global-set-key (kbd "s-L") 'windmove-right)
-
-(global-set-key (kbd "C-c x") 'browse-url-at-point)
-
-(global-set-key (kbd "s-i") 'projectile-ag)
-(global-set-key (kbd "s-u") 'projectile-find-file)
-
-(global-set-key (kbd "M-N") 'next-error)
-(global-set-key (kbd "M-P") 'previous-error)
-
-(global-set-key (kbd "M-n") 'next-buffer)
-(global-set-key (kbd "M-p") 'previous-buffer)
-
-
-(global-set-key (kbd "M-`") 'ns-next-frame)

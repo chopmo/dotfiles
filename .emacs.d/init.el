@@ -149,6 +149,8 @@
 
 (load "sql-setup.el")
 
+(load "jpt-key-bindings.el")
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -189,7 +191,13 @@
            (for-all 1))
      (projectile-project-type . boot-clj)
      (cider-boot-parameters . "dev"))))
- '(sql-postgres-program "/usr/local/opt/postgresql@9.4/bin/psql"))
+ '(sql-password "password")
+ '(sql-postgres-login-params
+   (quote
+    ((user :default "jtj")
+     password server
+     (database :default "jtj"))))
+ '(sql-postgres-program "/usr/bin/psql"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -208,15 +216,16 @@
 (setq helm-ag-insert-at-point 'symbol)
 (setq helm-M-x-fuzzy-match t)
 
-(global-set-key (kbd "s-f") 'helm-find-files)
-(global-set-key (kbd "s-8") 'isearch-forward-symbol-at-point)
-
-(global-set-key (kbd "M-x") 'helm-M-x)
-
 (ido-vertical-mode)
 
-(display-battery-mode 1)
-(display-time-mode 1)
+;; This will be handled by i3
+;; (display-battery-mode 1)
+;; (display-time-mode 1)
 
 (require 'yasnippet)
 (yas-global-mode 1)
+
+(set-frame-font "-CYEL-Inziu Iosevka J-normal-normal-normal-*-16-*-*-*-d-0-iso10646-1" nil t)
+
+
+;(set-frame-font "-CYRE-Inconsolata-normal-normal-normal-*-16-*-*-*-m-0-iso10646-1" nil t)

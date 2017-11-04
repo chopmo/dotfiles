@@ -103,13 +103,14 @@
       (unhighlight-regexp (car (car hi-lock-interactive-patterns)))
     (highlight-symbol-at-point)))
 
-(global-set-key (kbd "s-.") 'jpt-toggle-mark-word-at-point)
+(global-set-key (kbd "M-s-.") 'jpt-toggle-mark-word-at-point)
 
 (global-set-key (kbd "s-o") 'projectile-project-buffers-other-buffer)
 
-(global-unset-key (kbd "s-p"))
+; (global-unset-key (kbd "s-p"))
 
-(global-set-key (kbd "s-b") 'helm-buffers-list)
+
+; New
 
 (projectile-rails-global-mode)
 
@@ -121,7 +122,3 @@
 ;;   (interactive)
 ;;   (async-shell-command "cd ~/Dropbox/notes; git add -A; git commit -m \"Save\""))
 ;; (global-set-key "\C-cN" 'jpt-commit-notes)
-
-(global-set-key (kbd "s-w") 'whitespace-mode)
-
-(global-set-key (kbd "s-l") 'goto-line)
