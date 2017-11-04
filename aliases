@@ -17,6 +17,7 @@ alias gp='git pull'
 alias gd='clear; git diff'
 alias gs='git status -sb'
 alias aa='git add --all'
+alias gcm='git checkout master'
 
 alias throttle="awk '!(NR % 100)'"
 
