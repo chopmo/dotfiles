@@ -156,7 +156,8 @@ bindsym $mod+r mode "resize"
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
-bindsym --release $mod+F11 exec ~/c/dotfiles/mint/bin/screenshot.sh > /tmp/tmp.log 2>&1
+bindsym --release $mod+F11 exec ~/c/dotfiles/mint/bin/take-screenshot.sh
+bindsym $mod+Shift+F11 exec ~/c/dotfiles/mint/bin/show-last-screenshot.sh
 bindsym $mod+F12 exec ~/c/dotfiles/mint/bin/init-hardware.sh
 
 # Start i3bar to display a workspace bar (plus the system information i3status
