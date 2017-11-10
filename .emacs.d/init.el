@@ -191,7 +191,7 @@
            (for-all 1))
      (projectile-project-type . boot-clj)
      (cider-boot-parameters . "dev"))))
- '(sql-password "password")
+ '(sql-password "")
  '(sql-postgres-login-params
    (quote
     ((user :default "jtj")
