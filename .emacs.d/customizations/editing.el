@@ -80,7 +80,7 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 
 ;; Disable old window switching so I can get used to Windmove
-(global-unset-key (kbd "C-x o"))
+;; (global-unset-key (kbd "C-x o"))
 
 ;; Always remove trailing whitespace before saving a file, because it
 ;; looks nice in diffs.
