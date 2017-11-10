@@ -2,8 +2,7 @@
 ;; Clojure
 ;;;;
 
-;; Enable paredit for Clojure
-(add-hook 'clojure-mode-hook 'enable-paredit-mode)
+
 
 ;; This is useful for working with camel-case tokens, like names of
 ;; Java classes (e.g. JavaClassName)
@@ -25,11 +24,17 @@
             (define-clojure-indent (fact 1))
             (define-clojure-indent (facts 1))))
 
+(eval-after-load "paredit"
+  '(progn
+     ;; I need the M-J keybinding for windmove
+    (define-key paredit-mode-map (kbd "M-J") nil)))
 
 ;; clj-refactor
 (add-hook 'clojure-mode-hook
           (lambda ()
-            (clj-refactor-mode 1)))
+            (clj-refactor-mode 1)
+            (enable-paredit-mode)))
+
 
 ;;;;
 ;; Cider
