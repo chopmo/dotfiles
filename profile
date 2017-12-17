@@ -17,5 +17,5 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-export PATH="bin:$HOME/.rbenv/bin:$HOME/bin:$HOME/.local/bin:$PATH"
+export PATH="bin:$HOME/c/dotfiles/bin:$HOME/.rbenv/bin:$HOME/bin:$HOME/.local/bin:$PATH"
 eval "$(rbenv init -)"
