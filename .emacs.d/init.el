@@ -166,7 +166,7 @@
  '(coffee-tab-width 2)
  '(custom-safe-themes
    (quote
-    ("9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" default)))
+    ("4e63466756c7dbd78b49ce86f5f0954b92bf70b30c01c494b37c586639fa3f6f" "9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" default)))
  '(display-buffer-alist
    (quote
     (("*Async Shell Command*" display-buffer-no-window
