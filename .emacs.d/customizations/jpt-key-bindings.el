@@ -85,3 +85,4 @@
 
 
 (global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (quote [f5]) 'jpt-commit-everything)
