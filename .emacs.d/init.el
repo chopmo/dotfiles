@@ -208,6 +208,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(eyebrowse-mode-line-active ((t (:inverse-video t))))
+ '(font-lock-string-face ((t (:foreground "#ad7fa8" :slant normal))))
  '(helm-selection ((t (:background "gray28" :distant-foreground "black"))))
  '(hl-line ((t (:background "#3a4a3a"))))
  '(linum ((t (:foreground "gray65")))))
