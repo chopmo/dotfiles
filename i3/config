@@ -156,6 +156,12 @@ bindsym $mod+r mode "resize"
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
+bindsym $mod+F1 exec ~/c/dotfiles/mint/screenlayout/laptop-only.sh
+bindsym $mod+F2 exec ~/c/dotfiles/mint/screenlayout/two-up.sh
+bindsym $mod+F3 exec ~/c/dotfiles/mint/screenlayout/external.sh
+
+bindsym $mod+F9 exec pavucontrol
+bindsym $mod+F10 move workspace to output left
 bindsym --release $mod+F11 exec ~/c/dotfiles/mint/bin/take-screenshot.sh
 bindsym $mod+Shift+F11 exec ~/c/dotfiles/mint/bin/show-last-screenshot.sh
 bindsym $mod+F12 exec ~/c/dotfiles/mint/bin/init-hardware.sh
@@ -164,23 +170,27 @@ bindsym $mod+F12 exec ~/c/dotfiles/mint/bin/init-hardware.sh
 # finds out, if available)
 bar {
         status_command i3status
-        tray_output HDMI1
-        tray_output eDP1
+        tray_output primary
 }
+
+for_window [class="Pavucontrol"] floating enable
+
 
 # Built-in monitor is the primary (initially)
 # xrandr --output eDP1 --primary
 
-exec --no-startup-id ~/c/dotfiles/mint/bin/init-keyboards.sh
+exec --always --no-startup-id ~/c/dotfiles/mint/bin/init-keyboards.sh
 
-exec unclutter -idle 1 -jitter 10 &
+exec --always unclutter -idle 2 -jitter 10 &
 
 exec synclient vertscrolldelta=-114
 exec synclient tapbutton1=0
 
 exec redshift-gtk &
 
-exect --no-startup-id dropbox start &
+exec --no-startup-id dropbox start &
+
+exec --no-startup-id xfce4-volumed
 
 # Use pavucontrol instead
 # exec mate-volume-control-applet &
