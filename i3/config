@@ -49,11 +49,12 @@ bindsym $mod+k focus down
 bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+# Audio control on the arrow keys and p
+bindsym $mod+Down exec --no-startup-id amixer -D pulse sset Master 5%-
+bindsym $mod+Up exec --no-startup-id amixer -D pulse sset Master 5%+
+bindsym $mod+Left exec "playerctl previous"
+bindsym $mod+Right exec "playerctl next"
+bindsym $mod+p exec "playerctl play-pause"
 
 # move focused window
 bindsym $mod+Shift+j move left
@@ -176,9 +177,8 @@ bar {
 
 for_window [class="Pavucontrol"] floating enable
 
-
 # Built-in monitor is the primary (initially)
-# xrandr --output eDP1 --primary
+exec xrandr --output eDP1 --primary
 
 exec --always --no-startup-id ~/c/dotfiles/mint/bin/init-keyboards.sh
 
