@@ -191,7 +191,6 @@ exec redshift-gtk &
 
 exec --no-startup-id dropbox start &
 
-exec --no-startup-id xfce4-volumed
+# exec --no-startup-id xfce4-volumed
 
-# Use pavucontrol instead
-# exec mate-volume-control-applet &
+exec --no-startup-id nm-applet
