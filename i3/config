@@ -178,7 +178,7 @@ bar {
 for_window [class="Pavucontrol"] floating enable
 
 # Built-in monitor is the primary (initially)
-exec xrandr --output eDP1 --primary
+# exec xrandr --output eDP1 --primary
 
 exec --always --no-startup-id ~/c/dotfiles/mint/bin/init-keyboards.sh
 
