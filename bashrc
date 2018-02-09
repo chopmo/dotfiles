@@ -130,3 +130,5 @@ function ci() {
     git commit
   fi
 }
+
+export PATH=~/.local/bin:$PATH
