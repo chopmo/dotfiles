@@ -29,3 +29,8 @@ server {
         proxy_pass http://gomore.dev;
     }
 }
+
+server {
+    listen 8100;
+    root /home/jtj/c/dotfiles;
+}

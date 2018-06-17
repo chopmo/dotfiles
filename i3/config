@@ -37,7 +37,8 @@ bindsym $mod+Return exec mate-terminal --hide-menubar
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+# bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -show run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -50,8 +51,8 @@ bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
 # Audio control on the arrow keys and p
-bindsym $mod+Down exec --no-startup-id amixer -D pulse sset Master 5%-
-bindsym $mod+Up exec --no-startup-id amixer -D pulse sset Master 5%+
+bindsym $mod+Down exec --no-startup-id "amixer -c 0 sset PCM 2dB-; amixer -c 1 sset PCM 2dB-; amixer -c 2 sset PCM 2dB-; amixer -c 3 sset PCM 2dB-"
+bindsym $mod+Up exec --no-startup-id "amixer -c 0 sset PCM 2dB+; amixer -c 1 sset PCM 2dB+; amixer -c 2 sset PCM 2dB+; amixer -c 3 sset PCM 2dB+"
 bindsym $mod+Left exec "playerctl previous"
 bindsym $mod+Right exec "playerctl next"
 bindsym $mod+p exec "playerctl play-pause"
@@ -168,6 +169,8 @@ bindsym --release $mod+F11 exec ~/c/dotfiles/mint/bin/take-screenshot.sh
 bindsym $mod+Shift+F11 exec ~/c/dotfiles/mint/bin/show-last-screenshot.sh
 bindsym $mod+F12 exec ~/c/dotfiles/mint/bin/init-hardware.sh
 
+bindsym $mod+t exec ~/c/dotfiles/mint/bin/toggle-touchpad.sh
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -176,16 +179,16 @@ bar {
 }
 
 for_window [class="Pavucontrol"] floating enable
+for_window [class="Zeal"] floating enable
 
 # Built-in monitor is the primary (initially)
 # exec xrandr --output eDP1 --primary
 
 exec --always --no-startup-id ~/c/dotfiles/mint/bin/init-keyboards.sh
 
-exec --always unclutter -idle 2 -jitter 10 &
+exec --always --no-startup-id unclutter -idle 5 -jitter 10 &
 
-exec synclient vertscrolldelta=-114
-exec synclient tapbutton1=0
+exec --always --no-startup-id synclient VertScrollDelta=-114 MinSpeed=1.50 MaxSpeed=2.50 TapButton1=0 TapButton2=0
 
 exec redshift-gtk &
 
@@ -194,3 +197,5 @@ exec --no-startup-id dropbox start &
 # exec --no-startup-id xfce4-volumed
 
 exec --no-startup-id nm-applet
+
+focus_on_window_activation focus

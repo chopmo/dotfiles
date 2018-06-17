@@ -164,6 +164,7 @@
    (quote
     ("--smart-case" "--nogroup" "--column" "--ignore" "log" "--")))
  '(cider-prompt-for-symbol nil)
+ '(cider-save-file-on-load t)
  '(cider-stacktrace-default-filters nil)
  '(coffee-tab-width 2)
  '(custom-safe-themes
@@ -174,6 +175,7 @@
     (("*Async Shell Command*" display-buffer-no-window
       (nil)))))
  '(helm-ag-base-command "ag --nocolor --nogroup --hidden")
+ '(helm-buffer-max-length 50)
  '(helm-buffers-fuzzy-matching t)
  '(helm-completion-in-region-fuzzy-match t)
  '(helm-mode-fuzzy-match t)
@@ -184,6 +186,11 @@
  '(package-selected-packages
    (quote
     (restclient restclient-helm haskell-mode json-mode magit-popup eyebrowse sml-mode clj-refactor yasnippet smex helm-ag helm-projectile helm ido-vertical-mode yaml-mode projectile-rails markdown-mode+ rspec-mode ag coffee-mode projectile paredit magit exec-path-from-shell clojure-mode-extra-font-locking cider)))
+ '(projectile-globally-ignored-files (quote ("TAGS")))
+ '(projectile-project-root-files
+   (quote
+    ("rebar.config" "project.clj" "build.boot" "SConstruct" "pom.xml" "build.sbt" "gradlew" "build.gradle" ".ensime" "Gemfile" "requirements.txt" "setup.py" "tox.ini" "composer.json" "Cargo.toml" "mix.exs" "stack.yaml" "info.rkt" "DESCRIPTION" "TAGS" "GTAGS")))
+ '(projectile-project-root-files-top-down-recurring (quote (".svn" "CVS")))
  '(rspec-spec-command "rspec")
  '(rspec-use-bundler-when-possible nil)
  '(ruby-insert-encoding-magic-comment nil)

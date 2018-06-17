@@ -22,3 +22,4 @@ alias gcm='git checkout master'
 alias throttle="awk '!(NR % 100)'"
 
 alias csv='column -s\; -t <'
+alias d=docker-compose

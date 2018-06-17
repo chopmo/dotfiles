@@ -36,6 +36,9 @@
 (global-set-key (kbd "M-I") 'windmove-up)
 (global-set-key (kbd "M-L") 'windmove-right)
 
+(global-set-key (kbd "C-M-0") 'maximize-window)
+(global-set-key (kbd "C-M-9") 'balance-windows)
+
 ; (global-set-key (kbd "M-s-w") 'whitespace-mode)
 
 
@@ -87,3 +90,5 @@
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (quote [f5]) 'jpt-commit-everything)
 (define-key global-map (kbd "C-\\") 'toggle-windows-split)
+
+(global-set-key (kbd "M-M") 'mc/edit-lines)
