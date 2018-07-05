@@ -188,8 +188,6 @@ exec --always --no-startup-id ~/c/dotfiles/mint/bin/init-keyboards.sh
 
 exec --always --no-startup-id unclutter -idle 5 -jitter 10 &
 
-exec --always --no-startup-id synclient VertScrollDelta=-114 MinSpeed=1.50 MaxSpeed=2.50 TapButton1=0 TapButton2=0
-
 exec redshift-gtk &
 
 exec --no-startup-id dropbox start &
