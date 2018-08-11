@@ -3,7 +3,9 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        cljr-slash
         coffee-dedent-line-backspace
+        complete-symbol
         end-of-buffer
         indent-for-tab-command
         isearch-exit
@@ -15,6 +17,7 @@
         paredit-forward-delete
         paredit-forward-kill-word
         paredit-forward-slurp-sexp
+        paredit-open-round
         paredit-splice-sexp
         paredit-wrap-round
         ))
