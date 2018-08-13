@@ -51,8 +51,9 @@ bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
 # Audio control on the arrow keys and p
-bindsym $mod+Down exec --no-startup-id "amixer -c 0 sset PCM 2dB-; amixer -c 1 sset PCM 2dB-; amixer -c 2 sset PCM 2dB-; amixer -c 3 sset PCM 2dB-"
-bindsym $mod+Up exec --no-startup-id "amixer -c 0 sset PCM 2dB+; amixer -c 1 sset PCM 2dB+; amixer -c 2 sset PCM 2dB+; amixer -c 3 sset PCM 2dB+"
+bindsym $mod+Down exec --no-startup-id ~/c/dotfiles/mint/bin/volume-down.sh
+bindsym $mod+Up exec --no-startup-id ~/c/dotfiles/mint/bin/volume-up.sh
+
 bindsym $mod+Left exec "playerctl previous"
 bindsym $mod+Right exec "playerctl next"
 bindsym $mod+p exec "playerctl play-pause"
