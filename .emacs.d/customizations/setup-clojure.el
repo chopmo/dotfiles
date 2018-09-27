@@ -2,8 +2,6 @@
 ;; Clojure
 ;;;;
 
-
-
 ;; This is useful for working with camel-case tokens, like names of
 ;; Java classes (e.g. JavaClassName)
 (add-hook 'clojure-mode-hook 'subword-mode)
@@ -97,3 +95,4 @@
      (define-key cider-mode-map (kbd "C-c u") 'cider-user-ns)))
 
 (global-prettify-symbols-mode 1)
+(setq clojure-align-forms-automatically t)
