@@ -3,7 +3,7 @@ set -x
 
 BASEDIR=$(dirname $0)
 
-$BASEDIR/init-keyboards.sh
+$BASEDIR/us-keyboard.sh
 ruby $BASEDIR/init-monitors.rb
 
 # Enable stereo output for SteelSeries headset
