@@ -42,7 +42,7 @@ pl=pull
   changed = green
   untracked = cyan
 [core]
-	editor = /usr/bin/vim
+	editor = /usr/bin/emacs
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
