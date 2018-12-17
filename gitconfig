@@ -57,3 +57,5 @@ protocol = https
 
 [diff]
 	algorithm = minimal
+[github]
+	user = chopmo
