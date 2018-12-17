@@ -136,3 +136,4 @@ export PATH=~/.local/bin:$PATH
 export EDITOR=emacs
 export AWS_DEFAULT_REGION=eu-central-1
 export AWS_CONTAINER_CREDENTIALS_RELATIVE_URI=/home/jtj/.aws/credentials
+export DISABLE_SPRING=1
