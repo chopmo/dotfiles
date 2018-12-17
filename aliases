@@ -23,3 +23,6 @@ alias throttle="awk '!(NR % 100)'"
 
 alias csv='column -s\; -t <'
 alias d=docker-compose
+
+alias staging-console="ENV=staging make pull-image rails-c"
+alias prod-console="ENV=production make pull-image rails-c"
