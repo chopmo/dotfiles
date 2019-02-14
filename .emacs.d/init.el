@@ -6,15 +6,13 @@
 ;; Packages
 ;;;;
 
-;; Define package repositories
+;; (add-to-list 'package-archives
+;;              '("marmalade" . "http://marmalade-repo.org/packages/") t)
+;; (add-to-list 'package-archives
+;;              '("tromey" . "http://tromey.com/elpa/") t)
 (require 'package)
-(require 'cl) ; TODO: Still required?
 (add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(add-to-list 'package-archives
-             '("tromey" . "http://tromey.com/elpa/") t)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa" . "https://melpa.org/packages/") t)
 
 
 ;; Load and activate emacs packages. Do this first so that the
@@ -169,7 +167,7 @@
  '(coffee-tab-width 2)
  '(custom-safe-themes
    (quote
-    ("4e63466756c7dbd78b49ce86f5f0954b92bf70b30c01c494b37c586639fa3f6f" "9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" default)))
+    ("52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" "4e63466756c7dbd78b49ce86f5f0954b92bf70b30c01c494b37c586639fa3f6f" "9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" default)))
  '(display-buffer-alist
    (quote
     (("*Async Shell Command*" display-buffer-no-window
@@ -185,7 +183,7 @@
  '(linum-format "%4d")
  '(package-selected-packages
    (quote
-    (restclient restclient-helm haskell-mode json-mode magit-popup eyebrowse sml-mode clj-refactor yasnippet smex helm-ag helm-projectile helm ido-vertical-mode yaml-mode projectile-rails markdown-mode+ rspec-mode ag coffee-mode projectile paredit magit exec-path-from-shell clojure-mode-extra-font-locking cider)))
+    (clj-refactor git-link multiple-cursors vue-mode tangotango-theme cider restclient restclient-helm haskell-mode json-mode magit-popup eyebrowse sml-mode yasnippet smex helm-ag helm-projectile helm ido-vertical-mode yaml-mode projectile-rails markdown-mode+ rspec-mode ag coffee-mode projectile paredit magit exec-path-from-shell clojure-mode-extra-font-locking)))
  '(projectile-globally-ignored-files (quote ("TAGS")))
  '(projectile-project-root-files
    (quote

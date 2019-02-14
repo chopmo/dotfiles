@@ -29,10 +29,10 @@
     (define-key paredit-mode-map (kbd "C-M-]") 'cider-doc)))
 
 ;; clj-refactor
-(add-hook 'clojure-mode-hook
-          (lambda ()
-            (clj-refactor-mode 1)
-            (enable-paredit-mode)))
+;; (add-hook 'clojure-mode-hook
+;;           (lambda ()
+;;             (clj-refactor-mode 1)
+;;             (enable-paredit-mode)))
 
 
 ;;;;
