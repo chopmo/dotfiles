@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+google-chrome `hub ci-status -v | grep -o "http.*"`
