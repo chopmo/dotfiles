@@ -1,1 +1,0 @@
-/Users/jtj/.vimrc
