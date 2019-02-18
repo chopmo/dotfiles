@@ -190,15 +190,13 @@ for_window [class="Zeal"] floating enable
 # Built-in monitor is the primary (initially)
 # exec xrandr --output eDP1 --primary
 
-# exec --always --no-startup-id unclutter -idle 5 -jitter 10 &
+exec --always --no-startup-id unclutter -idle 5 -jitter 10 &
 
 exec --no-startup-id redshift-gtk -l 56.200349:10.181152 &
 
-# exec --no-startup-id dropbox start &
+exec --no-startup-id dropbox start &
 
-# exec --no-startup-id xfce4-volumed
-
-# exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet
 
 focus_on_window_activation focus
 focus_follows_mouse no
