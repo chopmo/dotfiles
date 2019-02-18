@@ -99,6 +99,7 @@
 ;; a .yml file
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
+(add-to-list 'exec-path "~/c/dotfiles/bin")
 
 ;;;;
 ;; Customization
