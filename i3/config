@@ -31,7 +31,7 @@ font pango:Roboto 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec mate-terminal --hide-menubar
+bindsym $mod+Return exec i3-sensible-terminal --hide-menubar
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -167,7 +167,7 @@ bindsym $mod+F2 exec ~/c/dotfiles/mint/screenlayout/two-up.sh
 bindsym $mod+F3 exec ~/c/dotfiles/mint/screenlayout/external.sh
 
 bindsym $mod+F9 exec pavucontrol
-bindsym $mod+F10 move workspace to output left
+# bindsym $mod+F10 move workspace to output left
 bindsym --release $mod+F11 exec ~/c/dotfiles/mint/bin/take-screenshot.sh
 bindsym $mod+Shift+F11 exec ~/c/dotfiles/mint/bin/show-last-screenshot.sh
 bindsym $mod+F12 exec ~/c/dotfiles/mint/bin/init-hardware.sh
@@ -187,17 +187,15 @@ for_window [class="Zeal"] floating enable
 # Built-in monitor is the primary (initially)
 # exec xrandr --output eDP1 --primary
 
-exec --always --no-startup-id ~/c/dotfiles/mint/bin/init-keyboards.sh
+# exec --always --no-startup-id unclutter -idle 5 -jitter 10 &
 
-exec --always --no-startup-id unclutter -idle 5 -jitter 10 &
+exec --no-startup-id redshift-gtk -l 56.200349:10.181152 &
 
-exec redshift-gtk &
-
-exec --no-startup-id dropbox start &
+# exec --no-startup-id dropbox start &
 
 # exec --no-startup-id xfce4-volumed
 
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 
 focus_on_window_activation focus
 focus_follows_mouse no
