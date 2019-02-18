@@ -218,6 +218,10 @@
  '(hl-line ((t (:background "#3a4a3a"))))
  '(linum ((t (:foreground "gray65")))))
 
+;; Projectile
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
 ; Helm stuff
 (helm-mode 1)
 (require 'helm-config)
@@ -234,8 +238,3 @@
 
 (require 'yasnippet)
 (yas-global-mode 1)
-
-(set-frame-font "-CYEL-Inziu Iosevka J-normal-normal-normal-*-16-*-*-*-d-0-iso10646-1" nil t)
-
-
-;(set-frame-font "-CYRE-Inconsolata-normal-normal-normal-*-16-*-*-*-m-0-iso10646-1" nil t)
