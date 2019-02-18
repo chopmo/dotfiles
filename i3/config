@@ -54,6 +54,9 @@ bindsym $mod+semicolon focus right
 bindsym $mod+Down exec --no-startup-id ~/c/dotfiles/mint/bin/volume-down.sh
 bindsym $mod+Up exec --no-startup-id ~/c/dotfiles/mint/bin/volume-up.sh
 
+bindsym $mod+Control+Down exec --no-startup-id ~/c/dotfiles/mint/bin/brightness-down.sh
+bindsym $mod+Control+Up exec --no-startup-id ~/c/dotfiles/mint/bin/brightness-up.sh
+
 bindsym $mod+Left exec "playerctl previous"
 bindsym $mod+Right exec "playerctl next"
 bindsym $mod+p exec "playerctl play-pause"
