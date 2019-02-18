@@ -16,7 +16,12 @@ sudo apt -yqq install \
      libssl-dev \
      libreadline-dev \
      zlib1g-dev \
-     htop
+     htop \
+     openjdk-8-jdk \
+     unclutter \
+     postgresql-10 \
+     postgresql-server-dev-10 \
+     curl
 
 ln -sf /home/jtj/c/dotfiles/profile /home/jtj/.profile
 ln -sf /home/jtj/c/dotfiles/bashrc /home/jtj/.bashrc
@@ -24,12 +29,15 @@ ln -sf /home/jtj/c/dotfiles/aliases /home/jtj/.bash_aliases
 ln -sf /home/jtj/c/dotfiles/.tmux.conf /home/jtj/
 ln -sf /home/jtj/c/dotfiles/agignore /home/jtj/.agignore
 ln -sf /home/jtj/c/dotfiles/gemrc /home/jtj/.gemrc
+ln -sf /home/jtj/c/dotfiles/gitconfig /home/jtj/.gitconfig
+mkdir -p /home/jtj/.config/dunst
+ln -sf /home/jtj/c/dotfiles/dunstrc /home/jtj/.config/dunst/
 
 # git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 
 # mkdir -p "$(rbenv root)"/plugins
 # git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 
-rbenv install 2.4.0
-rbenv global 2.4.0
-gem install bundler
+# rbenv install 2.4.0
+# rbenv global 2.4.0
+# gem install bundler
