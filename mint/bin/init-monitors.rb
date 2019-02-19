@@ -8,12 +8,12 @@
 
 # Dual monitor setup: xrandr --output eDP1 --left-of DP1-1 --mode 1920x1080 --output DP1-1 --primary --mode 2560x1440
 
-if `xrandr`[/HDMI1 connected/]
-  `xrandr --output HDMI1 --primary --mode 3440x1440`
-  `xrandr --output eDP1 --off`
-  `notify-send "Selected HDMI1"`
+if `xrandr`[/HDMI-1 connected/]
+  `xrandr --output HDMI-1 --primary --mode 3440x1440`
+  `xrandr --output eDP-1 --off`
+  `notify-send "Selected HDMI-1"`
 else
-  `xrandr --output eDP1 --primary --mode 1920x1080`
-  `xrandr --output HDMI1 --off`
-  `notify-send "Selected eDP1"`
+  `xrandr --output eDP-1 --primary --mode 1920x1080`
+  `xrandr --output HDMI-1 --off`
+  `notify-send "Selected eDP-1"`
 end
