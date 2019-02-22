@@ -227,3 +227,5 @@
 
 (require 'yasnippet)
 (yas-global-mode 1)
+
+(set-frame-font "-1ASC-Liberation Mono-normal-normal-normal-*-16-*-*-*-m-0-iso10646-1")
