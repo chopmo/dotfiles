@@ -41,3 +41,8 @@ ln -sf /home/jtj/c/dotfiles/dunstrc /home/jtj/.config/dunst/
 # rbenv install 2.4.0
 # rbenv global 2.4.0
 # gem install bundler
+
+
+# Also, to fix backlight adjustment:
+# Install light (https://github.com/haikarainen/light)
+# sudo chmod a+w /sys/class/backlight/intel_backlight/brightness

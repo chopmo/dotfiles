@@ -162,8 +162,8 @@ hide_edge_borders both
 bindsym $mod+r mode "resize"
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
 
 bindsym $mod+F1 exec ~/c/dotfiles/mint/screenlayout/laptop-only.sh
 bindsym $mod+F2 exec ~/c/dotfiles/mint/screenlayout/two-up.sh
