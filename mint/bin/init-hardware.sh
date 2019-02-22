@@ -19,3 +19,7 @@ synclient VertScrollDelta=-114 MinSpeed=1.50 MaxSpeed=2.50 TapButton1=0 TapButto
 #                       grep "Natural Scrolling Enabled (" \
 #                       | cut -d'(' -f2 | cut -d')' -f1`
 # xinput --set-prop $id $natural_scrolling_id 1
+
+# Kill dunst so it will recalculate screen position on next
+# notification, because screen size may have changed.
+pkill dunst
