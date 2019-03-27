@@ -192,7 +192,7 @@ for_window [class="Zeal"] floating enable
 
 exec --always --no-startup-id unclutter -idle 5 -jitter 10 &
 
-exec --no-startup-id redshift-gtk -l 56.200349:10.181152 &
+exec --no-startup-id redshift-gtk -l 56.200349:10.181152 -t 5500:3500 &
 
 exec --no-startup-id dropbox start &
 
@@ -200,3 +200,5 @@ exec --no-startup-id nm-applet
 
 focus_on_window_activation focus
 focus_follows_mouse no
+
+# TODO: If possible, hide "Slack Call Minipanel"
