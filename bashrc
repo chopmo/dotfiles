@@ -131,7 +131,7 @@ function ci() {
   fi
 }
 
-export PATH=~/.local/bin:$PATH
+export PATH=~/.local/bin:~/.yarn/bin:$PATH
 
 export EDITOR=emacs
 export AWS_DEFAULT_REGION=eu-central-1
