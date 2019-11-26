@@ -26,3 +26,6 @@ alias d=docker-compose
 
 alias staging-console="ENV=staging make pull-image rails-c"
 alias prod-console="ENV=production make pull-image rails-c"
+
+alias st="ENV=staging "
+alias pr="ENV=production "
