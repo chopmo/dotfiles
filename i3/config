@@ -187,6 +187,8 @@ bar {
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Zeal"] floating enable
 
+for_window [title="^Slack$" floating] move scratchpad
+
 # Built-in monitor is the primary (initially)
 # exec xrandr --output eDP1 --primary
 
