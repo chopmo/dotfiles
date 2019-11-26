@@ -92,3 +92,5 @@
 (define-key global-map (kbd "C-\\") 'toggle-windows-split)
 
 (global-set-key (kbd "M-M") 'mc/edit-lines)
+
+(global-set-key (kbd "C-M-o") 'zoom-window-zoom)
