@@ -26,7 +26,10 @@
   '(progn
      ;; I need the M-J keybinding for windmove
     (define-key paredit-mode-map (kbd "M-J") nil)
-    (define-key paredit-mode-map (kbd "C-M-]") 'cider-doc)))
+    (define-key paredit-mode-map (kbd "C-M-]") 'cider-doc)
+    (define-key paredit-mode-map (kbd "C-M-S-u") (lambda ()
+                                                   (interactive)
+                                                   (paredit-backward-up 100)))))
 
 ;; clj-refactor
 (add-hook 'clojure-mode-hook
@@ -81,7 +84,8 @@
 
 (defun cider-refresh ()
   (interactive)
-  (cider-interactive-eval (format "(user/restart-test-db-system)")))
+  (cider-interactive-eval (format "(load \"user\")"))
+  (cider-interactive-eval (format "(user/reset)")))
 
 (defun cider-user-ns ()
   (interactive)

@@ -150,29 +150,39 @@
  '(ag-arguments
    (quote
     ("--smart-case" "--nogroup" "--column" "--ignore" "log" "--")))
+ '(ahs-idle-interval 0.5)
+ '(ahs-modes
+   (quote
+    (actionscript-mode apache-mode bat-generic-mode c++-mode c-mode csharp-mode css-mode dos-mode emacs-lisp-mode html-mode ini-generic-mode java-mode javascript-mode js-mode lisp-interaction-mode lua-mode latex-mode makefile-mode makefile-gmake-mode markdown-mode moccur-edit-mode nxml-mode nxhtml-mode outline-mode perl-mode cperl-mode php-mode python-mode rc-generic-mode reg-generic-mode ruby-mode sgml-mode sh-mode squirrel-mode text-mode tcl-mode visual-basic-mode clojure-mode)))
+ '(cider-auto-jump-to-error nil)
  '(cider-prompt-for-symbol nil)
  '(cider-save-file-on-load t)
  '(cider-stacktrace-default-filters nil)
  '(coffee-tab-width 2)
+ '(completion-styles (quote (basic partial-completion emacs22)))
  '(custom-safe-themes
    (quote
-    ("52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" "4e63466756c7dbd78b49ce86f5f0954b92bf70b30c01c494b37c586639fa3f6f" "9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" default)))
+    ("713f898dd8c881c139b62cf05b7ac476d05735825d49006255c0a31f9a4f46ab" "7f1263c969f04a8e58f9441f4ba4d7fb1302243355cb9faecb55aec878a06ee9" "5ee12d8250b0952deefc88814cf0672327d7ee70b16344372db9460e9a0e3ffc" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" "4e63466756c7dbd78b49ce86f5f0954b92bf70b30c01c494b37c586639fa3f6f" "9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" default)))
  '(display-buffer-alist
    (quote
     (("*Async Shell Command*" display-buffer-no-window
       (nil)))))
+ '(global-auto-highlight-symbol-mode nil)
  '(helm-ag-base-command "ag --nocolor --nogroup --hidden")
  '(helm-buffer-max-length 50)
  '(helm-buffers-fuzzy-matching t)
  '(helm-completion-in-region-fuzzy-match t)
+ '(helm-completion-style (quote emacs))
  '(helm-mode-fuzzy-match t)
  '(hippie-expand-try-functions-list
    (quote
-    (try-expand-dabbrev try-expand-dabbrev-all-buffers try-expand-dabbrev-from-kill try-complete-lisp-symbol-partially try-complete-lisp-symbol try-expand-line-all-buffers)))
+    (try-expand-line try-expand-line-all-buffers try-expand-dabbrev try-expand-dabbrev-all-buffers try-expand-dabbrev-from-kill try-complete-lisp-symbol-partially try-complete-lisp-symbol)))
  '(linum-format "%4d")
+ '(magit-list-refs-sortby "-creatordate")
+ '(magit-pull-or-fetch t)
  '(package-selected-packages
    (quote
-    (markdown-mode cljr-helm clj-refactor git-link multiple-cursors vue-mode tangotango-theme cider restclient restclient-helm haskell-mode json-mode magit-popup eyebrowse sml-mode yasnippet smex helm-ag helm-projectile helm ido-vertical-mode yaml-mode projectile-rails markdown-mode+ rspec-mode ag coffee-mode projectile paredit magit exec-path-from-shell clojure-mode-extra-font-locking)))
+    (auto-highlight-symbol vue-mode mmm-mode dockerfile-mode helm-cider kotlin-mode swift-mode zoom-window markdown-mode cljr-helm clj-refactor git-link multiple-cursors tangotango-theme cider restclient restclient-helm haskell-mode json-mode magit-popup eyebrowse sml-mode yasnippet smex helm-ag helm-projectile helm ido-vertical-mode yaml-mode projectile-rails markdown-mode+ rspec-mode ag coffee-mode projectile paredit magit exec-path-from-shell clojure-mode-extra-font-locking)))
  '(projectile-globally-ignored-files (quote ("TAGS")))
  '(projectile-project-root-files
    (quote

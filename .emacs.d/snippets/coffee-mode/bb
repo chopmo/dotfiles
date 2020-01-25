@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: bb
+# key: bb
+# --
+import Backbone from 'backbone'
