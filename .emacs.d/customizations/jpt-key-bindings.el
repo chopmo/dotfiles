@@ -94,3 +94,7 @@
 (global-set-key (kbd "M-M") 'mc/edit-lines)
 
 (global-set-key (kbd "C-M-o") 'zoom-window-zoom)
+
+(global-set-key (kbd "C-M-y") 'helm-show-kill-ring)
+
+(global-set-key (kbd "M-H") 'auto-highlight-symbol-mode)
