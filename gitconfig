@@ -43,6 +43,7 @@ pl=pull
   untracked = cyan
 [core]
 	editor = /usr/bin/emacs
+	autocrlf = input
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
@@ -59,3 +60,5 @@ protocol = https
 	algorithm = minimal
 [github]
 	user = chopmo
+[remote]
+	autoSetupMerge = always
