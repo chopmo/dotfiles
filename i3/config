@@ -65,7 +65,7 @@ bindsym $mod+p exec "playerctl -p spotify play-pause"
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+# bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -193,7 +193,7 @@ for_window [title="^Slack$" floating] move scratchpad
 # Built-in monitor is the primary (initially)
 # exec xrandr --output eDP1 --primary
 
-exec --always --no-startup-id unclutter -idle 5 -jitter 10 &
+exec --always --no-startup-id unclutter -keystroke -jitter 10 &
 
 exec --no-startup-id redshift-gtk -l 56.200349:10.181152 -t 5500:3500 &
 
