@@ -3,7 +3,7 @@
 setxkbmap -option -option ctrl:swapcaps us
 
 # TODO: What was this?
-# -e "keycode 107 = Super_L" \
+#
 
 # Map (in order):
 # - caps lock key to control
@@ -11,10 +11,12 @@ setxkbmap -option -option ctrl:swapcaps us
 # - Semicolon key to support ae with Mode_switch
 # - Apostrophe key to support oslash with Mode_switch
 # - Bracketleft key to support aring with Mode_switch
+# - PrtSc on Thinkpad to Super L
 xmodmap -e "keycode 66 = Control_L NoSymbol Control_L" \
         -e "keycode 37 = Mode_switch NoSymbol Mode_switch" \
         -e "keycode 47 = semicolon colon ae AE" \
         -e "keycode 48 = apostrophe quotedbl oslash Oslash" \
-        -e "keycode 34 = bracketleft braceleft aring Aring"
+        -e "keycode 34 = bracketleft braceleft aring Aring" \
+        -e "keycode 107 = Super_L"
 
 xset r rate 250 40
