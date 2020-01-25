@@ -199,6 +199,8 @@ exec --no-startup-id redshift-gtk -l 56.200349:10.181152 -t 5500:3500 &
 
 exec --no-startup-id dropbox start &
 
+exec --no-startup-id zeal &
+
 exec --no-startup-id nm-applet
 
 focus_on_window_activation focus
