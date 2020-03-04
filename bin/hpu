@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e
+
+if [[ -f "Gemfile" ]]; then
+  git diff master --name-only app | xargs rubocop
+fi
+
+/usr/local/bin/hub pull-request
