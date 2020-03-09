@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-if [[ -f "Gemfile" ]]; then
+if [[ -f "Gemfile" && -d "app" ]]; then
   git diff master --name-only app | xargs rubocop
 fi
 
