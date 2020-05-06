@@ -3,6 +3,23 @@
 (defvar sql-prompt-regexp)
 (defvar sql-prompt-cont-regexp)
 
+(defun jpt-sql-in-region-as-csv-copy (beg end)
+  (interactive "r")
+  (if (region-active-p)
+      (progn
+        (kill-new
+         (concat
+          "\\copy ("
+          (replace-regexp-in-string
+           "[\n;]"
+           " "
+           (buffer-substring-no-properties beg end))
+          ") TO '/tmp.csv' CSV HEADER;"))
+        (deactivate-mark)
+        (message "OK"))
+
+    (message "Region is not active")))
+
 (add-hook 'sql-interactive-mode-hook 'my-sql-interactive-mode-hook)
 (defun my-sql-interactive-mode-hook ()
   "Custom interactive SQL mode behaviours. See `sql-interactive-mode-hook'."
@@ -16,7 +33,9 @@
   ;; Deal with inline prompts in query output.
   ;; Runs after `sql-interactive-remove-continuation-prompt'.
   (add-hook 'comint-preoutput-filter-functions
-            'my-sql-comint-preoutput-filter :append :local))
+            'my-sql-comint-preoutput-filter :append :local)
+
+  (define-key sql-mode-map (kbd "C-M-c") 'jpt-sql-in-region-as-csv-copy))
 
 (defun my-sql-comint-preoutput-filter (output)
   "Filter prompts out of SQL query output.

@@ -174,7 +174,7 @@
  '(helm-buffer-max-length 50)
  '(helm-buffers-fuzzy-matching t)
  '(helm-completion-in-region-fuzzy-match t)
- '(helm-completion-style (quote emacs))
+ '(helm-completion-style (quote helm-fuzzy))
  '(helm-mode-fuzzy-match t)
  '(hippie-expand-try-functions-list
    (quote
