@@ -15,9 +15,6 @@
 ;; Highlights matching parenthesis
 (show-paren-mode 1)
 
-;; Highlight current line
-;; (global-hl-line-mode 1)
-
 ;; Interactive search key bindings. By default, C-s runs
 ;; isearch-forward, so this swaps the bindings.
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
@@ -107,18 +104,6 @@
 
 (global-set-key (kbd "s-o") 'projectile-project-buffers-other-buffer)
 
-; (global-unset-key (kbd "s-p"))
-
-
-; New
-
 (projectile-rails-global-mode)
 
 (global-set-key "\C-cn" (lambda () (interactive) (find-file "~/Dropbox/notes/capture.md")))
-(global-set-key "\C-cs" (lambda () (interactive) (find-file "~/Dropbox/notes/scratch.md")))
-
-;; TODO: This seems to be committing the wrong thing on Linux :-O
-;; (defun jpt-commit-notes ()
-;;   (interactive)
-;;   (async-shell-command "cd ~/Dropbox/notes; git add -A; git commit -m \"Save\""))
-;; (global-set-key "\C-cN" 'jpt-commit-notes)
