@@ -72,8 +72,10 @@
 ;; (global-set-key (kbd "M-N") 'next-error)
 ;; (global-set-key (kbd "M-P") 'previous-error)
 
-(global-set-key (kbd "M-n") 'next-buffer)
-(global-set-key (kbd "M-p") 'previous-buffer)
+;; (global-set-key (kbd "M-n") 'switch-to-next-buffer)
+;; (global-set-key (kbd "M-p") 'switch-to-prev-buffer)
+(global-set-key (kbd "M-n") 'projectile-next-project-buffer)
+(global-set-key (kbd "M-p") 'projectile-previous-project-buffer)
 
 ;; (global-set-key (kbd "C-c x") 'browse-url-at-point)
 
@@ -98,3 +100,5 @@
 (global-set-key (kbd "C-M-y") 'helm-show-kill-ring)
 
 (global-set-key (kbd "M-H") 'auto-highlight-symbol-mode)
+
+(global-set-key (kbd "C-M-j") 'imenu)
