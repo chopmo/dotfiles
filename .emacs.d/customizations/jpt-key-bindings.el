@@ -65,7 +65,7 @@
 
 ;; (global-set-key (kbd "C-K") 'kill-this-buffer)
 
-(global-set-key (kbd "M-*") 'isearch-forward-symbol-at-point)
+(global-set-key (kbd "M-*") 'jpt-isearch-forward-word-at-point)
 
 
 ;; Unchanged

@@ -20,3 +20,18 @@
 
 (defun jpt-monitor-brightness-down (monitor-id)
   (async-shell-command (concat "ddcctl -d " (number-to-string monitor-id) " -b 10-")))
+
+(defun jpt-isearch-forward-word-at-point ()
+  (interactive)
+  (isearch-forward-word nil 1)
+  (let ((bounds (find-tag-default-bounds)))
+    (cond
+     (bounds
+      (when (< (car bounds) (point))
+	(goto-char (car bounds)))
+      (isearch-yank-string
+       (buffer-substring-no-properties (car bounds) (cdr bounds))))
+     (t
+      (setq isearch-error "No symbol at point")
+      (isearch-push-state)
+      (isearch-update)))))
