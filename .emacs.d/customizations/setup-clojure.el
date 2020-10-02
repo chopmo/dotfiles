@@ -100,3 +100,5 @@
 
 (global-prettify-symbols-mode 1)
 (setq clojure-align-forms-automatically t)
+
+(require 'flycheck-clj-kondo)

@@ -65,7 +65,7 @@ bindsym $mod+p exec "playerctl -p spotify play-pause"
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
-# bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -83,7 +83,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+# bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -97,7 +97,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+Shift+a focus child
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -124,8 +124,8 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # Disabling these because I should only need one keymap now
-# bindsym $mod+u exec ~/c/dotfiles/mint/bin/us-keyboard.sh
-# bindsym $mod+i exec ~/c/dotfiles/mint/bin/dk-keyboard.sh
+bindsym $mod+u exec ~/c/dotfiles/mint/bin/us-keyboard.sh
+bindsym $mod+i exec ~/c/dotfiles/mint/bin/dk-keyboard.sh
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -171,9 +171,9 @@ bindsym $mod+F2 exec ~/c/dotfiles/mint/screenlayout/two-up.sh
 bindsym $mod+F3 exec ~/c/dotfiles/mint/screenlayout/external.sh
 
 bindsym $mod+F9 exec pavucontrol
-# bindsym $mod+F10 move workspace to output left
+
 bindsym --release $mod+F11 exec ~/c/dotfiles/mint/bin/take-screenshot.sh
-bindsym $mod+Shift+F11 exec ~/c/dotfiles/mint/bin/show-last-screenshot.sh
+bindsym --release $mod+Shift+F11 exec ~/c/dotfiles/mint/bin/take-delayed-screenshot.sh
 bindsym $mod+F12 exec ~/c/dotfiles/mint/bin/init-hardware.sh
 
 bindsym $mod+t exec ~/c/dotfiles/mint/bin/toggle-touchpad.sh
@@ -187,15 +187,21 @@ bar {
 
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Zeal"] floating enable
+for_window [class="Zeal"] sticky enable
 
-for_window [title="^Slack$" floating] move scratchpad
+for_window [title="^Slack \| mini panel$" floating] move position 3100 1150, resize set 200 150
+
+# for_window [title="^Slack$" floating] move scratchpad
+
+# bindsym $mod+s exec i3-msg [title="^Slack$" floating] move scratchpad && notify-send "Slack mini window hidden"
+# bindsym $mod+s exec i3-msg [title="^Slack$" floating] move scratchpad && notify-send "Slack mini window hidden"
 
 # Built-in monitor is the primary (initially)
 # exec xrandr --output eDP1 --primary
 
 exec --always --no-startup-id unclutter -keystroke -jitter 10 &
 
-exec --no-startup-id redshift-gtk -l 56.200349:10.181152 -t 5500:3500 &
+exec --no-startup-id redshift-gtk -l 56.200349:10.181152 -t 5500:3000 &
 
 exec --no-startup-id dropbox start &
 
@@ -207,3 +213,5 @@ focus_on_window_activation focus
 focus_follows_mouse no
 
 # TODO: If possible, hide "Slack Call Minipanel"
+
+bindsym $mod+Shift+s sticky toggle

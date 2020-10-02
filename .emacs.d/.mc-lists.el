@@ -18,8 +18,10 @@
         paredit-forward-kill-word
         paredit-forward-slurp-sexp
         paredit-open-round
+        paredit-semicolon
         paredit-splice-sexp
         paredit-wrap-round
+        sgml-slash
         ))
 
 (setq mc/cmds-to-run-once

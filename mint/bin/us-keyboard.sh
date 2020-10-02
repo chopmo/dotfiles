@@ -19,4 +19,4 @@ xmodmap -e "keycode 66 = Control_L NoSymbol Control_L" \
         -e "keycode 34 = bracketleft braceleft aring Aring" \
         -e "keycode 107 = Super_L"
 
-xset r rate 250 40
+xset r rate 200 40

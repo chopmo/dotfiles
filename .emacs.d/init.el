@@ -45,6 +45,8 @@
     ;; https://github.com/clojure-emacs/cider
     cider
 
+    clj-refactor
+
     eyebrowse
 
     ;; allow ido usage in as many contexts as possible. see
@@ -132,6 +134,7 @@
 
 ;; Langauage-specific
 (load "setup-clojure.el")
+
 (load "setup-js.el")
 
 (load "sql-setup.el")
@@ -150,11 +153,13 @@
  '(ag-arguments
    (quote
     ("--smart-case" "--nogroup" "--column" "--ignore" "log" "--")))
- '(ahs-idle-interval 0.5)
+ '(ahs-idle-interval 0.1)
  '(ahs-modes
    (quote
     (actionscript-mode apache-mode bat-generic-mode c++-mode c-mode csharp-mode css-mode dos-mode emacs-lisp-mode html-mode ini-generic-mode java-mode javascript-mode js-mode lisp-interaction-mode lua-mode latex-mode makefile-mode makefile-gmake-mode markdown-mode moccur-edit-mode nxml-mode nxhtml-mode outline-mode perl-mode cperl-mode php-mode python-mode rc-generic-mode reg-generic-mode ruby-mode sgml-mode sh-mode squirrel-mode text-mode tcl-mode visual-basic-mode clojure-mode)))
+ '(cider-annotate-completion-candidates t)
  '(cider-auto-jump-to-error nil)
+ '(cider-completion-use-context t)
  '(cider-prompt-for-symbol nil)
  '(cider-save-file-on-load t)
  '(cider-stacktrace-default-filters nil)
@@ -167,27 +172,35 @@
    (quote
     (("*Async Shell Command*" display-buffer-no-window
       (nil)))))
+ '(eyebrowse-new-workspace t)
+ '(git-link-default-branch nil)
+ '(git-link-use-commit t)
  '(global-auto-highlight-symbol-mode nil)
  '(helm-ag-base-command "ag --nocolor --nogroup --hidden")
  '(helm-buffer-max-length 50)
  '(helm-buffers-fuzzy-matching t)
- '(helm-completion-in-region-fuzzy-match t)
- '(helm-completion-style (quote helm-fuzzy))
- '(helm-mode-fuzzy-match t)
+ '(helm-completion-in-region-fuzzy-match nil)
+ '(helm-completion-style (quote emacs))
+ '(helm-mode-fuzzy-match nil)
  '(hippie-expand-try-functions-list
    (quote
     (try-expand-line try-expand-line-all-buffers try-expand-dabbrev try-expand-dabbrev-all-buffers try-expand-dabbrev-from-kill try-complete-lisp-symbol-partially try-complete-lisp-symbol)))
  '(linum-format "%4d")
  '(magit-list-refs-sortby "-creatordate")
  '(magit-pull-or-fetch t)
+ '(magit-status-sections-hook
+   (quote
+    (magit-insert-status-headers magit-insert-merge-log magit-insert-rebase-sequence magit-insert-am-sequence magit-insert-sequencer-sequence magit-insert-untracked-files magit-insert-unstaged-changes magit-insert-staged-changes magit-insert-unpushed-to-pushremote magit-insert-unpushed-to-upstream-or-recent magit-insert-unpulled-from-pushremote magit-insert-unpulled-from-upstream)))
+ '(neo-window-width 40)
  '(package-selected-packages
    (quote
-    (auto-highlight-symbol vue-mode mmm-mode dockerfile-mode helm-cider kotlin-mode swift-mode zoom-window markdown-mode cljr-helm clj-refactor git-link multiple-cursors tangotango-theme cider restclient restclient-helm haskell-mode json-mode magit-popup eyebrowse sml-mode yasnippet smex helm-ag helm-projectile helm ido-vertical-mode yaml-mode projectile-rails markdown-mode+ rspec-mode ag coffee-mode projectile paredit magit exec-path-from-shell clojure-mode-extra-font-locking)))
+    (flycheck-clj-kondo neotree geiser go-mode auto-highlight-symbol vue-mode mmm-mode dockerfile-mode helm-cider kotlin-mode swift-mode zoom-window markdown-mode cljr-helm clj-refactor git-link multiple-cursors tangotango-theme cider restclient restclient-helm haskell-mode json-mode magit-popup eyebrowse sml-mode yasnippet smex helm-ag helm-projectile helm ido-vertical-mode yaml-mode projectile-rails markdown-mode+ rspec-mode ag coffee-mode projectile paredit magit exec-path-from-shell clojure-mode-extra-font-locking)))
  '(projectile-globally-ignored-files (quote ("TAGS")))
  '(projectile-project-root-files
    (quote
     ("rebar.config" "project.clj" "build.boot" "SConstruct" "pom.xml" "build.sbt" "gradlew" "build.gradle" ".ensime" "Gemfile" "requirements.txt" "setup.py" "tox.ini" "composer.json" "Cargo.toml" "mix.exs" "stack.yaml" "info.rkt" "DESCRIPTION" "TAGS" "GTAGS")))
  '(projectile-project-root-files-top-down-recurring (quote (".svn" "CVS")))
+ '(projectile-tags-command "ripper-tags -R -f TAGS")
  '(rspec-spec-command "rspec")
  '(rspec-use-bundler-when-possible nil)
  '(ruby-insert-encoding-magic-comment nil)
@@ -199,6 +212,7 @@
            (for-all 1))
      (projectile-project-type . boot-clj)
      (cider-boot-parameters . "dev"))))
+ '(search-default-mode nil)
  '(sql-password "")
  '(sql-postgres-login-params
    (quote

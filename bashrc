@@ -132,8 +132,11 @@ function ci() {
 }
 
 export PATH=~/.local/bin:~/.yarn/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin
 
 export EDITOR=emacs
 export AWS_DEFAULT_REGION=eu-central-1
 export AWS_CONTAINER_CREDENTIALS_RELATIVE_URI=/home/jtj/.aws/credentials
 export DISABLE_SPRING=1
+
+export LEIN_JVM_OPTS="-XX:TieredStopAtLevel=1"
