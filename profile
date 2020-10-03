@@ -19,4 +19,3 @@ fi
 
 export PATH="$HOME/c/dotfiles/bin:$HOME/.rbenv/bin:$HOME/bin:$HOME/.local/bin:$PATH"
 eval "$(rbenv init -)"
-export PATH="bin:$PATH"
