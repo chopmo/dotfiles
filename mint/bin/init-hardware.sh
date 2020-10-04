@@ -4,12 +4,20 @@ set -x
 BASEDIR=$(dirname $0)
 
 $BASEDIR/us-keyboard.sh
-ruby $BASEDIR/init-monitors.rb
+# ruby $BASEDIR/init-monitors.rb
 
 # Enable stereo output for SteelSeries headset
 pacmd load-module module-alsa-sink device=hw:1,1
 
 synclient VertScrollDelta=-114 MinSpeed=1.50 MaxSpeed=2.50 TapButton1=0 TapButton2=0
+
+if [[ $HOSTNAME = "bau7" ]]; then
+  xrandr --output HDMI-0 --primary --mode 3440x1440
+  notify-send "Hardware init done"
+else
+  ruby $BASEDIR/init-monitors.rb
+  pkill dunst
+fi
 
 # Enable natural scrolling
 #
@@ -22,4 +30,4 @@ synclient VertScrollDelta=-114 MinSpeed=1.50 MaxSpeed=2.50 TapButton1=0 TapButto
 
 # Kill dunst so it will recalculate screen position on next
 # notification, because screen size may have changed.
-pkill dunst
+#
