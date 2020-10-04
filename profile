@@ -19,3 +19,4 @@ fi
 
 export PATH="$HOME/c/dotfiles/bin:$HOME/.rbenv/bin:$HOME/bin:$HOME/.local/bin:$PATH"
 eval "$(rbenv init -)"
+if [ -e /home/jtj/.nix-profile/etc/profile.d/nix.sh ]; then . /home/jtj/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
