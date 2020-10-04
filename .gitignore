@@ -4,3 +4,4 @@
 iterm2/com.googlecode.iterm2.plist
 .emacs.d/transient/
 docker/data
+*~
