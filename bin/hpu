@@ -5,4 +5,4 @@ set -e
 #   git diff master --name-only app | xargs rubocop
 # fi
 
-/usr/local/bin/hub pull-request
+~/bin/hub pull-request
