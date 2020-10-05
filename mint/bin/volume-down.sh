@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 # So primitive, but works
-amixer -c 0 sset PCM 2dB-
-amixer -c 1 sset PCM 2dB-
-amixer -c 2 sset PCM 2dB-
-amixer -c 3 sset PCM 2dB-
-amixer -c 4 sset PCM 2dB-
+pactl set-sink-volume 1 -10%
+pactl set-sink-volume 2 -10%
+pactl set-sink-volume 3 -10%
+pactl set-sink-volume 4 -10%
