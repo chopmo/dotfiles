@@ -54,8 +54,8 @@ bindsym $mod+Control+l exec --no-startup-id i3lock -i ~/c/dotfiles/i3/images/bg1
 
 
 # Audio control on the arrow keys and p
-bindsym $mod+Down exec --no-startup-id ~/c/dotfiles/mint/bin/volume-down.sh
-bindsym $mod+Up exec --no-startup-id ~/c/dotfiles/mint/bin/volume-up.sh
+bindsym $mod+Down exec --no-startup-id ~/c/dotfiles/bin/adjust-volume down
+bindsym $mod+Up exec --no-startup-id ~/c/dotfiles/bin/adjust-volume up
 
 bindsym $mod+Control+Down exec --no-startup-id ~/c/dotfiles/mint/bin/brightness-down.sh
 bindsym $mod+Control+Up exec --no-startup-id ~/c/dotfiles/mint/bin/brightness-up.sh

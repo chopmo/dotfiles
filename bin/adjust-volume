@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+if [[ $# < 1 ]]; then
+  echo "Usage: adjust-volume <modifier>"
+  exit 1
+fi
+
+increment=5
+
+sinks=$(pactl list short sinks | sed -e 's,^\([0-9][0-9]*\)[^0-9].*,\1,')
+volumes=$(pactl list sinks | grep '^[[:space:]]Volume:' | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')
+
+idx=1
+for vol in $volumes; do
+  sink=$(echo $sinks | cut -d " " -f $idx)
+  if [[ $1 = "up" ]]; then
+     newvol=$(( $vol + $increment ))
+  else
+     newvol=$(( $vol - $increment ))
+  fi
+
+  if (( $newvol > 100 )); then
+    newvol=100
+  elif (( $newvol < 0 )); then
+    newvol=0
+  fi
+
+  pactl set-sink-volume $sink ${newvol}%
+
+  idx=$(( $idx + 1 ))
+done
