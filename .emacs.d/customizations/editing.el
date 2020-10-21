@@ -107,3 +107,5 @@
 (projectile-rails-global-mode)
 
 (global-set-key "\C-cn" (lambda () (interactive) (find-file "~/Dropbox/notes/capture.md")))
+
+(setq tags-revert-without-query 1)
