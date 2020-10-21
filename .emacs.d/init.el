@@ -200,7 +200,7 @@
    (quote
     ("rebar.config" "project.clj" "build.boot" "SConstruct" "pom.xml" "build.sbt" "gradlew" "build.gradle" ".ensime" "Gemfile" "requirements.txt" "setup.py" "tox.ini" "composer.json" "Cargo.toml" "mix.exs" "stack.yaml" "info.rkt" "DESCRIPTION" "TAGS" "GTAGS")))
  '(projectile-project-root-files-top-down-recurring (quote (".svn" "CVS")))
- '(projectile-tags-command "ripper-tags -R -f TAGS")
+ '(projectile-tags-command "find . -name '*.rb' | xargs etags -o TAGS")
  '(rspec-spec-command "rspec")
  '(rspec-use-bundler-when-possible nil)
  '(ruby-insert-encoding-magic-comment nil)
