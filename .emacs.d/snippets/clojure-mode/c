@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: c
+# key: c
+# --
+(comment
+  $0
+  ,)

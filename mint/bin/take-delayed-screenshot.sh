@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-sleep 5
-/usr/bin/import /home/jtj/Downloads/last-screenshot.png && xclip -selection clip -t image/png /home/jtj/Downloads/last-screenshot.png
+sleep 3
+gnome-screenshot -f /home/jtj/Downloads/last-fullscreen-screenshot.png && eog -f /home/jtj/Downloads/last-fullscreen-screenshot.png

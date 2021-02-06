@@ -51,7 +51,7 @@ bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
 bindsym $mod+Control+l exec --no-startup-id i3lock -i ~/c/dotfiles/i3/images/bg1.png
-
+bindsym $mod+Control+s exec --no-startup-id ~/c/dotfiles/i3/suspend.sh
 
 # Audio control on the arrow keys and p
 bindsym $mod+Down exec --no-startup-id ~/c/dotfiles/bin/adjust-volume down
@@ -63,6 +63,7 @@ bindsym $mod+Control+Up exec --no-startup-id ~/c/dotfiles/mint/bin/brightness-up
 bindsym $mod+Left exec "playerctl -p spotify previous"
 bindsym $mod+Right exec "playerctl -p spotify next"
 bindsym $mod+p exec "playerctl -p spotify play-pause"
+
 
 # move focused window
 bindsym $mod+Shift+j move left

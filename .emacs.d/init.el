@@ -162,6 +162,7 @@
  '(cider-annotate-completion-candidates t)
  '(cider-auto-jump-to-error nil)
  '(cider-completion-use-context t)
+ '(cider-lein-parameters "repl :headless :host localhost")
  '(cider-prompt-for-symbol nil)
  '(cider-save-file-on-load t)
  '(cider-stacktrace-default-filters nil)
@@ -169,7 +170,7 @@
  '(completion-styles (quote (basic partial-completion emacs22)))
  '(custom-safe-themes
    (quote
-    ("713f898dd8c881c139b62cf05b7ac476d05735825d49006255c0a31f9a4f46ab" "7f1263c969f04a8e58f9441f4ba4d7fb1302243355cb9faecb55aec878a06ee9" "5ee12d8250b0952deefc88814cf0672327d7ee70b16344372db9460e9a0e3ffc" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" "4e63466756c7dbd78b49ce86f5f0954b92bf70b30c01c494b37c586639fa3f6f" "9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" default)))
+    ("a10ca93d065921865932b9d7afae98362ce3c347f43cb0266d025d70bec57af1" "713f898dd8c881c139b62cf05b7ac476d05735825d49006255c0a31f9a4f46ab" "7f1263c969f04a8e58f9441f4ba4d7fb1302243355cb9faecb55aec878a06ee9" "5ee12d8250b0952deefc88814cf0672327d7ee70b16344372db9460e9a0e3ffc" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" "4e63466756c7dbd78b49ce86f5f0954b92bf70b30c01c494b37c586639fa3f6f" "9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" default)))
  '(display-buffer-alist
    (quote
     (("*Async Shell Command*" display-buffer-no-window
@@ -184,6 +185,10 @@
  '(helm-completion-in-region-fuzzy-match nil)
  '(helm-completion-style (quote emacs))
  '(helm-mode-fuzzy-match nil)
+ '(highlight-symbol-colors (quote ("light gray")))
+ '(highlight-symbol-idle-delay 0.2)
+ '(highlight-symbol-occurrence-message (quote (explicit navigation)))
+ '(highlight-symbol-on-navigation-p nil)
  '(hippie-expand-try-functions-list
    (quote
     (try-expand-line try-expand-line-all-buffers try-expand-dabbrev try-expand-dabbrev-all-buffers try-expand-dabbrev-from-kill try-complete-lisp-symbol-partially try-complete-lisp-symbol)))
@@ -196,11 +201,14 @@
  '(neo-window-width 40)
  '(package-selected-packages
    (quote
-    (tangotango-theme flycheck-clj-kondo neotree geiser go-mode auto-highlight-symbol vue-mode mmm-mode dockerfile-mode helm-cider kotlin-mode swift-mode zoom-window markdown-mode cljr-helm clj-refactor git-link multiple-cursors cider restclient restclient-helm haskell-mode json-mode magit-popup eyebrowse sml-mode yasnippet smex helm-ag helm-projectile helm ido-vertical-mode yaml-mode projectile-rails markdown-mode+ rspec-mode ag coffee-mode projectile paredit magit exec-path-from-shell clojure-mode-extra-font-locking)))
+    (edit-server modus-themes minimap highlight-symbol tangotango-theme flycheck-clj-kondo neotree geiser go-mode auto-highlight-symbol vue-mode mmm-mode dockerfile-mode helm-cider kotlin-mode swift-mode zoom-window markdown-mode cljr-helm clj-refactor git-link multiple-cursors cider restclient restclient-helm haskell-mode json-mode magit-popup eyebrowse sml-mode yasnippet smex helm-ag helm-projectile helm ido-vertical-mode yaml-mode projectile-rails markdown-mode+ rspec-mode ag coffee-mode projectile paredit magit exec-path-from-shell clojure-mode-extra-font-locking)))
  '(projectile-globally-ignored-files (quote ("TAGS")))
  '(projectile-project-root-files
    (quote
     ("rebar.config" "project.clj" "build.boot" "SConstruct" "pom.xml" "build.sbt" "gradlew" "build.gradle" ".ensime" "Gemfile" "requirements.txt" "setup.py" "tox.ini" "composer.json" "Cargo.toml" "mix.exs" "stack.yaml" "info.rkt" "DESCRIPTION" "TAGS" "GTAGS")))
+ '(projectile-project-root-files-bottom-up
+   (quote
+    (".projectile" ".git" ".hg" ".fslckout" "_FOSSIL_" ".bzr" "_darcs")))
  '(projectile-project-root-files-top-down-recurring (quote (".svn" "CVS")))
  '(projectile-tags-command "find . -name '*.rb' | xargs etags -o TAGS")
  '(rspec-spec-command "rspec")
@@ -218,10 +226,11 @@
  '(sql-password "")
  '(sql-postgres-login-params
    (quote
-    ((user :default "jtj")
+    ((user :default "gomore")
      password server
-     (database :default "jtj"))))
- '(sql-postgres-program "/usr/bin/psql"))
+     (database :default "gomore_development"))))
+ '(sql-postgres-program "/usr/bin/psql")
+ '(sql-product (quote postgres)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -229,9 +238,10 @@
  ;; If there is more than one, they won't work right.
  '(eyebrowse-mode-line-active ((t (:inverse-video t))))
  '(font-lock-string-face ((t (:foreground "#ad7fa8" :slant normal))))
- '(helm-selection ((t (:background "gray28" :distant-foreground "black"))))
+ '(highlight-symbol-face ((t (:background "chocolate"))))
  '(hl-line ((t (:background "#3a4a3a"))))
- '(linum ((t (:foreground "gray65")))))
+ '(linum ((t (:foreground "gray65"))))
+ '(mmm-default-submode-face ((t nil))))
 
 ;; Projectile
 (projectile-mode +1)
