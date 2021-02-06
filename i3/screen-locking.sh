@@ -11,10 +11,7 @@ xidlehook \
   --timer 120 \
     'xset dpms force suspend' \
     '' \
+  --timer 3600 \
+    'systemctl suspend' \
+    '' \
   &
-
-
-# Not currently working because disabling SMT in the BIOS also breaks S3:
-#  --timer 3600 \
-#    'systemctl suspend' \
-#    '' \
