@@ -57,8 +57,8 @@ bindsym $mod+Control+s exec --no-startup-id ~/c/dotfiles/i3/suspend.sh
 bindsym $mod+Down exec --no-startup-id ~/c/dotfiles/bin/adjust-volume down
 bindsym $mod+Up exec --no-startup-id ~/c/dotfiles/bin/adjust-volume up
 
-bindsym $mod+Control+Down exec --no-startup-id ~/c/dotfiles/mint/bin/brightness-down.sh
-bindsym $mod+Control+Up exec --no-startup-id ~/c/dotfiles/mint/bin/brightness-up.sh
+bindsym $mod+Control+Down exec --no-startup-id ~/c/dotfiles/i3/brightness.sh down
+bindsym $mod+Control+Up exec --no-startup-id ~/c/dotfiles/i3/brightness.sh up
 
 bindsym $mod+Left exec "playerctl -p spotify previous"
 bindsym $mod+Right exec "playerctl -p spotify next"
