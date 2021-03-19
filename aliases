@@ -28,3 +28,5 @@ alias prod-console="ENV=production make pull-image rails-c"
 
 alias st="ENV=staging "
 alias pr="ENV=production "
+
+alias e="emacs -nw -q"
