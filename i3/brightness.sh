@@ -6,4 +6,4 @@ else
   operation="-"
 fi
 
-ddcutil setvcp --sleep-multiplier .1  --noverify 10 $operation 10
+ddcutil setvcp --sleep-multiplier .1  --noverify 10 $operation 5
