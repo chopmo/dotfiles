@@ -104,3 +104,5 @@
 (global-set-key (kbd "C-M-j") 'imenu)
 
 (global-set-key (quote [f7]) 'toggle-truncate-lines)
+
+(global-set-key (kbd "C-S-k") 'kill-current-buffer)
