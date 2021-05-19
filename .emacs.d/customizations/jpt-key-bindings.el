@@ -104,5 +104,8 @@
 (global-set-key (kbd "C-M-j") 'imenu)
 
 (global-set-key (quote [f7]) 'toggle-truncate-lines)
+(global-set-key (quote [f8]) 'org-journal-new-entry)
 
 (global-set-key (kbd "C-S-k") 'kill-current-buffer)
+
+(define-key projectile-rails-mode-map (kbd "C-c r") 'projectile-rails-command-map)
