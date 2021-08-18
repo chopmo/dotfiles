@@ -31,5 +31,27 @@
 
 ;; (advice-add 'cider-test-execute :around #'jpt-swap-systems)
 
+;; (advice-remove 'cider-test-execute #'jpt-swap-systems)
 
-(advice-remove 'cider-test-execute #'jpt-swap-systems)
+(defun jpt-buffer-contains-substring (s)
+  (save-excursion
+    (save-match-data
+      (goto-char (point-min))
+      (search-forward s nil t))))
+
+(defun jpt-toggle-playground ()
+  (interactive)
+  (cond
+   ((string-match "/src/" (buffer-file-name))
+    (let ((dev-filename (replace-regexp-in-string "/src/" "/dev/" (buffer-file-name))))
+      (when (not (file-exists-p dev-filename))
+        (let ((dirname (replace-regexp-in-string "/[^\/]*$" "" dev-filename)))
+          (when (not (file-exists-p dirname))
+            (make-directory dirname t))))
+      (find-file dev-filename)
+      (when (and (not (file-exists-p dev-filename))
+                 (not (jpt-buffer-contains-substring "PLAYGROUND")))
+        (insert ";; *******************\n;; * PLAYGROUND FILE *\n;; *******************\n\n"))))
+
+   ((string-match "/dev/" (buffer-file-name))
+    (find-file (replace-regexp-in-string "/dev/" "/src/" (buffer-file-name))))))
