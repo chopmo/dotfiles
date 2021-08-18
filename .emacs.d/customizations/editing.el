@@ -109,3 +109,11 @@
 (global-set-key "\C-cn" (lambda () (interactive) (find-file "~/Dropbox/notes/capture.md")))
 
 (setq tags-revert-without-query 1)
+
+(defun jpt-append-timestamp ()
+  (interactive)
+  (end-of-buffer)
+  (insert (concat
+           "\n# "
+           (format-time-string "%a %d-%m-%Y, %H:%S" (current-time))
+           "\n\n")))
