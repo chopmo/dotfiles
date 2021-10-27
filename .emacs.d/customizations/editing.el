@@ -54,9 +54,6 @@
   (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
 (global-set-key (kbd "C-;") 'toggle-comment-on-line)
 
-;; yay rainbows!
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-
 ;; use 2 spaces for tabs
 (defun die-tabs ()
   (interactive)
