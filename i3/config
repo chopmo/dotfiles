@@ -201,7 +201,7 @@ for_window [title="^Slack \| mini panel$" floating] move position 3100 1150, res
 # bindsym $mod+s exec i3-msg [title="^Slack$" floating] move scratchpad && notify-send "Slack mini window hidden"
 
 # Built-in monitor is the primary (initially)
-# exec xrandr --output eDP1 --primary
+exec xrandr --output DP-0 --primary
 
 exec --always --no-startup-id unclutter -keystroke -jitter 10 &
 
