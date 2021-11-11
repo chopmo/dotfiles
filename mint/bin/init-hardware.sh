@@ -31,3 +31,5 @@ fi
 # Kill dunst so it will recalculate screen position on next
 # notification, because screen size may have changed.
 #
+
+xinput --set-prop 9 "libinput Accel Speed" 0.5
