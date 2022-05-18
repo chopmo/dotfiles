@@ -50,7 +50,7 @@ bindsym $mod+k focus down
 bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
-bindsym $mod+Control+l exec --no-startup-id i3lock -i ~/c/dotfiles/i3/images/bg1.png
+bindsym $mod+Control+l exec --no-startup-id i3lock -i ~/Dropbox/wallpapers/pexels-johannes-plenio-1567058.png
 bindsym $mod+Control+s exec --no-startup-id ~/c/dotfiles/i3/suspend.sh
 
 # Audio control on the arrow keys and p
@@ -178,7 +178,7 @@ bindsym $mod+F9 exec pavucontrol
 
 bindsym --release $mod+F11 exec ~/c/dotfiles/mint/bin/take-screenshot.sh
 bindsym --release $mod+Shift+F11 exec ~/c/dotfiles/mint/bin/take-delayed-screenshot.sh
-bindsym $mod+F12 exec ~/c/dotfiles/mint/bin/init-hardware.sh
+bindsym --release $mod+F12 exec ~/c/dotfiles/mint/bin/init-hardware.sh
 
 bindsym $mod+t exec ~/c/dotfiles/mint/bin/toggle-touchpad.sh
 

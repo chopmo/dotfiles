@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-i3lock -i ~/c/dotfiles/i3/images/bg1.png
+i3lock -i ~/Dropbox/wallpapers/pexels-johannes-plenio-1567058.png
 systemctl suspend
