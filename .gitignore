@@ -5,3 +5,4 @@ iterm2/com.googlecode.iterm2.plist
 .emacs.d/transient/
 docker/data
 *~
+.bash_local
