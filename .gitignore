@@ -6,3 +6,4 @@ iterm2/com.googlecode.iterm2.plist
 docker/data
 *~
 .bash_local
+weechat/logs
