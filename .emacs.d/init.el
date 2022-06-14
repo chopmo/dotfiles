@@ -102,6 +102,11 @@
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
 (add-to-list 'exec-path "~/c/dotfiles/bin")
+(add-to-list 'exec-path "~/.nvm/versions/node/v16.13.1/bin")
+
+(setq exec-path (append exec-path '("~/.nvm/versions/node/v16.13.1/bin")))
+
+
 
 ;;;;
 ;; Customization
@@ -161,16 +166,21 @@
     (actionscript-mode apache-mode bat-generic-mode c++-mode c-mode csharp-mode css-mode dos-mode emacs-lisp-mode html-mode ini-generic-mode java-mode javascript-mode js-mode lisp-interaction-mode lua-mode latex-mode makefile-mode makefile-gmake-mode markdown-mode moccur-edit-mode nxml-mode nxhtml-mode outline-mode perl-mode cperl-mode php-mode python-mode rc-generic-mode reg-generic-mode ruby-mode sgml-mode sh-mode squirrel-mode text-mode tcl-mode visual-basic-mode clojure-mode)))
  '(cider-annotate-completion-candidates t)
  '(cider-auto-jump-to-error nil)
+ '(cider-auto-select-test-report-buffer t)
  '(cider-completion-use-context t)
  '(cider-lein-parameters "repl :headless :host localhost")
  '(cider-prompt-for-symbol nil)
  '(cider-save-file-on-load t)
  '(cider-stacktrace-default-filters nil)
+ '(cider-test-show-report-on-success nil)
+ '(clojure-align-binding-forms
+   (quote
+    ("let" "when-let" "when-some" "if-let" "if-some" "binding" "loop" "doseq" "for" "with-open" "with-local-vars" "with-redefs" "plait")))
  '(coffee-tab-width 2)
  '(completion-styles (quote (basic partial-completion emacs22)))
  '(custom-safe-themes
    (quote
-    ("a10ca93d065921865932b9d7afae98362ce3c347f43cb0266d025d70bec57af1" "713f898dd8c881c139b62cf05b7ac476d05735825d49006255c0a31f9a4f46ab" "7f1263c969f04a8e58f9441f4ba4d7fb1302243355cb9faecb55aec878a06ee9" "5ee12d8250b0952deefc88814cf0672327d7ee70b16344372db9460e9a0e3ffc" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" "4e63466756c7dbd78b49ce86f5f0954b92bf70b30c01c494b37c586639fa3f6f" "9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" default)))
+    ("fee7287586b17efbfda432f05539b58e86e059e78006ce9237b8732fde991b4c" "4c56af497ddf0e30f65a7232a8ee21b3d62a8c332c6b268c81e9ea99b11da0d3" "0fffa9669425ff140ff2ae8568c7719705ef33b7a927a0ba7c5e2ffcfac09b75" "00445e6f15d31e9afaa23ed0d765850e9cd5e929be5e8e63b114a3346236c44c" "d2db4af7153c5d44cb7a67318891e2692b8bf5ddd70f47ee7a1b2d03ad25fcd9" "51ec7bfa54adf5fff5d466248ea6431097f5a18224788d0bd7eb1257a4f7b773" "285d1bf306091644fb49993341e0ad8bafe57130d9981b680c1dbd974475c5c7" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" "c433c87bd4b64b8ba9890e8ed64597ea0f8eb0396f4c9a9e01bd20a04d15d358" "13a8eaddb003fd0d561096e11e1a91b029d3c9d64554f8e897b2513dbf14b277" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "a10ca93d065921865932b9d7afae98362ce3c347f43cb0266d025d70bec57af1" "713f898dd8c881c139b62cf05b7ac476d05735825d49006255c0a31f9a4f46ab" "7f1263c969f04a8e58f9441f4ba4d7fb1302243355cb9faecb55aec878a06ee9" "5ee12d8250b0952deefc88814cf0672327d7ee70b16344372db9460e9a0e3ffc" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" "4e63466756c7dbd78b49ce86f5f0954b92bf70b30c01c494b37c586639fa3f6f" "9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" default)))
  '(display-buffer-alist
    (quote
     (("*Async Shell Command*" display-buffer-no-window
@@ -198,10 +208,13 @@
  '(magit-status-sections-hook
    (quote
     (magit-insert-status-headers magit-insert-merge-log magit-insert-rebase-sequence magit-insert-am-sequence magit-insert-sequencer-sequence magit-insert-untracked-files magit-insert-unstaged-changes magit-insert-staged-changes magit-insert-unpushed-to-pushremote magit-insert-unpushed-to-upstream-or-recent magit-insert-unpulled-from-pushremote magit-insert-unpulled-from-upstream)))
+ '(markdown-header-scaling t)
+ '(minimap-mode t)
  '(neo-window-width 40)
+ '(org-journal-dir "~/Dropbox/journal/")
  '(package-selected-packages
    (quote
-    (edit-server modus-themes minimap highlight-symbol tangotango-theme flycheck-clj-kondo neotree geiser go-mode auto-highlight-symbol vue-mode mmm-mode dockerfile-mode helm-cider kotlin-mode swift-mode zoom-window markdown-mode cljr-helm clj-refactor git-link multiple-cursors cider restclient restclient-helm haskell-mode json-mode magit-popup eyebrowse sml-mode yasnippet smex helm-ag helm-projectile helm ido-vertical-mode yaml-mode projectile-rails markdown-mode+ rspec-mode ag coffee-mode projectile paredit magit exec-path-from-shell clojure-mode-extra-font-locking)))
+    (prettier-js kotlin-mode tuareg ocamlformat solarized-theme org-journal modus-themes highlight-symbol tangotango-theme neotree geiser go-mode auto-highlight-symbol vue-mode mmm-mode dockerfile-mode helm-cider swift-mode zoom-window markdown-mode cljr-helm git-link multiple-cursors restclient restclient-helm haskell-mode json-mode magit-popup eyebrowse sml-mode yasnippet smex helm-ag helm-projectile helm ido-vertical-mode yaml-mode projectile-rails markdown-mode+ rspec-mode ag projectile paredit magit exec-path-from-shell clojure-mode-extra-font-locking)))
  '(projectile-globally-ignored-files (quote ("TAGS")))
  '(projectile-project-root-files
    (quote
@@ -212,23 +225,31 @@
  '(projectile-project-root-files-top-down-recurring (quote (".svn" "CVS")))
  '(projectile-tags-command "find . -name '*.rb' | xargs etags -o TAGS")
  '(rspec-spec-command "rspec")
- '(rspec-use-bundler-when-possible nil)
+ '(rspec-use-bundler-when-possible t)
  '(ruby-insert-encoding-magic-comment nil)
  '(safe-local-variable-values
    (quote
-    ((eval define-clojure-indent
+    ((cider-shadow-default-options . "app")
+     (cider-default-cljs-repl . shadow)
+     (eval define-clojure-indent
            (fnk 1))
      (eval define-clojure-indent
            (for-all 1))
      (projectile-project-type . boot-clj)
      (cider-boot-parameters . "dev"))))
  '(search-default-mode nil)
+ '(solarized-distinct-doc-face nil)
+ '(solarized-distinct-fringe-background nil)
+ '(solarized-high-contrast-mode-line t)
+ '(solarized-use-less-bold nil)
+ '(solarized-use-more-italic nil)
  '(sql-password "")
  '(sql-postgres-login-params
    (quote
     ((user :default "gomore")
      password server
-     (database :default "gomore_development"))))
+     (database :default "gomore_development")
+     port)))
  '(sql-postgres-program "/usr/bin/psql")
  '(sql-product (quote postgres)))
 (custom-set-faces
@@ -241,7 +262,11 @@
  '(highlight-symbol-face ((t (:background "chocolate"))))
  '(hl-line ((t (:background "#3a4a3a"))))
  '(linum ((t (:foreground "gray65"))))
- '(mmm-default-submode-face ((t nil))))
+ '(markdown-header-face-1 ((t (:height 2.0))))
+ '(markdown-header-face-2 ((t (:height 1.5))))
+ '(markdown-header-face-3 ((t (:weight bold :height 1.0))))
+ '(mmm-default-submode-face ((t nil)))
+ '(rainbow-delimiters-unmatched-face ((t (:inherit bold)))))
 
 ;; Projectile
 (projectile-mode +1)
@@ -264,4 +289,6 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 
-(set-frame-font "-1ASC-Liberation Mono-normal-normal-normal-*-16-*-*-*-m-0-iso10646-1")
+; (set-frame-font "-1ASC-Liberation Mono-normal-normal-normal-*-16-*-*-*-m-0-iso10646-1")
+
+(require 'org-journal)

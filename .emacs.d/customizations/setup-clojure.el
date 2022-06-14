@@ -45,6 +45,9 @@
 ;; Cider
 ;;;;
 
+(setq cider-repl-display-help-banner nil)
+(setq cider-use-xref nil)
+
 ;; provides minibuffer documentation for the code you're typing into the repl
 (add-hook 'cider-mode-hook 'eldoc-mode)
 
@@ -104,4 +107,4 @@
 (global-prettify-symbols-mode 1)
 (setq clojure-align-forms-automatically t)
 
-(require 'flycheck-clj-kondo)
+;; (require 'flycheck-clj-kondo)
