@@ -103,14 +103,18 @@
 
 (projectile-rails-global-mode)
 
-(global-set-key "\C-cn" (lambda () (interactive) (find-file "~/Dropbox/notes/capture.md")))
+(global-set-key "\C-cn"
+                (lambda ()
+                  (interactive)
+                  (eyebrowse-switch-to-window-config-3)
+                  (find-file "~/Dropbox/Notes/gomore/notes.org")))
 
 (setq tags-revert-without-query 1)
 
 (defun jpt-append-timestamp ()
   (interactive)
-  (end-of-buffer)
+  ;;(end-of-buffer)
   (insert (concat
-           "\n# "
+           "\n### "
            (format-time-string "%a %d-%m-%Y, %H:%S" (current-time))
            "\n\n")))
