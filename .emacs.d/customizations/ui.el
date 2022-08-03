@@ -31,7 +31,7 @@
   (scroll-bar-mode -1))
 
 
-(load-theme 'solarized-dark t t)
+(load-theme 'solarized-light t t)
 
 ;; Uncomment the lines below by removing semicolons and play with the
 ;; values in order to set the width (in characters wide) and height
