@@ -26,7 +26,6 @@
 ;;                               (delete-window)
 ;;                               (balance-windows)))
 
-;; (global-set-key (kbd "s-k") 'kill-this-buffer)
 ;; (global-set-key (kbd "s-f") 'helm-find-files)
 
 
@@ -59,11 +58,9 @@
                               (split-window-right)
                               (balance-windows)))
 
-(global-set-key (kbd "M-)") (lambda () (interactive)
+(global-set-key (kbd "M-k") (lambda () (interactive)
                               (delete-window)
                               (balance-windows)))
-
-;; (global-set-key (kbd "C-K") 'kill-this-buffer)
 
 (global-set-key (kbd "M-*") 'jpt-isearch-forward-word-at-point)
 
