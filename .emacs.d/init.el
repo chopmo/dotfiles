@@ -142,6 +142,8 @@
 
 (load "setup-js.el")
 
+(load "setup-ruby.el")
+
 (load "sql-setup.el")
 
 (load "jpt-key-bindings.el")
