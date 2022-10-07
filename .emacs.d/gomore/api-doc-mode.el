@@ -5,7 +5,8 @@
 (make-variable-buffer-local 'jpt-api-doc-mode-hiding)
 
 (defun jpt-api-doc-mode-hide ()
-  (let ((keywords '("android"
+  (let ((keywords '("-"
+                    "android"
                     "application/json"
                     "content"
                     "description"
@@ -17,13 +18,14 @@
                     "platform"
                     "produces"
                     "properties"
+                    "removed"
                     "responses"
                     "schema"
                     "status"
                     "summary"
                     "tags"
                     "type")))
-    (hide-lines-matching (mapconcat (lambda (s) (concat "\\b" s "\\b")) keywords  "\\|"))))
+    (hide-lines-matching (mapconcat (lambda (s) (concat "^\s*" s)) keywords  "\\|"))))
 
 (defun jpt-api-doc-mode-toggle ()
   (interactive)
