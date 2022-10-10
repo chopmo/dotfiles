@@ -15,7 +15,8 @@ if [[ $HOSTNAME = "bau7" ]]; then
   xrandr --output HDMI-0 --primary --mode 3440x1440
   notify-send "Hardware init done"
 else
-  ruby $BASEDIR/init-monitors.rb
+  xrandr --output eDP-1 --primary
+  # ruby $BASEDIR/init-monitors.rb
   pkill dunst
 fi
 
