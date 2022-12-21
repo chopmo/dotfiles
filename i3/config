@@ -56,6 +56,8 @@ bindsym $mod+Control+s exec --no-startup-id ~/c/dotfiles/i3/suspend.sh
 # Audio control on the arrow keys and p
 bindsym $mod+Down exec --no-startup-id ~/c/dotfiles/bin/adjust-volume down
 bindsym $mod+Up exec --no-startup-id ~/c/dotfiles/bin/adjust-volume up
+bindsym $mod+Shift+Down exec --no-startup-id ~/c/dotfiles/bin/adjust-default-sink up
+bindsym $mod+Shift+Up exec --no-startup-id ~/c/dotfiles/bin/adjust-default-sink down
 
 bindsym $mod+Control+Down exec --no-startup-id ~/c/dotfiles/i3/brightness.sh down
 bindsym $mod+Control+Up exec --no-startup-id ~/c/dotfiles/i3/brightness.sh up
@@ -72,10 +74,10 @@ bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+# bindsym $mod+Shift+Left move left
+# bindsym $mod+Shift+Down move down
+# bindsym $mod+Shift+Up move up
+# bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+h split h

@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+
+if ARGV.count != 1
+  puts "Usage: adjust-default-sink <modifier>"
+  exit 1
+end
+
+sinks = `pactl list short sinks`.lines.map { |l| l.split[1] }
+
+default_sink = `pactl info`.lines.grep(/Default Sink/).first.split[2]
+
+default_sink_idx = sinks.find_index(default_sink)
+
+if ARGV[0] == "up"
+  new_sink_idx = default_sink_idx + 1
+else
+  new_sink_idx = default_sink_idx - 1
+end
+
+if new_sink_idx < 0
+  new_sink_idx = 0
+elsif new_sink_idx >= sinks.count
+  new_sink_idx = sinks.count - 1
+end
+
+new_sink = sinks[new_sink_idx]
+
+`pactl set-default-sink #{new_sink}`
