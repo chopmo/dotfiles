@@ -35,3 +35,6 @@
       (setq isearch-error "No symbol at point")
       (isearch-push-state)
       (isearch-update)))))
+
+;; Default dired to copying/moving to another window
+(setq dired-dwim-target t)
