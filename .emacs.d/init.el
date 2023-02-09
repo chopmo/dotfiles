@@ -101,6 +101,8 @@
 ;; a .yml file
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
+(load "zprint.el")
+
 (add-to-list 'exec-path "~/c/dotfiles/bin")
 (add-to-list 'exec-path "~/.nvm/versions/node/v16.13.1/bin")
 

@@ -6,6 +6,9 @@
 ;; Java classes (e.g. JavaClassName)
 (add-hook 'clojure-mode-hook 'subword-mode)
 
+;; Always enable zprint mode
+(add-hook 'clojure-mode-hook 'zprint-mode)
+
 ;; yay rainbows!
 ;; Disabling for now because it's too subtle with my color scheme
 ;; (add-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
