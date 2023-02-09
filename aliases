@@ -35,3 +35,5 @@ alias e="emacs -nw -q"
 alias hibernate="sudo systemctl hibernate --force"
 
 alias tmux="TERM=xterm-256color tmux"
+
+alias bb="flatpak run app.bluebubbles.BlueBubbles"
