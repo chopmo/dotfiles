@@ -43,7 +43,11 @@
 
 (global-set-key (kbd "M-P") 'projectile-ag)
 (global-set-key (kbd "M-U") 'projectile-find-file)
-(global-set-key (kbd "M-B") 'helm-buffers-list)
+
+;; Let's try a more focused buffer switcher
+;;(global-set-key (kbd "M-B") 'helm-buffers-list)
+(global-set-key (kbd "M-B") 'projectile-switch-to-buffer)
+
 (global-set-key (kbd "M-O") 'helm-find-files)
 
 (global-set-key (kbd "C-M-l") 'goto-line)
