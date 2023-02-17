@@ -190,7 +190,7 @@
 
 ; Helm stuff
 (helm-mode 1)
-(require 'helm-config)
+
 (require 'helm-projectile)
 (helm-projectile-on)
 (setq helm-ag-insert-at-point 'symbol)
