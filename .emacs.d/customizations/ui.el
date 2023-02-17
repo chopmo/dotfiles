@@ -30,8 +30,7 @@
 (when (fboundp 'scroll-bar-mode)
   (scroll-bar-mode -1))
 
-
-(load-theme 'solarized-dark t t)
+(load-theme 'sanityinc-tomorrow-night t)
 
 ;; Uncomment the lines below by removing semicolons and play with the
 ;; values in order to set the width (in characters wide) and height
