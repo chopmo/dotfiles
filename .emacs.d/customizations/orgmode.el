@@ -18,3 +18,5 @@
   (setq org-tags-exclude-from-inheritance (quote ("crypt")))
   :custom
   (org-crypt-key "jacob@tjoernholm.dk"))
+
+(global-set-key (kbd "C-c C-j") 'org-journal-new-entry)
