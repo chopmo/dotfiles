@@ -103,11 +103,7 @@
 
 (projectile-rails-global-mode)
 
-(global-set-key "\C-cn"
-                (lambda ()
-                  (interactive)
-                  (eyebrowse-switch-to-window-config-3)
-                  (find-file "~/Dropbox/Notes/gomore/notes.org")))
+
 
 (setq tags-revert-without-query 1)
 
