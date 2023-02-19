@@ -11,4 +11,7 @@
 if `xrandr`[/HDMI-0 connected/]
   `xrandr --output HDMI-0 --primary --mode 3440x1440`
   `notify-send "Selected HDMI-0"`
+elsif `xrandr`[/DP-0 connected/]
+  `xrandr --output DP-0 --primary --mode 3840x2160`
+  `notify-send "Selected DP-0"`
 end
