@@ -17,7 +17,7 @@
 
   ;; Notes
   (eyebrowse-switch-to-window-config-3)
-  (find-file "~/Dropbox/Notes/gomore/notes.org")
+  (find-file "~/Dropbox/org/gomore/capture.org")
 
   ;; SQL
   (eyebrowse-switch-to-window-config-9)
