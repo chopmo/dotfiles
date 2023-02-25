@@ -1,7 +1,8 @@
-
 (require 'org-journal)
+(require 'olivetti)
 
 (setq org-journal-dir "~/Dropbox/org/journal")
+(global-set-key (kbd "C-c C-j") 'org-journal-new-entry)
 
 (use-package epa-file
   :ensure nil
@@ -19,4 +20,7 @@
   :custom
   (org-crypt-key "jacob@tjoernholm.dk"))
 
-(global-set-key (kbd "C-c C-j") 'org-journal-new-entry)
+(add-hook 'org-journal-mode-hook
+	(lambda ()
+	  (olivetti-mode)
+	  (olivetti-set-width 80)))
