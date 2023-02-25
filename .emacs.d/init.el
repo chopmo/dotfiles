@@ -161,6 +161,7 @@
 
 (load "orgmode.el")
 
+(load "bookmarks.el")
 
 (setq custom-file "~/c/dotfiles/.emacs.d/custom.el")
 (load custom-file)

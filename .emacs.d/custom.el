@@ -8,6 +8,7 @@
  '(ahs-idle-interval 0.1)
  '(ahs-modes
    '(actionscript-mode apache-mode bat-generic-mode c++-mode c-mode csharp-mode css-mode dos-mode emacs-lisp-mode html-mode ini-generic-mode java-mode javascript-mode js-mode lisp-interaction-mode lua-mode latex-mode makefile-mode makefile-gmake-mode markdown-mode moccur-edit-mode nxml-mode nxhtml-mode outline-mode perl-mode cperl-mode php-mode python-mode rc-generic-mode reg-generic-mode ruby-mode sgml-mode sh-mode squirrel-mode text-mode tcl-mode visual-basic-mode clojure-mode))
+ '(bookmark-default-file "~/Dropbox/emacs-bookmarks")
  '(cider-annotate-completion-candidates t)
  '(cider-auto-jump-to-error nil)
  '(cider-auto-select-test-report-buffer t)
