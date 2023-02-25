@@ -207,3 +207,6 @@
 (yas-global-mode 1)
 
 ; (set-frame-font "-1ASC-Liberation Mono-normal-normal-normal-*-16-*-*-*-m-0-iso10646-1")
+
+;; Enable repeated mark pops with C-u C-SPC C-SPC C-SPC etc...
+(setq set-mark-command-repeat-pop t)
