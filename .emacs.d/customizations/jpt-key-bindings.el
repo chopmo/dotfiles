@@ -3,35 +3,6 @@
 
 (global-set-key (quote [f12]) (quote open-dot-emacs-file))
 
-; Old
-;; (global-set-key (kbd "s-w") 'whitespace-mode)
-;; (global-set-key (kbd "s-l") 'goto-line)
-;; (global-set-key (kbd "s-J") 'windmove-left)
-;; (global-set-key (kbd "s-K") 'windmove-down)
-;; (global-set-key (kbd "s-I") 'windmove-up)
-;; (global-set-key (kbd "s-L") 'windmove-right)
-;; (global-set-key (kbd "s-l") 'goto-line)
-;; (global-set-key (kbd "s-i") 'projectile-ag)
-;; (global-set-key (kbd "s-u") 'projectile-find-file)
-;; (global-set-key (kbd "s-b") 'helm-buffers-list)
-;; (global-set-key (kbd "s-1") 'delete-other-windows)
-
-;; (global-set-key (kbd "s-2") (lambda () (interactive)
-;;                               (split-window-below)
-;;                               (balance-windows)))
-
-;; (global-set-key (kbd "s-3") (lambda () (interactive)
-;;                               (split-window-right)
-;;                               (balance-windows)))
-
-;; (global-set-key (kbd "s-0") (lambda () (interactive)
-;;                               (delete-window)
-;;                               (balance-windows)))
-
-;; (global-set-key (kbd "s-f") 'helm-find-files)
-
-
-; new
 (global-set-key (kbd "M-J") 'windmove-left)
 (global-set-key (kbd "M-K") 'windmove-down)
 (global-set-key (kbd "M-I") 'windmove-up)
@@ -40,14 +11,10 @@
 (global-set-key (kbd "C-M-0") 'maximize-window)
 (global-set-key (kbd "C-M-9") 'balance-windows)
 
-; (global-set-key (kbd "M-s-w") 'whitespace-mode)
-
 
 (global-set-key (kbd "M-P") 'projectile-ag)
 (global-set-key (kbd "M-U") 'projectile-find-file)
 
-;; Let's try a more focused buffer switcher
-;;(global-set-key (kbd "M-B") 'helm-buffers-list)
 (global-set-key (kbd "M-B") 'projectile-switch-to-buffer)
 
 (global-set-key (kbd "M-O") 'helm-find-files)
@@ -70,27 +37,10 @@
 
 (global-set-key (kbd "M-*") 'jpt-isearch-forward-word-at-point)
 
-
-;; Unchanged
-;; (global-set-key (kbd "M-N") 'next-error)
-;; (global-set-key (kbd "M-P") 'previous-error)
-
-;; (global-set-key (kbd "M-n") 'switch-to-next-buffer)
-;; (global-set-key (kbd "M-p") 'switch-to-prev-buffer)
-;;(global-set-key (kbd "M-n") 'projectile-next-project-buffer)
-;;(global-set-key (kbd "M-p") 'projectile-previous-project-buffer)
-
-;; (global-set-key (kbd "C-c x") 'browse-url-at-point)
-
 (global-set-key (kbd "M-[") 'eyebrowse-prev-window-config)
 (global-set-key (kbd "M-]") 'eyebrowse-next-window-config)
 
 (global-unset-key (kbd "C-z"))
-;; (global-unset-key (kbd "s-m"))
-
-;; Toggle fullscreen with f11
-;; (global-set-key (quote [f11]) 'toggle-frame-fullscreen)
-
 
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (quote [f5]) 'jpt-commit-everything)
