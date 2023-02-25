@@ -1,3 +1,5 @@
+;; Known globally available great keys
+;; M-i
 
 (global-set-key (quote [f12]) (quote open-dot-emacs-file))
 
@@ -75,8 +77,8 @@
 
 ;; (global-set-key (kbd "M-n") 'switch-to-next-buffer)
 ;; (global-set-key (kbd "M-p") 'switch-to-prev-buffer)
-(global-set-key (kbd "M-n") 'projectile-next-project-buffer)
-(global-set-key (kbd "M-p") 'projectile-previous-project-buffer)
+;;(global-set-key (kbd "M-n") 'projectile-next-project-buffer)
+;;(global-set-key (kbd "M-p") 'projectile-previous-project-buffer)
 
 ;; (global-set-key (kbd "C-c x") 'browse-url-at-point)
 
