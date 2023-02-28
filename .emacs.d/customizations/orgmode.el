@@ -24,3 +24,8 @@
 	(lambda ()
 	  (olivetti-mode)
 	  (olivetti-set-width 80)))
+
+(add-hook 'olivetti-mode-on-hook
+	(lambda ()
+          (message "foo")
+	  (linum-mode 0)))
