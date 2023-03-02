@@ -27,5 +27,4 @@
 
 (add-hook 'olivetti-mode-on-hook
 	(lambda ()
-          (message "foo")
 	  (linum-mode 0)))
