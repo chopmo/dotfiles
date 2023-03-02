@@ -33,6 +33,7 @@
   '(progn
      ;; I need the M-J keybinding for windmove
     (define-key paredit-mode-map (kbd "M-J") nil)
+    (define-key paredit-mode-map (kbd "RET") nil)
     (define-key paredit-mode-map (kbd "C-M-]") 'cider-doc)
     (define-key paredit-mode-map (kbd "C-M-S-u") (lambda ()
                                                    (interactive)
