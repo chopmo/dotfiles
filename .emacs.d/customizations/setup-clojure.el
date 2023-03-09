@@ -102,10 +102,14 @@
   (interactive)
   (cider-repl-set-ns "user"))
 
+(defun jpt-switch-to-cider-buffer ()
+  (interactive)
+  (switch-to-buffer (cider-current-repl nil 'ensure)))
+
 (eval-after-load 'cider
   '(progn
      (define-key clojure-mode-map (kbd "C-c C-v") 'cider-start-http-server)
-     (define-key clojure-mode-map (kbd "C-M-r") 'cider-refresh)
+     (define-key clojure-mode-map (kbd "C-M-r") 'jpt-switch-to-cider-buffer)
      (define-key clojure-mode-map (kbd "C-c u") 'cider-user-ns)
      (define-key cider-mode-map (kbd "C-c u") 'cider-user-ns)))
 
