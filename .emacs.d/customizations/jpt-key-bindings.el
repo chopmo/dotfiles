@@ -62,3 +62,5 @@
 (global-set-key (kbd "C-S-k") 'kill-current-buffer)
 
 (define-key projectile-rails-mode-map (kbd "C-c r") 'projectile-rails-command-map)
+
+(global-set-key (quote [f6]) 'org-journal-new-entry)

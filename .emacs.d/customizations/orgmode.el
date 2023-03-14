@@ -2,7 +2,7 @@
 (require 'olivetti)
 
 (setq org-journal-dir "~/Dropbox/org/journal")
-(global-set-key (kbd "C-c C-j") 'org-journal-new-entry)
+
 
 (use-package epa-file
   :ensure nil
