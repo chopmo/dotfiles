@@ -100,8 +100,11 @@
 ;; Adding this code will make Emacs enter yaml mode whenever you open
 ;; a .yml file
 (add-to-list 'load-path "~/.emacs.d/vendor")
+(add-to-list 'load-path "~/.emacs.d/vendor/mmm-mode")
 
 (load "zprint.el")
+(load "vue-mode.el")
+(load "mmm-mode.el")
 
 (add-to-list 'exec-path "~/c/dotfiles/bin")
 (add-to-list 'exec-path "~/.nvm/versions/node/v16.13.1/bin")

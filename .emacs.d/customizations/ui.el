@@ -89,7 +89,7 @@
           (jump-to-register ?u)))))
 
 
-(global-set-key (kbd "C-c C-l") 'locked-buffer-mode)
+;(global-set-key (kbd "C-c C-l") 'locked-buffer-mode)
 
 (define-minor-mode locked-buffer-mode
   "Make the current window always display this buffer."
