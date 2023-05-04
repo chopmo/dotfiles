@@ -7,7 +7,7 @@
 remote=${1-origin}
 
 # Branches to keep, regardless of their current merge state
-permanent_branches="develop|master|production|rentals"
+permanent_branches="develop|master|main|production|rentals"
 
 # Remove local already merged branches
 git branch --merged | grep -v -E "(\*|$permanent_branches)" | xargs -n 1 git branch -d
