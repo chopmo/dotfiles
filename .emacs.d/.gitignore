@@ -10,3 +10,4 @@ auto-save-list
 backups
 **/*.elc
 elpa
+org-roam.db
