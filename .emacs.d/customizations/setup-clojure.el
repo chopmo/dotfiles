@@ -43,7 +43,8 @@
 (add-hook 'clojure-mode-hook
           (lambda ()
             (clj-refactor-mode 1)
-            (enable-paredit-mode)))
+            (enable-paredit-mode)
+            (flycheck-mode 1)))
 
 
 ;;;;
@@ -116,4 +117,4 @@
 (global-prettify-symbols-mode 1)
 (setq clojure-align-forms-automatically t)
 
-;; (require 'flycheck-clj-kondo)
+(require 'flycheck-clj-kondo)
