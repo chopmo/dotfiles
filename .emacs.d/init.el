@@ -82,7 +82,8 @@
     ag
 
     yasnippet
-    ))
+
+    use-package))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
