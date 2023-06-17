@@ -159,7 +159,7 @@
 
 (load "git.el")
 
-(load "yaml.el")
+(load "jpt-yaml.el")
 
 (load "gomore.el")
 
