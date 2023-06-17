@@ -102,10 +102,12 @@
 ;; a .yml file
 (add-to-list 'load-path "~/.emacs.d/vendor")
 (add-to-list 'load-path "~/.emacs.d/vendor/mmm-mode")
+(add-to-list 'load-path "~/.emacs.d/vendor/code-review-fix-closql-update")
 
 (load "zprint.el")
 (load "vue-mode.el")
 (load "mmm-mode.el")
+(load "code-review.el")
 
 (add-to-list 'exec-path "~/c/dotfiles/bin")
 (add-to-list 'exec-path "~/.nvm/versions/node/v16.13.1/bin")
