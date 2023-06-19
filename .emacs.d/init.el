@@ -107,7 +107,10 @@
 (load "zprint.el")
 (load "vue-mode.el")
 (load "mmm-mode.el")
+
 (load "code-review.el")
+(setq code-review-new-buffer-window-strategy #'switch-to-buffer)
+(add-hook 'code-review-mode-hook #'emojify-mode)
 
 (add-to-list 'exec-path "~/c/dotfiles/bin")
 (add-to-list 'exec-path "~/.nvm/versions/node/v16.13.1/bin")
@@ -211,6 +214,8 @@
 
 (require 'yasnippet)
 (yas-global-mode 1)
+
+(setq ad-redefinition-action 'accept)
 
 ; (set-frame-font "-1ASC-Liberation Mono-normal-normal-normal-*-16-*-*-*-m-0-iso10646-1")
 
