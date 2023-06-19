@@ -11,3 +11,5 @@ backups
 **/*.elc
 elpa
 org-roam.db
+*.sqlite
+emojis/
