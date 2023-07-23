@@ -132,6 +132,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # Disabling these because I should only need one keymap now
 bindsym $mod+u exec ~/c/dotfiles/mint/bin/us-keyboard.sh
+bindsym $mod+y exec ~/c/dotfiles/mint/bin/us-keyboard-colemak.sh
 bindsym $mod+i exec ~/c/dotfiles/mint/bin/dk-keyboard.sh
 
 # reload the configuration file
