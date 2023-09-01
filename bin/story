@@ -1,0 +1,101 @@
+#!/usr/bin/env ruby
+
+require 'json'
+
+def usage
+  puts "Usage: story <command> <shortcut-story-link>"
+  puts "Command can be start or switch"
+end
+
+if ARGV.count != 2
+  usage
+  exit 1
+end
+
+command = ARGV[0]
+
+def shortcut_api_token
+  open(File.expand_path("~/.shortcut-api-token")).read
+rescue
+  puts "Unable to find shortcut API token in ~/.shortcut-api-token"
+  puts "Generate a token here: https://app.shortcut.com/gomore/settings/account/api-tokens"
+  exit 1
+end
+
+def get_story_json(story_id)
+  json = `curl -X GET \
+    -s \
+    -H "Content-Type: application/json" \
+    -H "Shortcut-Token: #{shortcut_api_token}" \
+    -L "https://api.app.shortcut.com/api/v3/stories/#{story_id}"`
+  JSON.parse(json)
+end
+
+def find_story_id(story_url)
+  match_data = /.*story.*\/(\d+)/.match(story_url)
+  if !match_data
+    puts "Invalid URL format. Example: https://app.shortcut.com/gomore/story/74077/link-between-debt-cases"
+    exit 1
+  end
+  match_data[1]
+end
+
+def branch_name(story_id, story_name)
+  story_part = story_name[0..40].split(/ /).join("-").downcase
+  "chopmo/sc-#{story_id}/#{story_part}"
+end
+
+def working_tree_clean?
+  system("git diff --exit-code > /dev/null") &&
+    system("git diff --cached --exit-code > /dev/null")
+end
+
+
+if !working_tree_clean?
+  puts "Working tree not clean"
+  exit 1
+end
+
+def start_story(story_id)
+  json = get_story_json(story_id)
+  branch_count =
+  if json["branches"].size > 0
+    puts "There are already branches on the story"
+    exit 1
+  end
+
+  branch = branch_name(story_id, json["name"])
+  `git co main`
+  `git pull`
+  `git co -b #{branch}`
+  `git push -u`
+  puts "Done. Created and pushed new branch #{branch}"
+end
+
+
+def switch_to_story(story_id)
+  json = get_story_json(story_id)
+  branch_count = json["branches"].size
+  if branch_count != 1
+    puts "Unexpected number of branches on story: #{branch_count}"
+    exit 1
+  end
+
+  branch = json["branches"][0]["name"]
+  `git co main`
+  `git pull`
+  `git fetch`
+  `git co #{branch}`
+  puts "Done."
+end
+
+id = find_story_id(ARGV[1])
+
+if command == "start"
+  start_story(id)
+elsif command == "switch"
+  switch_to_story(id)
+else
+  puts "Invalid command. Usage:"
+  usage
+end
