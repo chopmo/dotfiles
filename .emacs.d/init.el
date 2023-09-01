@@ -172,6 +172,8 @@
 
 (load "bookmarks.el")
 
+(load "edit-from-firefox.el")
+
 (setq custom-file "~/c/dotfiles/.emacs.d/custom.el")
 (load custom-file)
 
