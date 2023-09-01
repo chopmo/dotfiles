@@ -58,7 +58,7 @@
  '(org-journal-time-format "")
  '(org-journal-time-prefix "")
  '(package-selected-packages
-   '(olivetti nov use-package color-theme-sanityinc-tomorrow hide-lines yafolding prettier-js kotlin-mode tuareg ocamlformat solarized-theme org-journal modus-themes highlight-symbol tangotango-theme neotree geiser go-mode auto-highlight-symbol vue-mode mmm-mode dockerfile-mode helm-cider swift-mode zoom-window markdown-mode cljr-helm git-link multiple-cursors restclient restclient-helm haskell-mode json-mode magit-popup eyebrowse sml-mode yasnippet smex helm-ag helm-projectile helm ido-vertical-mode yaml-mode projectile-rails markdown-mode+ rspec-mode ag projectile paredit magit exec-path-from-shell clojure-mode-extra-font-locking))
+   '(edit-server olivetti nov use-package color-theme-sanityinc-tomorrow hide-lines yafolding prettier-js kotlin-mode tuareg ocamlformat solarized-theme org-journal modus-themes highlight-symbol tangotango-theme neotree geiser go-mode auto-highlight-symbol vue-mode mmm-mode dockerfile-mode helm-cider swift-mode zoom-window markdown-mode cljr-helm git-link multiple-cursors restclient restclient-helm haskell-mode json-mode magit-popup eyebrowse sml-mode yasnippet smex helm-ag helm-projectile helm ido-vertical-mode yaml-mode projectile-rails markdown-mode+ rspec-mode ag projectile paredit magit exec-path-from-shell clojure-mode-extra-font-locking))
  '(projectile-globally-ignored-files '("TAGS"))
  '(projectile-project-root-files
    '("rebar.config" "project.clj" "build.boot" "SConstruct" "pom.xml" "build.sbt" "gradlew" "build.gradle" ".ensime" "Gemfile" "requirements.txt" "setup.py" "tox.ini" "composer.json" "Cargo.toml" "mix.exs" "stack.yaml" "info.rkt" "DESCRIPTION" "TAGS" "GTAGS"))
@@ -100,6 +100,8 @@
  '(ahs-definition-face ((((class color) (min-colors 89)) (:foreground "#FFFFFF" :background "#F33600"))))
  '(ahs-face ((((class color) (min-colors 89)) (:foreground "#FFFFFF" :background "#F33600"))))
  '(eyebrowse-mode-line-active ((t (:inverse-video t))))
+ '(flycheck-error ((t (:underline t))))
+ '(flycheck-warning ((t (:background "dark red" :underline (:color "#de935f" :style wave)))))
  '(font-lock-string-face ((t (:foreground "#ad7fa8" :slant normal))))
  '(highlight-symbol-face ((t (:background "chocolate"))))
  '(hl-line ((t (:background "#3a4a3a"))))
