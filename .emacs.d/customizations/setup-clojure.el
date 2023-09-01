@@ -53,6 +53,7 @@
 
 (setq cider-repl-display-help-banner nil)
 (setq cider-use-xref nil)
+(setq cider-repl-display-in-current-window t)
 
 ;; provides minibuffer documentation for the code you're typing into the repl
 (add-hook 'cider-mode-hook 'eldoc-mode)
