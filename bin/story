@@ -41,7 +41,7 @@ def find_story_id(story_url)
 end
 
 def branch_name(story_id, story_name)
-  story_part = story_name[0..40].split(/ /).join("-").downcase
+  story_part = story_name.gsub(/[^a-zA-Z0-9 -]/, '')[0..40].split(/ /).join("-").downcase
   "chopmo/sc-#{story_id}/#{story_part}"
 end
 

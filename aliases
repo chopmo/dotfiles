@@ -38,4 +38,5 @@ alias tmux="TERM=xterm-256color tmux"
 
 alias bb="flatpak run app.bluebubbles.BlueBubbles"
 
-alias story="~/c/dotfiles/bin/story"
+alias sst="~/c/dotfiles/bin/story start"
+alias ssw="~/c/dotfiles/bin/story switch"
