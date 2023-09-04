@@ -58,11 +58,6 @@ end
 
 def start_story(story_id)
   json = get_story_json(story_id)
-  branch_count =
-  if json["branches"].size > 0
-    puts "There are already branches on the story"
-    exit 1
-  end
 
   branch = branch_name(story_id, json["name"])
   `git co main`
