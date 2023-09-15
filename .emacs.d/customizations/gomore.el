@@ -1,4 +1,15 @@
+(require 'request)
 
+(defun gomore-translation-value (translation-key)
+  (let ((body (request-response-data
+               (request "https://gomore.dk/locales/2/translations"
+                 :sync t
+                 :params (list
+                          (cons "query" translation-key)
+                          (cons "format" "json"))
+                 :parser 'json-read))))
+    (alist-get 'value
+               (aref body 0))))
 
 (defun load-gomore ()
   (interactive)

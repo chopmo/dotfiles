@@ -83,7 +83,9 @@
 
     yasnippet
 
-    use-package))
+    use-package
+
+    request))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))

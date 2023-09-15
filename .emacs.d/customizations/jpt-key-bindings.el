@@ -66,3 +66,6 @@
 (global-set-key (quote [f6]) 'org-journal-new-entry)
 
 (global-set-key (kbd "C-c g") 'code-review-start)
+
+(global-set-key (kbd "C-M-t") (lambda () (interactive)
+                                (message "%s" (gomore-translation-value (current-word)))))
