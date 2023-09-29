@@ -85,7 +85,9 @@
 
     use-package
 
-    request))
+    request
+
+    editorconfig))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
@@ -175,6 +177,8 @@
 (load "bookmarks.el")
 
 (load "edit-from-firefox.el")
+
+(load "copilot.el")
 
 (setq custom-file "~/c/dotfiles/.emacs.d/custom.el")
 (load custom-file)
