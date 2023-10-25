@@ -178,8 +178,6 @@
 
 (load "edit-from-firefox.el")
 
-(load "copilot.el")
-
 (setq custom-file "~/c/dotfiles/.emacs.d/custom.el")
 (load custom-file)
 
