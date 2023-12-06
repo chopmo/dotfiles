@@ -114,3 +114,11 @@
            "\n* "
            (format-time-string "%a %d-%m-%Y, %H:%S" (current-time))
            "\n\n")))
+
+(defun jpt-insert-date-heading ()
+  (interactive)
+  ;;(end-of-buffer)
+  (insert (concat
+           "\n* "
+           (format-time-string "%a %d-%m-%Y" (current-time))
+           "\n\n")))
