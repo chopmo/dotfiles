@@ -111,6 +111,6 @@
   (interactive)
   ;;(end-of-buffer)
   (insert (concat
-           "\n### "
+           "\n* "
            (format-time-string "%a %d-%m-%Y, %H:%S" (current-time))
            "\n\n")))

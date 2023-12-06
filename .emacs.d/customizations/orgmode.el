@@ -3,7 +3,6 @@
 
 (setq org-journal-dir "~/Dropbox/org/journal")
 
-
 (use-package epa-file
   :ensure nil
   :config
@@ -28,3 +27,29 @@
 (add-hook 'olivetti-mode-on-hook
 	(lambda ()
 	  (linum-mode 0)))
+
+(add-hook 'org-mode-hook
+          (lambda ()
+            (auto-fill-mode 1)))
+
+(use-package org-roam
+  :ensure t
+  :init
+  (setq org-roam-v2-ack t)
+  :custom
+  (org-roam-directory "~/Dropbox/org-roam")
+  (org-roam-completion-everywhere t)
+  :bind (("C-c n l" . org-roam-buffer-toggle)
+         ("C-c n f" . org-roam-node-find)
+         ("C-c n i" . org-roam-node-insert)
+         :map org-mode-map
+         ("C-M-i"    . completion-at-point)
+         ("C-M-r"    . org-refile)
+         ("C-M-n"    . org-forward-heading-same-level)
+         ("C-M-p"    . org-backward-heading-same-level)
+         ("C-M-u"    . org-up-element))
+  :bind-keymap
+  ("C-c n d" . org-roam-dailies-map)
+  :config
+  (require 'org-roam-dailies)
+  (org-roam-setup))
