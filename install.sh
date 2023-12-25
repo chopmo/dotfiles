@@ -19,8 +19,6 @@ sudo apt -yqq install \
      htop \
      openjdk-8-jdk \
      unclutter \
-     postgresql-10 \
-     postgresql-server-dev-10 \
      curl
 
 ln -sf /home/jtj/c/dotfiles/profile /home/jtj/.profile
