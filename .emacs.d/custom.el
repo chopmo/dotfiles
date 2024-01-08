@@ -12,6 +12,7 @@
  '(cider-annotate-completion-candidates t)
  '(cider-auto-jump-to-error nil)
  '(cider-auto-select-test-report-buffer t)
+ '(cider-clojure-cli-command "clojure")
  '(cider-completion-use-context t)
  '(cider-lein-parameters "repl :headless :host localhost")
  '(cider-prompt-for-symbol nil)
@@ -43,6 +44,7 @@
  '(hippie-expand-try-functions-list
    '(try-expand-line try-expand-line-all-buffers try-expand-dabbrev try-expand-dabbrev-all-buffers try-expand-dabbrev-from-kill try-complete-lisp-symbol-partially try-complete-lisp-symbol))
  '(isearch-allow-motion t)
+ '(ispell-dictionary nil)
  '(linum-format "%4d")
  '(magit-list-refs-sortby "-creatordate")
  '(magit-pull-or-fetch t)
@@ -59,7 +61,7 @@
  '(org-journal-time-prefix "")
  '(org-reverse-note-order t)
  '(package-selected-packages
-   '(editorconfig request edit-server olivetti nov use-package color-theme-sanityinc-tomorrow hide-lines yafolding prettier-js kotlin-mode tuareg ocamlformat solarized-theme org-journal modus-themes highlight-symbol tangotango-theme neotree geiser go-mode auto-highlight-symbol vue-mode mmm-mode dockerfile-mode helm-cider swift-mode zoom-window markdown-mode cljr-helm git-link multiple-cursors restclient restclient-helm haskell-mode json-mode magit-popup eyebrowse sml-mode yasnippet smex helm-ag helm-projectile helm ido-vertical-mode yaml-mode projectile-rails markdown-mode+ rspec-mode ag projectile paredit magit exec-path-from-shell clojure-mode-extra-font-locking))
+   '(flycheck-clj-kondo org-roam cider edit-indirect ssass-mode vue-html-mode editorconfig request edit-server olivetti nov use-package color-theme-sanityinc-tomorrow hide-lines yafolding prettier-js kotlin-mode tuareg ocamlformat solarized-theme org-journal modus-themes highlight-symbol tangotango-theme neotree geiser go-mode auto-highlight-symbol vue-mode mmm-mode dockerfile-mode helm-cider swift-mode zoom-window markdown-mode cljr-helm git-link multiple-cursors restclient restclient-helm haskell-mode json-mode magit-popup eyebrowse sml-mode yasnippet smex helm-ag helm-projectile helm ido-vertical-mode yaml-mode projectile-rails markdown-mode+ rspec-mode ag projectile paredit magit exec-path-from-shell clojure-mode-extra-font-locking))
  '(projectile-globally-ignored-files '("TAGS"))
  '(projectile-project-root-files
    '("rebar.config" "project.clj" "build.boot" "SConstruct" "pom.xml" "build.sbt" "gradlew" "build.gradle" ".ensime" "Gemfile" "requirements.txt" "setup.py" "tox.ini" "composer.json" "Cargo.toml" "mix.exs" "stack.yaml" "info.rkt" "DESCRIPTION" "TAGS" "GTAGS"))
@@ -104,6 +106,7 @@
  '(flycheck-error ((t (:underline t))))
  '(flycheck-warning ((t (:background "dark red" :underline (:color "#de935f" :style wave)))))
  '(font-lock-string-face ((t (:foreground "#ad7fa8" :slant normal))))
+ '(helm-selection ((t (:extend t :inverse-video t))))
  '(highlight-symbol-face ((t (:background "chocolate"))))
  '(hl-line ((t (:background "#3a4a3a"))))
  '(jpt-hi-gray ((t (:foreground "gray"))))
