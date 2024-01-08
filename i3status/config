@@ -15,13 +15,13 @@ general {
 order += "disk /"
 # order += "run_watch DHCP"
 # order += "run_watch VPN"
-order += "wireless _first_"
+# order += "wireless _first_"
 order += "ethernet _first_"
-order += "battery 0"
-# order += "load"
+# order += "battery 0"
+order += "load"
 order += "cpu_usage"
-# order += "memory"
-# order += "cpu_temperature 0"
+order += "memory"
+order += "cpu_temperature 0"
 order += "tztime local"
 
 wireless _first_ {
@@ -66,4 +66,9 @@ memory {
         format = "%free"
         threshold_degraded = "10%"
         format_degraded = "MEMORY: %free"
+}
+
+cpu_temperature 0 {
+        format = "T: %degrees °C"
+        path = "/sys/class/hwmon/hwmon0/temp1_input"
 }
