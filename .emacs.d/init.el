@@ -45,6 +45,10 @@
     ;; https://github.com/clojure-emacs/cider
     cider
 
+    prettier-js
+
+    rspec-mode
+
     clj-refactor
 
     eyebrowse
@@ -87,7 +91,18 @@
 
     request
 
-    editorconfig))
+    editorconfig
+
+    color-theme-sanityinc-tomorrow
+
+    org-journal
+
+    olivetti
+
+    ;; vendor/vue-mode stuff
+    vue-html-mode
+    ssass-mode
+    edit-indirect))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
@@ -106,22 +121,15 @@
 ;; a .yml file
 (add-to-list 'load-path "~/.emacs.d/vendor")
 (add-to-list 'load-path "~/.emacs.d/vendor/mmm-mode")
-(add-to-list 'load-path "~/.emacs.d/vendor/code-review-fix-closql-update")
 
 (load "zprint.el")
 (load "vue-mode.el")
 (load "mmm-mode.el")
 
-(load "code-review.el")
-(setq code-review-new-buffer-window-strategy #'switch-to-buffer)
-(add-hook 'code-review-mode-hook #'emojify-mode)
-
 (add-to-list 'exec-path "~/c/dotfiles/bin")
 (add-to-list 'exec-path "~/.nvm/versions/node/v16.13.1/bin")
 
 (setq exec-path (append exec-path '("~/.nvm/versions/node/v16.13.1/bin")))
-
-
 
 ;;;;
 ;; Customization
@@ -175,8 +183,6 @@
 (load "orgmode.el")
 
 (load "bookmarks.el")
-
-(load "edit-from-firefox.el")
 
 (setq custom-file "~/c/dotfiles/.emacs.d/custom.el")
 (load custom-file)
