@@ -16,19 +16,6 @@
 ;; A little more syntax highlighting
 (require 'clojure-mode-extra-font-locking)
 
-;; syntax hilighting for midje
-(add-hook 'clojure-mode-hook
-          (lambda ()
-            (setq inferior-lisp-program "lein repl")
-            (font-lock-add-keywords
-             nil
-             '(("(\\(facts?\\)"
-                (1 font-lock-keyword-face))
-               ("(\\(background?\\)"
-                (1 font-lock-keyword-face))))
-            (define-clojure-indent (fact 1))
-            (define-clojure-indent (facts 1))))
-
 (eval-after-load "paredit"
   '(progn
      ;; I need the M-J keybinding for windmove
@@ -37,7 +24,8 @@
     (define-key paredit-mode-map (kbd "C-M-]") 'cider-doc)
     (define-key paredit-mode-map (kbd "C-M-S-u") (lambda ()
                                                    (interactive)
-                                                   (paredit-backward-up 100)))))
+                                                   (paredit-backward-up 100)))
+    ))
 
 ;; clj-refactor
 (add-hook 'clojure-mode-hook
@@ -47,16 +35,9 @@
             (flycheck-mode 1)))
 
 
-;;;;
-;; Cider
-;;;;
-
 (setq cider-repl-display-help-banner nil)
 (setq cider-use-xref nil)
 (setq cider-repl-display-in-current-window t)
-
-;; provides minibuffer documentation for the code you're typing into the repl
-(add-hook 'cider-mode-hook 'eldoc-mode)
 
 ;; Always enable paredit for clojure buffers
 (add-hook 'clojure-mode-hook #'paredit-mode)
@@ -83,40 +64,38 @@
 (add-to-list 'auto-mode-alist '("\\.cljs.*$" . clojurescript-mode))
 (add-to-list 'auto-mode-alist '("lein-env" . enh-ruby-mode))
 
-
-;; key bindings
-;; these help me out with the way I usually develop web apps
-(defun cider-start-http-server ()
-  (interactive)
-  (cider-load-current-buffer)
-  (let ((ns (cider-current-ns)))
-    (cider-repl-set-ns ns)
-    (cider-interactive-eval (format "(println '(def server (%s/start))) (println 'server)" ns))
-    (cider-interactive-eval (format "(def server (%s/start)) (println server)" ns))))
-
-
-(defun cider-refresh ()
-  (interactive)
-  (cider-interactive-eval (format "(load \"user\")"))
-  (cider-interactive-eval (format "(user/reset)")))
-
-(defun cider-user-ns ()
-  (interactive)
-  (cider-repl-set-ns "user"))
-
-(defun jpt-switch-to-cider-buffer ()
-  (interactive)
-  (switch-to-buffer (cider-current-repl nil 'ensure)))
-
 (eval-after-load 'cider
   '(progn
-     (define-key clojure-mode-map (kbd "C-c C-v") 'cider-start-http-server)
      (define-key clojure-mode-map (kbd "C-M-r") 'cider-switch-to-repl-buffer)
-     (define-key cider-repl-mode-map (kbd "C-M-r") 'cider-switch-to-last-clojure-buffer)
-     (define-key clojure-mode-map (kbd "C-c u") 'cider-user-ns)
-     (define-key cider-mode-map (kbd "C-c u") 'cider-user-ns)))
+     (define-key cider-repl-mode-map (kbd "C-M-r") 'cider-switch-to-last-clojure-buffer)))
 
 (global-prettify-symbols-mode 1)
 (setq clojure-align-forms-automatically t)
 
 (require 'flycheck-clj-kondo)
+
+(use-package lsp-mode
+  :ensure t
+  :hook ((clojure-mode . lsp)
+         (clojurec-mode . lsp)
+         (clojurescript-mode . lsp))
+  :config
+  (dolist (m '(clojure-mode
+               clojurec-mode
+               clojurescript-mode
+               clojurex-mode))
+     (add-to-list 'lsp-language-id-configuration `(,m . "clojure")))
+
+  :bind (("C-c e" . 'lsp-execute-code-action)
+         ("C-c l" . 'lsp-find-references)
+         ("C-c r" . 'lsp-rename)))
+
+(use-package lsp-ui
+  :ensure t
+  :commands lsp-ui-mode)
+
+(setq lsp-headerline-breadcrumb-enable nil)
+
+(setq gc-cons-threshold (* 100 1024 1024)
+      read-process-output-max (* 1024 1024)
+      treemacs-space-between-root-nodes nil)
