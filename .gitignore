@@ -9,3 +9,4 @@ docker/data
 .bash_local
 weechat/logs
 .lsp-session-v1
+tramp
