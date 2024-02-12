@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -e
 
-GIT_EDITOR="emacs -Q" ~/bin/hub pull-request
+GIT_EDITOR="emacs -Q" ~/bin/hub pull-request -b main
