@@ -26,11 +26,8 @@
 
 (add-hook 'olivetti-mode-on-hook
 	(lambda ()
-	  (linum-mode 0)))
-
-(add-hook 'org-mode-hook
-          (lambda ()
-            (auto-fill-mode 1)))
+	  (linum-mode 0)
+          (auto-fill-mode 1)))
 
 (use-package org-roam
   :ensure t
