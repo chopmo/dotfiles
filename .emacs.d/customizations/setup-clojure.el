@@ -88,11 +88,8 @@
 
   :bind (("C-c e" . 'lsp-execute-code-action)
          ("C-c l" . 'lsp-find-references)
-         ("C-c r" . 'lsp-rename)))
-
-(use-package lsp-ui
-  :ensure t
-  :commands lsp-ui-mode)
+         ("C-c r" . 'lsp-rename)
+         ("C-c n s" . 'lsp-clojure-clean-ns)))
 
 (setq lsp-headerline-breadcrumb-enable nil)
 
