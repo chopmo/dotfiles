@@ -19,6 +19,7 @@
  '(cider-save-file-on-load t)
  '(cider-stacktrace-default-filters nil)
  '(cider-test-show-report-on-success nil)
+ '(cider-use-tooltips nil)
  '(clojure-align-binding-forms
    '("let" "when-let" "when-some" "if-let" "if-some" "binding" "loop" "doseq" "for" "with-open" "with-local-vars" "with-redefs" "plait"))
  '(coffee-tab-width 2)
@@ -61,7 +62,9 @@
  '(org-journal-time-prefix "")
  '(org-reverse-note-order t)
  '(package-selected-packages
-   '(flycheck-clj-kondo org-roam cider edit-indirect ssass-mode vue-html-mode editorconfig request edit-server olivetti nov use-package color-theme-sanityinc-tomorrow hide-lines yafolding prettier-js kotlin-mode tuareg ocamlformat solarized-theme org-journal modus-themes highlight-symbol tangotango-theme neotree geiser go-mode auto-highlight-symbol vue-mode mmm-mode dockerfile-mode helm-cider swift-mode zoom-window markdown-mode cljr-helm git-link multiple-cursors restclient restclient-helm haskell-mode json-mode magit-popup eyebrowse sml-mode yasnippet smex helm-ag helm-projectile helm ido-vertical-mode yaml-mode projectile-rails markdown-mode+ rspec-mode ag projectile paredit magit exec-path-from-shell clojure-mode-extra-font-locking))
+   '(unfill flycheck-clj-kondo org-roam cider edit-indirect ssass-mode vue-html-mode editorconfig request edit-server olivetti nov use-package color-theme-sanityinc-tomorrow hide-lines yafolding prettier-js kotlin-mode tuareg ocamlformat solarized-theme org-journal modus-themes highlight-symbol tangotango-theme neotree geiser go-mode auto-highlight-symbol vue-mode mmm-mode dockerfile-mode helm-cider swift-mode zoom-window markdown-mode cljr-helm git-link multiple-cursors restclient restclient-helm haskell-mode json-mode magit-popup eyebrowse sml-mode yasnippet smex helm-ag helm-projectile helm ido-vertical-mode yaml-mode projectile-rails markdown-mode+ rspec-mode ag projectile paredit magit exec-path-from-shell clojure-mode-extra-font-locking))
+ '(prettier-js-args '("prettier"))
+ '(prettier-js-command "/usr/bin/npx")
  '(projectile-globally-ignored-files '("TAGS"))
  '(projectile-project-root-files
    '("rebar.config" "project.clj" "build.boot" "SConstruct" "pom.xml" "build.sbt" "gradlew" "build.gradle" ".ensime" "Gemfile" "requirements.txt" "setup.py" "tox.ini" "composer.json" "Cargo.toml" "mix.exs" "stack.yaml" "info.rkt" "DESCRIPTION" "TAGS" "GTAGS"))
