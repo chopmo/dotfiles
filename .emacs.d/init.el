@@ -112,15 +112,15 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Customizations
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(setq custom-file "~/c/dotfiles/emacs/custom.el")
+(setq custom-file "~/c/dotfiles/.emacs.d/custom.el")
 (load custom-file)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Vendor
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(add-to-list 'load-path "~/c/dotfiles/emacs/vendor")
-(add-to-list 'load-path "~/c/dotfiles/emacs/vendor/mmm-mode")
+(add-to-list 'load-path "~/c/dotfiles/.emacs.d/vendor")
+(add-to-list 'load-path "~/c/dotfiles/.emacs.d/vendor/mmm-mode")
 
 (load "zprint.el")
 (load "vue-mode.el")
@@ -189,7 +189,7 @@
 ;; Open this file with f12 for convenience
 (defun open-dot-emacs-file ()
   (interactive)
-  (find-file "~/c/dotfiles/emacs/init.el" t))
+  (find-file "~/c/dotfiles/.emacs.d/init.el" t))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; UI
