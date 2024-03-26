@@ -1,3 +1,6 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Startup and basic UI
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; no message in scratch buffer
 (setq initial-scratch-message "")
 
@@ -5,6 +8,29 @@
 (setq inhibit-startup-screen t)
 
 (setq package-enable-at-startup t)
+
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+
+
+;; It's OK to have windows with a small height. Specifically, this
+;; ensure that rspec tests are (almost) always run in a horizontal
+;; split.
+(setq split-height-threshold 10)
+
+;; Show line numbers
+(global-display-line-numbers-mode)
+
+;; Don't show native OS scroll bars for buffers because they're redundant
+(when (fboundp 'scroll-bar-mode)
+  (scroll-bar-mode -1))
+
+(scroll-bar-mode -1)
+(blink-cursor-mode -1)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Packages
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
@@ -194,29 +220,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; UI
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; These customizations change the way emacs looks and disable/enable
-;; some user interface elements. Some useful customizations are
-;; commented out, and begin with the line "CUSTOMIZE". These are more
-;; a matter of preference and may require some fiddling to match your
-;; preferences
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-
-;; It's OK to have windows with a small height. Specifically, this
-;; ensure that rspec tests are (almost) always run in a horizontal
-;; split.
-(setq split-height-threshold 10)
-
-;; Show line numbers
-(global-display-line-numbers-mode)
-
-;; Don't show native OS scroll bars for buffers because they're redundant
-(when (fboundp 'scroll-bar-mode)
-  (scroll-bar-mode -1))
-
-(scroll-bar-mode -1)
-(blink-cursor-mode -1)
-
 (load-theme 'sanityinc-tomorrow-night t)
 
 ;; These settings relate to how emacs interacts with your operating system
