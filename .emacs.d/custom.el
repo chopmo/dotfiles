@@ -62,7 +62,7 @@
  '(org-journal-time-prefix "")
  '(org-reverse-note-order t)
  '(package-selected-packages
-   '(unfill flycheck-clj-kondo org-roam cider edit-indirect ssass-mode vue-html-mode editorconfig request edit-server olivetti nov use-package color-theme-sanityinc-tomorrow hide-lines yafolding prettier-js kotlin-mode tuareg ocamlformat solarized-theme org-journal modus-themes highlight-symbol tangotango-theme neotree geiser go-mode auto-highlight-symbol vue-mode mmm-mode dockerfile-mode helm-cider swift-mode zoom-window markdown-mode cljr-helm git-link multiple-cursors restclient restclient-helm haskell-mode json-mode magit-popup eyebrowse sml-mode yasnippet smex helm-ag helm-projectile helm ido-vertical-mode yaml-mode projectile-rails markdown-mode+ rspec-mode ag projectile paredit magit exec-path-from-shell clojure-mode-extra-font-locking))
+   '(company unfill flycheck-clj-kondo org-roam cider edit-indirect ssass-mode vue-html-mode editorconfig request edit-server olivetti nov use-package color-theme-sanityinc-tomorrow hide-lines yafolding prettier-js kotlin-mode tuareg ocamlformat solarized-theme org-journal modus-themes highlight-symbol tangotango-theme neotree geiser go-mode auto-highlight-symbol vue-mode mmm-mode dockerfile-mode helm-cider swift-mode zoom-window markdown-mode cljr-helm git-link multiple-cursors restclient restclient-helm haskell-mode json-mode magit-popup eyebrowse sml-mode yasnippet smex helm-ag helm-projectile helm ido-vertical-mode yaml-mode projectile-rails markdown-mode+ rspec-mode ag projectile paredit magit exec-path-from-shell clojure-mode-extra-font-locking))
  '(prettier-js-args '("prettier"))
  '(prettier-js-command "/usr/bin/npx")
  '(projectile-globally-ignored-files '("TAGS"))
