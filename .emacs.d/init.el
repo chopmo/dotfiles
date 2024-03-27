@@ -9,9 +9,11 @@
 
 (setq package-enable-at-startup t)
 
+;; Consider all themes safe
+(setq custom-safe-themes t)
+
 (menu-bar-mode -1)
 (tool-bar-mode -1)
-
 
 ;; It's OK to have windows with a small height. Specifically, this
 ;; ensure that rspec tests are (almost) always run in a horizontal
@@ -220,7 +222,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; UI
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(load-theme 'sanityinc-tomorrow-night t)
+(load-theme 'sanityinc-tomorrow-day t)
 
 ;; These settings relate to how emacs interacts with your operating system
 (setq
