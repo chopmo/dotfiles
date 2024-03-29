@@ -81,6 +81,7 @@
 (use-package edit-indirect)
 (use-package zoom-window)
 (use-package auto-highlight-symbol)
+(use-package company)
 
 (use-package lsp-mode
   :ensure t
