@@ -27,6 +27,7 @@
  '(custom-enabled-themes '(sanityinc-tomorrow-day))
  '(display-buffer-alist '(("*Async Shell Command*" display-buffer-no-window (nil))))
  '(eyebrowse-new-workspace t)
+ '(flycheck-display-errors-function 'ignore)
  '(forge-topic-list-limit '(60 . -5))
  '(git-link-default-branch nil)
  '(git-link-use-commit t)
