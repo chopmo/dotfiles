@@ -51,6 +51,7 @@
 
 (require 'org)
 
+(use-package emacsql)
 (use-package paredit)
 (use-package clojure-mode)
 (use-package clojure-mode-extra-font-locking)
