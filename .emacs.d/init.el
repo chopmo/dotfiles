@@ -223,7 +223,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; UI
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(load-theme 'sanityinc-tomorrow-day t)
+(load-theme 'sanityinc-tomorrow-night t)
 
 ;; These settings relate to how emacs interacts with your operating system
 (setq
