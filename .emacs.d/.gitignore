@@ -15,3 +15,6 @@ org-roam.db
 *.sqlite
 emojis/
 eln-cache
+.cache
+transient
+url

@@ -2,8 +2,6 @@
 .vim/.netrwhist
 .vim/doc/tags
 iterm2/com.googlecode.iterm2.plist
-.emacs.d/transient/
-.emacs.d/eln-cache/
 docker/data
 *~
 .bash_local
