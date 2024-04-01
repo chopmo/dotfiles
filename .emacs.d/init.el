@@ -82,12 +82,14 @@
 (use-package zoom-window)
 (use-package auto-highlight-symbol)
 (use-package company)
+(use-package yaml-mode)
 
 (use-package lsp-mode
   :ensure t
   :hook ((clojure-mode . lsp)
          (clojurec-mode . lsp)
-         (clojurescript-mode . lsp))
+         (clojurescript-mode . lsp)
+         (yaml-mode . lsp))
   :config
   (dolist (m '(clojure-mode
                clojurec-mode
