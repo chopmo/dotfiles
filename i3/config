@@ -47,7 +47,6 @@ bindsym $mod+d exec rofi -show run
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
-bindsym $mod+l focus up
 bindsym $mod+b exec --no-startup-id "GDK_SCALE=2 flatpak run app.bluebubbles.BlueBubbles"
 bindsym $mod+semicolon focus right
 
