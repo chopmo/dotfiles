@@ -21,7 +21,7 @@
 (setq split-height-threshold 10)
 
 ;; Show line numbers
-(global-display-line-numbers-mode)
+(global-display-line-numbers-mode 1)
 
 ;; Don't show native OS scroll bars for buffers because they're redundant
 (when (fboundp 'scroll-bar-mode)
@@ -669,11 +669,11 @@
 (add-hook 'org-journal-mode-hook
 	(lambda ()
 	  (olivetti-mode)
-	  (olivetti-set-width 80)))
+	  (olivetti-set-width 120)))
 
 (add-hook 'olivetti-mode-on-hook
 	(lambda ()
-	  (linum-mode 0)
+	  (display-line-numbers-mode 0)
           (auto-fill-mode 1)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
