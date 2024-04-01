@@ -82,7 +82,10 @@
 (use-package zoom-window)
 (use-package auto-highlight-symbol)
 (use-package company)
-(use-package yaml-mode)
+(use-package yaml-mode
+  :config
+  (add-hook 'yaml-mode-hook (lambda ()
+                              (lsp-headerline-breadcrumb-mode t))))
 
 (use-package lsp-mode
   :ensure t
@@ -609,11 +612,6 @@
 (defun jpt-yaml-show-path-to-point ()
   (interactive)
   (message (jpt-yaml-path-to-point)))
-
-(eval-after-load 'yaml-mode
-  '(progn
-     (define-key yaml-mode-map (kbd "C-x p") 'jpt-yaml-show-path-to-point)))
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Gomore
