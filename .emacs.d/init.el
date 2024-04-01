@@ -669,12 +669,11 @@
 (add-hook 'org-journal-mode-hook
 	(lambda ()
 	  (olivetti-mode)
-	  (olivetti-set-width 120)))
+	  (olivetti-set-width 80)))
 
 (add-hook 'olivetti-mode-on-hook
 	(lambda ()
-	  (display-line-numbers-mode 0)
-          (auto-fill-mode 1)))
+	  (display-line-numbers-mode 0)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Projectile
