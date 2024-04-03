@@ -815,3 +815,4 @@
 (global-set-key (kbd "C-;") 'jpt-toggle-comment-on-line)
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "M-RET") 'bookmark-jump)
+(global-set-key (kbd "C-x C-o") 'browse-url-at-point)
