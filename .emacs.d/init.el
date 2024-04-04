@@ -792,7 +792,7 @@
 
 (global-set-key (kbd "M-H") 'auto-highlight-symbol-mode)
 
-(global-set-key (kbd "C-M-j") 'imenu)
+(global-set-key (kbd "C-M-j") 'helm-imenu)
 
 (global-set-key (quote [f7]) 'toggle-truncate-lines)
 (global-set-key (quote [f8]) 'jpt-insert-date-heading)
