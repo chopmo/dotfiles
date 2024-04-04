@@ -83,6 +83,7 @@
 (use-package auto-highlight-symbol)
 (use-package company)
 (use-package git-link)
+(use-package restclient)
 (use-package yaml-mode
   :config
   (add-hook 'yaml-mode-hook (lambda ()
