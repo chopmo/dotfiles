@@ -81,13 +81,15 @@
 (use-package edit-indirect)
 (use-package zoom-window)
 (use-package auto-highlight-symbol)
-(use-package company)
 (use-package git-link)
 (use-package restclient)
 (use-package yaml-mode
   :config
   (add-hook 'yaml-mode-hook (lambda ()
                               (lsp-headerline-breadcrumb-mode t))))
+
+(use-package company
+  :bind (("C-M-i" . company-complete)))
 
 (use-package lsp-mode
   :ensure t
