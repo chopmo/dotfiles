@@ -40,3 +40,5 @@ alias sst="~/c/dotfiles/bin/story start"
 alias ssw="~/c/dotfiles/bin/story switch"
 
 alias sc="~/c/shortterm/run"
+
+alias bat=batcat
