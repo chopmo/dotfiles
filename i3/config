@@ -46,7 +46,7 @@ bindsym $mod+d exec rofi -show run
 
 # change focus
 bindsym $mod+j focus left
-bindsym $mod+k focus down
+# bindsym $mod+k focus down
 bindsym $mod+b exec --no-startup-id "GDK_SCALE=2 flatpak run app.bluebubbles.BlueBubbles"
 bindsym $mod+semicolon focus right
 
@@ -69,8 +69,8 @@ bindsym $mod+p exec "playerctl -p spotify play-pause"
 
 # move focused window
 bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
+# bindsym $mod+Shift+k move down
+# bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
@@ -80,10 +80,10 @@ bindsym $mod+Shift+semicolon move right
 # bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+# bindsym $mod+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+# bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -100,10 +100,10 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+# bindsym $mod+a focus parent
 
 # focus the child container
-bindsym $mod+Shift+a focus child
+# bindsym $mod+Shift+a focus child
 
 # switch to workspace
 bindsym $mod+1 workspace 1
