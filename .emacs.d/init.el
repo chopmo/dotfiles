@@ -97,8 +97,7 @@
   :ensure t
   :hook ((clojure-mode . lsp)
          (clojurec-mode . lsp)
-         (clojurescript-mode . lsp)
-         (yaml-mode . lsp))
+         (clojurescript-mode . lsp))
   :config
   (dolist (m '(clojure-mode
                clojurec-mode
