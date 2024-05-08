@@ -149,6 +149,12 @@
   (require 'org-roam-dailies)
   (org-roam-setup))
 
+(use-package swift-mode
+  :ensure t)
+
+(use-package kotlin-mode
+  :ensure t)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Customizations
