@@ -121,4 +121,8 @@
  '(markdown-header-face-2 ((t (:height 1.5))))
  '(markdown-header-face-3 ((t (:weight bold :height 1.0))))
  '(mmm-default-submode-face ((t nil)))
+ '(org-block-begin-line ((t (:extend t :background "#1d1f21" :foreground "gray35" :slant italic))))
+ '(org-block-end-line ((t (:background "#1d1f21" :foreground "gray35" :slant italic))))
+ '(org-level-1 ((t (:inherit outline-1 :extend nil :height 2.0))))
+ '(org-level-2 ((t (:inherit outline-2 :extend nil :height 1.5))))
  '(rainbow-delimiters-unmatched-face ((t (:inherit bold)))))
