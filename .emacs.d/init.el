@@ -154,6 +154,12 @@
 (use-package kotlin-mode
   :ensure t)
 
+(use-package yafolding
+  :ensure t)
+
+(use-package casual-dired
+  :ensure t
+  :bind (:map dired-mode-map ("C-o" . #'casual-dired-tmenu)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Customizations
