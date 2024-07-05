@@ -38,6 +38,7 @@
  '(helm-completion-in-region-fuzzy-match nil)
  '(helm-completion-style 'emacs)
  '(helm-mode-fuzzy-match nil)
+ '(helm-move-to-line-cycle-in-source nil)
  '(highlight-symbol-colors '("light gray"))
  '(highlight-symbol-idle-delay 0.2)
  '(highlight-symbol-occurrence-message '(explicit navigation))
