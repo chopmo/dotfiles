@@ -64,3 +64,5 @@ protocol = https
 	autoSetupMerge = always
 [credential "https://github.com"]
 	helper = !gh auth git-credential
+[init]
+	defaultBranch = main
