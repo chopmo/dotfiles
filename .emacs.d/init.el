@@ -64,11 +64,18 @@
 (use-package projectile-rails)
 (use-package ido-vertical-mode)
 (use-package helm)
-(use-package helm-projectile)
+
+(use-package helm-projectile
+  :ensure t
+  :bind (("M-U" . 'helm-projectile)))
+
 (use-package helm-ag)
 (use-package rainbow-delimiters)
 (use-package tagedit)
-(use-package magit)
+(use-package magit
+  :config
+  (setq magit-pull-arguments '("--rebase" "--all")))
+
 (use-package ag)
 (use-package yasnippet)
 (use-package request)
@@ -97,7 +104,8 @@
   :ensure t
   :hook ((clojure-mode . lsp)
          (clojurec-mode . lsp)
-         (clojurescript-mode . lsp))
+         (clojurescript-mode . lsp)
+         (ruby-mode . lsp))
   :config
   (dolist (m '(clojure-mode
                clojurec-mode
@@ -109,6 +117,12 @@
          ("C-c l" . 'lsp-find-references)
          ("C-c r" . 'lsp-rename)
          ("C-c n s" . 'lsp-clojure-clean-ns)))
+
+(use-package lsp-treemacs
+  :ensure t
+  :hook ((clojure-mode . lsp)
+         (clojurec-mode . lsp)
+         (clojurescript-mode . lsp)))
 
 (use-package epa-file
   :ensure nil
@@ -160,6 +174,12 @@
 (use-package casual-dired
   :ensure t
   :bind (:map dired-mode-map ("C-o" . #'casual-dired-tmenu)))
+
+(use-package pr-review
+  :bind ("C-M-g" . jpt-start-pr-review))
+
+(use-package dockerfile-mode
+  :ensure t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Customizations
@@ -339,7 +359,7 @@
   ;;(end-of-buffer)
   (insert (concat
            "\n* "
-           (format-time-string "%a %d-%m-%Y" (current-time))
+           (format-time-string "%a %d-%m-%Y %H:%M" (current-time))
            "\n\n")))
 
 
@@ -646,7 +666,7 @@
 
   ;; API project
   (eyebrowse-switch-to-window-config-1)
-  (find-file "~/c/g/api/src/gomore_api/routes.clj")
+  (find-file "~/c/g/backend/api/src/gomore_api/routes.clj")
   (add-hook 'cider-connected-hook
             (lambda ()
               (cider-run "reset")))
@@ -654,7 +674,7 @@
 
   ;; Web project
   (eyebrowse-switch-to-window-config-2)
-  (find-file "~/c/g/web/config/routes.rb")
+  (find-file "~/c/g/backend/web/config/routes.rb")
 
   ;; Notes
   (eyebrowse-switch-to-window-config-3)
@@ -815,6 +835,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
+(global-set-key (quote [f11]) (lambda () (interactive) (find-file "~/Dropbox/org/inbox.org")))
 (global-set-key (quote [f12]) (quote open-dot-emacs-file))
 
 (global-set-key (kbd "M-J") 'windmove-left)
@@ -895,3 +916,18 @@
 (global-set-key (kbd "M-p") (lambda () (interactive) (previous-line 10)))
 (global-set-key (kbd "M-n") (lambda () (interactive) (next-line 10)))
 
+(defun get-x-clipboard-content ()
+  (when (display-graphic-p)
+    (let ((clipboard-content (gui-get-selection 'CLIPBOARD 'UTF8_STRING)))
+      (if clipboard-content
+          (substring-no-properties clipboard-content)
+        ""))))
+
+(defun jpt-start-pr-review ()
+  (interactive)
+  (pr-review (get-x-clipboard-content)))
+
+(setq org-todo-keyword-faces
+      '(("TODO" . (:foreground "pink" :weight bold :height 1.0))
+        ("DONE" . (:foreground "green" :weight bold :height 1.0))
+        ("IN-PROGRESS" . (:foreground "blue" :weight bold :height 1.0))))

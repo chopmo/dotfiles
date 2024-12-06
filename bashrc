@@ -126,7 +126,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export CDPATH=.:/home/jtj/c
+export CDPATH=.:/home/jtj/c/g/backend:/home/jtj/c
 
 function ci() {
   if [ -n "$1" ]; then
