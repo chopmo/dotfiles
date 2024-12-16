@@ -63,6 +63,12 @@
  '(org-journal-file-format "%Y%m%d.org")
  '(org-journal-time-format "")
  '(org-journal-time-prefix "")
+ '(org-link-frame-setup
+   '((vm . vm-visit-folder-other-frame)
+     (vm-imap . vm-visit-imap-folder-other-frame)
+     (gnus . org-gnus-no-new-news)
+     (file . find-file)
+     (wl . wl-other-frame)))
  '(org-reverse-note-order t)
  '(package-selected-packages
    '(lsp-treemacs pr-review company unfill flycheck-clj-kondo org-roam cider edit-indirect ssass-mode vue-html-mode editorconfig request edit-server olivetti nov use-package color-theme-sanityinc-tomorrow hide-lines yafolding prettier-js kotlin-mode tuareg ocamlformat solarized-theme org-journal modus-themes highlight-symbol tangotango-theme neotree geiser go-mode auto-highlight-symbol vue-mode mmm-mode dockerfile-mode helm-cider swift-mode zoom-window markdown-mode cljr-helm git-link multiple-cursors restclient restclient-helm haskell-mode json-mode magit-popup eyebrowse sml-mode yasnippet smex helm-ag helm-projectile helm ido-vertical-mode yaml-mode projectile-rails markdown-mode+ rspec-mode ag projectile paredit magit exec-path-from-shell clojure-mode-extra-font-locking))
