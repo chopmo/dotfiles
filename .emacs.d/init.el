@@ -99,6 +99,9 @@
 
 (use-package company
   :bind (("C-M-i" . company-complete)))
+(setq package-check-signature 'allow-unsigned)
+
+(use-package gnu-elpa-keyring-update)
 
 (use-package lsp-mode
   :ensure t
