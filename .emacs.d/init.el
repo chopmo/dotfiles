@@ -187,6 +187,10 @@
 (use-package dockerfile-mode
   :ensure t)
 
+(use-package whole-line-or-region
+  :ensure t
+  :init (whole-line-or-region-global-mode 1))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Customizations
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
