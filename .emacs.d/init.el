@@ -116,6 +116,9 @@
                clojurex-mode))
     (add-to-list 'lsp-language-id-configuration `(,m . "clojure")))
 
+  :custom
+  (lsp-eldoc-enable-hover nil)
+
   :bind (("C-c e" . 'lsp-execute-code-action)
          ("C-c l" . 'lsp-find-references)
          ("C-c r" . 'lsp-rename)
