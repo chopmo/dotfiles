@@ -46,7 +46,7 @@
  '(highlight-symbol-occurrence-message '(explicit navigation))
  '(highlight-symbol-on-navigation-p nil)
  '(hippie-expand-try-functions-list
-   '(try-expand-line try-expand-line-all-buffers try-expand-dabbrev try-expand-dabbrev-all-buffers try-expand-dabbrev-from-kill try-complete-lisp-symbol-partially try-complete-lisp-symbol))
+   '(try-expand-dabbrev try-expand-dabbrev-all-buffers try-expand-dabbrev-from-kill try-complete-lisp-symbol-partially try-complete-lisp-symbol try-expand-line))
  '(isearch-allow-motion t)
  '(ispell-dictionary nil)
  '(linum-format "%4d")
