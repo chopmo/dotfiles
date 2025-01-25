@@ -177,10 +177,6 @@
 (use-package yafolding
   :ensure t)
 
-(use-package casual-dired
-  :ensure t
-  :bind (:map dired-mode-map ("C-o" . #'casual-dired-tmenu)))
-
 (use-package pr-review
   :bind ("C-M-g" . jpt-start-pr-review))
 
