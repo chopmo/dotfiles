@@ -17,6 +17,7 @@ xmodmap -e "keycode 66 = Control_L NoSymbol Control_L" \
         -e "keycode 47 = semicolon colon ae AE" \
         -e "keycode 48 = apostrophe quotedbl oslash Oslash" \
         -e "keycode 34 = bracketleft braceleft aring Aring" \
-        -e "keycode 107 = Super_L"
+        -e "keycode 107 = Super_L" \
+        -e "keycode 108 = Super_L"
 
 xset r rate 200 40
