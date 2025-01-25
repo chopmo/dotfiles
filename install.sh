@@ -7,9 +7,7 @@ sudo apt -yqq install \
      pavucontrol \
      lightdm \
      lightdm-gtk-greeter \
-     emacs \
      tmux \
-     xserver-xorg-input-synaptics \
      redshift-gtk \
      silversearcher-ag \
      build-essential \
@@ -18,7 +16,6 @@ sudo apt -yqq install \
      zlib1g-dev \
      htop \
      openjdk-8-jdk \
-     unclutter \
      curl
 
 ln -sf /home/jtj/c/dotfiles/profile /home/jtj/.profile
