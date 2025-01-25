@@ -14,6 +14,9 @@ if `xrandr`[/HDMI-0 connected/]
 elsif `xrandr`[/DP-0 connected/]
   `xrandr --output DP-0 --primary --mode 3840x2160`
   `notify-send "Selected DP-0"`
+elsif `hostname`[/bau8/]
+  `xrandr --output eDP-1 --primary --mode 2880x1800`
+  `notify-send "Selected eDP-1 (bau8)"`
 elsif `xrandr`[/eDP-1 connected/]
   `xrandr --output eDP-1 --primary --mode 1920x1080`
   `notify-send "Selected eDP-1"`
