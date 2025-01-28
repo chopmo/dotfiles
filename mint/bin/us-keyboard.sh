@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-setxkbmap -option -option ctrl:swapcaps -option compose:ralt us
+setxkbmap -option -option ctrl:nocaps -option compose:ralt us
 
 # TODO: What was this?
 #
