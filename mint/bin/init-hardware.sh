@@ -16,3 +16,4 @@ pacmd load-module module-alsa-sink device=hw:1,1
 
 synclient VertScrollDelta=-114 MinSpeed=1.50 MaxSpeed=2.50 TapButton1=0 TapButton2=0
 
+xsetroot -solid "#111111"
