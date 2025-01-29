@@ -16,7 +16,6 @@ pacmd load-module module-alsa-sink device=hw:1,1
 
 if [ `hostname` = "bau8" ]; then
   synclient VertScrollDelta=-114 MinSpeed=1.50 MaxSpeed=2.50 TapButton1=0 TapButton2=0
-  syndaemon -i 1 -t -d
 else
   synclient VertScrollDelta=-114 MinSpeed=1.50 MaxSpeed=2.50 TapButton1=0 TapButton2=0
   xinput --set-prop 9 "libinput Accel Speed" 0.5
