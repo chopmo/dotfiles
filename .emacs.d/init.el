@@ -844,6 +844,9 @@
 (global-set-key (quote [f11]) (lambda () (interactive) (find-file "~/Dropbox/org/inbox.org")))
 (global-set-key (quote [f12]) (quote open-dot-emacs-file))
 
+(global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c c") 'org-capture)
+
 (global-set-key (kbd "M-J") 'windmove-left)
 (global-set-key (kbd "M-K") 'windmove-down)
 (global-set-key (kbd "M-I") 'windmove-up)
