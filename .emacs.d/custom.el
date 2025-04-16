@@ -83,6 +83,8 @@
  '(markdown-header-scaling t)
  '(minimap-mode t)
  '(neo-window-width 40)
+ '(org-agenda-files
+   '("~/.notes" "/home/jtj/Dropbox/org/inbox.org" "/home/jtj/Dropbox/org/calendar.org"))
  '(org-journal-date-format "%A, %d-%m-%Y")
  '(org-journal-enable-encryption nil)
  '(org-journal-encrypt-journal t)
