@@ -703,6 +703,7 @@
 ;;; Org mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq org-journal-dir "~/Dropbox/org/journal")
+(setq org-default-notes-file "~/Dropbox/org/inbox.org")
 
 (add-hook 'org-journal-mode-hook
 	(lambda ()
