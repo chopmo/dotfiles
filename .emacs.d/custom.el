@@ -83,8 +83,9 @@
  '(markdown-header-scaling t)
  '(minimap-mode t)
  '(neo-window-width 40)
- '(org-agenda-files
-   '("/home/jtj/Dropbox/org/inbox.org"))
+ '(org-agenda-files '("/home/jtj/Dropbox/org-roam"))
+ '(org-agenda-skip-deadline-if-done nil)
+ '(org-agenda-skip-scheduled-if-done nil)
  '(org-journal-date-format "%A, %d-%m-%Y")
  '(org-journal-enable-encryption nil)
  '(org-journal-encrypt-journal t)

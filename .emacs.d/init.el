@@ -703,7 +703,7 @@
 ;;; Org mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq org-journal-dir "~/Dropbox/org/journal")
-(setq org-default-notes-file "~/Dropbox/org/inbox.org")
+(setq org-default-notes-file "~/Dropbox/org-roam/inbox.org")
 
 (add-hook 'org-journal-mode-hook
 	(lambda ()
@@ -842,7 +842,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
-(global-set-key (quote [f11]) (lambda () (interactive) (find-file "~/Dropbox/org/inbox.org")))
+(global-set-key (quote [f11]) 'org-agenda-list)
 (global-set-key (quote [f12]) (quote open-dot-emacs-file))
 
 (global-set-key (kbd "C-c a") 'org-agenda)
