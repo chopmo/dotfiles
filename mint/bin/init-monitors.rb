@@ -12,8 +12,8 @@ if `xrandr`[/HDMI-0 connected/]
   `xrandr --output HDMI-0 --primary --mode 3440x1440`
   `notify-send "Selected HDMI-0"`
 elsif `xrandr`[/DP-0 connected/]
-  `xrandr --output DP-0 --primary --mode 3840x2160`
-  `notify-send "Selected DP-0"`
+  `xrandr --output DP-0 --primary --mode 3840x2160 --output HDMI-1 --rotate left --mode 3840x2160`
+  `notify-send "Selected DP-0 and HDMI-1"`
 elsif `hostname`[/bau8/]
   `xrandr --output eDP-1 --primary --mode 2880x1800`
   `notify-send "Selected eDP-1 (bau8)"`
