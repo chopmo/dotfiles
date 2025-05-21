@@ -837,6 +837,12 @@
   (interactive)
   (message (jpt-yaml-path-to-point)))
 
+(defun jpt-org-dir (dir)
+  (interactive)
+  (setq org-agenda-files (list dir))
+  (setq org-roam-directory dir)
+  (org-roam-db-sync))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Key bindings
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -925,6 +931,15 @@
 (global-set-key (kbd "C-x C-o") 'browse-url-at-point)
 (global-set-key (kbd "M-p") (lambda () (interactive) (previous-line 10)))
 (global-set-key (kbd "M-n") (lambda () (interactive) (next-line 10)))
+(global-set-key (kbd "C-c o h")
+                (lambda ()
+                  (interactive)
+                  (jpt-org-dir "~/Dropbox/org-roam/home")))
+
+(global-set-key (kbd "C-c o w")
+                (lambda ()
+                  (interactive)
+                  (jpt-org-dir "~/Dropbox/org-roam/work")))
 
 (defun get-x-clipboard-content ()
   (when (display-graphic-p)
