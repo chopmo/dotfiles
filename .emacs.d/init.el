@@ -161,7 +161,9 @@
          ("C-M-r"    . org-refile)
          ("C-M-n"    . org-forward-heading-same-level)
          ("C-M-p"    . org-backward-heading-same-level)
-         ("C-M-u"    . org-up-element))
+         ("C-M-u"    . org-up-element)
+         ("C-}" . org-open-at-point)
+         ("C-{" . org-mark-ring-goto))
   :bind-keymap
   ("C-c n d" . org-roam-dailies-map)
   :config
