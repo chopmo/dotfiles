@@ -841,6 +841,7 @@
   (interactive)
   (setq org-agenda-files (list dir))
   (setq org-roam-directory dir)
+  (setq org-default-notes-file (concat dir "/inbox.org"))
   (org-roam-db-sync))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
