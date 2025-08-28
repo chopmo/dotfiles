@@ -56,7 +56,7 @@
 (use-package clojure-mode)
 (use-package clojure-mode-extra-font-locking)
 (use-package cider)
-(use-package prettier-js)
+(use-package prettier)
 (use-package rspec-mode)
 (use-package clj-refactor)
 (use-package eyebrowse)
@@ -468,9 +468,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; JS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(add-hook 'js-mode-hook 'prettier-js-mode)
-(add-hook 'vue-mode-hook 'prettier-js-mode)
-
 (add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
 (add-hook 'js-mode-hook 'subword-mode)
 (add-hook 'html-mode-hook 'subword-mode)

@@ -47,6 +47,7 @@
  '(git-link-default-branch nil)
  '(git-link-use-commit t)
  '(global-auto-highlight-symbol-mode nil)
+ '(global-prettier-mode t)
  '(helm-ag-base-command "ag --nocolor --nogroup --hidden")
  '(helm-buffer-max-length 50)
  '(helm-buffers-fuzzy-matching t)
@@ -107,7 +108,7 @@
         json-mode kotlin-mode lsp-treemacs magit magit-popup
         markdown-mode markdown-mode+ mmm-mode modus-themes
         multiple-cursors neotree nov ocamlformat olivetti org-journal
-        org-roam paredit pr-review prettier-js projectile
+        org-roam paredit pr-review prettier projectile
         projectile-rails request restclient restclient-helm rspec-mode
         smex sml-mode solarized-theme ssass-mode swift-mode
         tangotango-theme tuareg unfill use-package vue-html-mode
