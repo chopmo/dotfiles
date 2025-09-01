@@ -113,6 +113,7 @@
         smex sml-mode solarized-theme ssass-mode swift-mode
         tangotango-theme tuareg unfill use-package vue-html-mode
         vue-mode yafolding yaml-mode yasnippet zoom-window))
+ '(prettier-enabled-parsers '(vue))
  '(prettier-js-args '("prettier"))
  '(prettier-js-command "/usr/bin/npx")
  '(projectile-completion-system 'helm)
