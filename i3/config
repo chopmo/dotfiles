@@ -228,6 +228,8 @@ exec --no-startup-id ~/c/dotfiles/i3/screen-locking.sh
 focus_on_window_activation focus
 focus_follows_mouse no
 
-# TODO: If possible, hide "Slack Call Minipanel"
-
 bindsym $mod+Shift+s sticky toggle
+
+# Emacs everywhere
+bindsym $mod+period exec emacsclient --eval "(emacs-everywhere)"
+for_window [title="^Emacs Everywhere.*"] floating enable

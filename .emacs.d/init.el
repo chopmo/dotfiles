@@ -189,6 +189,9 @@
   :ensure t
   :init (whole-line-or-region-global-mode 1))
 
+(use-package emacs-everywhere
+  :ensure t)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Customizations
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

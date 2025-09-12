@@ -40,6 +40,7 @@
  '(completion-styles '(basic partial-completion emacs22))
  '(custom-enabled-themes '(sanityinc-tomorrow-day))
  '(display-buffer-alist '(("*Async Shell Command*" display-buffer-no-window (nil))))
+ '(emacs-everywhere-frame-parameters '((name . "emacs-everywhere") (width . 180) (height . 30)))
  '(eyebrowse-new-workspace t)
  '(flycheck-display-errors-function 'ignore)
  '(flycheck-keymap-prefix "\3f")
