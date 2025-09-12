@@ -41,6 +41,11 @@
  '(custom-enabled-themes '(sanityinc-tomorrow-day))
  '(display-buffer-alist '(("*Async Shell Command*" display-buffer-no-window (nil))))
  '(emacs-everywhere-frame-parameters '((name . "emacs-everywhere") (width . 180) (height . 30)))
+ '(emacs-everywhere-init-hooks
+   '(emacs-everywhere-set-frame-name emacs-everywhere-apply-major-mode
+                                     emacs-everywhere-insert-selection
+                                     emacs-everywhere-remove-trailing-whitespace
+                                     emacs-everywhere-init-spell-check))
  '(eyebrowse-new-workspace t)
  '(flycheck-display-errors-function 'ignore)
  '(flycheck-keymap-prefix "\3f")
