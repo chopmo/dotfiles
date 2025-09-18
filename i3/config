@@ -211,7 +211,7 @@ for_window [title="^Slack \| mini panel$" floating] move position 3100 1150, res
 # Built-in monitor is the primary (initially)
 exec xrandr --output DP-0 --primary
 
-exec --always --no-startup-id unclutter -keystroke -jitter 10 &
+# exec --always --no-startup-id unclutter -keystroke -jitter 10 &
 
 exec --no-startup-id redshift-gtk -l 56.200349:10.181152 -t 5500:3000 &
 
