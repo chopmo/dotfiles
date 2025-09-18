@@ -2,10 +2,9 @@
 # name: nstest
 # key: nstest
 # --
-[clojure.test :refer [use-fixtures testing is deftest]]
+[clojure.test :refer [testing is deftest]]
 [gomore-api.factories]
 [factory-time.core :refer [create!]]
-[gomore-api.test-system :as test-sys]
-[gomore-api.test-utils :refer [GET POST api-path]]
-[clj-time.core :as t]
+[gomore-api.test-system :refer [fixtures] :as test-sys]
+[gomore-api.test-utils :refer [GET POST api-path] :as tu]
 [gomore-api.plait :refer [plait]]
