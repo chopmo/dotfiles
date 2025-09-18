@@ -185,6 +185,7 @@
  '(markdown-header-face-2 ((t (:height 1.5))))
  '(markdown-header-face-3 ((t (:weight bold :height 1.0))))
  '(mmm-default-submode-face ((t nil)))
+ '(mode-line ((t (:background "dim gray" :foreground "#c5c8c6" :box (:line-width (1 . 1) :color "#373b41") :weight normal))))
  '(org-block-begin-line ((t (:extend t :background "#1d1f21" :foreground "gray35" :slant italic))))
  '(org-block-end-line ((t (:background "#1d1f21" :foreground "gray35" :slant italic))))
  '(org-headline-todo ((t (:height 1.0 :inherit nil))))
