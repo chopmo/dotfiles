@@ -8,3 +8,4 @@
 [gomore-api.test-system :refer [fixtures] :as test-sys]
 [gomore-api.test-utils :refer [GET POST api-path] :as tu]
 [gomore-api.plait :refer [plait]]
+[matcher-combinators.clj-test]
