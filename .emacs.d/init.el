@@ -956,6 +956,15 @@
   (interactive)
   (pr-review (get-x-clipboard-content)))
 
+;; Add variant of ag search without test code
+(defun jpt-helm-projectile-ag-exclude-test ()
+  "Run helm-projectile-ag but exclude the test/ directory."
+  (interactive)
+  (let ((helm-ag-base-command "ag --ignore=test/ --nocolor --nogroup"))
+    (helm-projectile-ag)))
+
+(global-set-key (kbd "C-M-S-p") 'jpt-helm-projectile-ag-exclude-test)
+
 (setq org-todo-keyword-faces
       '(("TODO" . (:foreground "pink" :weight bold :height 1.0))
         ("DONE" . (:foreground "green" :weight bold :height 1.0))
