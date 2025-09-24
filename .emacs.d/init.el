@@ -960,7 +960,7 @@
 (defun jpt-helm-projectile-ag-exclude-test ()
   "Run helm-projectile-ag but exclude the test/ directory."
   (interactive)
-  (let ((helm-ag-base-command "ag --ignore=test/ --nocolor --nogroup"))
+  (let ((helm-ag-base-command "ag --ignore=test/ --ignore=spec/ --nocolor --nogroup"))
     (helm-projectile-ag)))
 
 (global-set-key (kbd "C-M-S-p") 'jpt-helm-projectile-ag-exclude-test)
