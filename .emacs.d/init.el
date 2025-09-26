@@ -210,7 +210,7 @@
 (load "mmm-mode.el")
 
 (add-to-list 'exec-path "~/c/dotfiles/bin")
-(add-to-list 'exec-path "~/.nvm/versions/node/v16.13.1/bin")
+(add-to-list 'exec-path "~/.nvm/versions/node/v22.15.0/bin")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Shell integration
