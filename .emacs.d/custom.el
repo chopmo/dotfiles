@@ -121,7 +121,7 @@
         vue-mode yafolding yaml-mode yasnippet zoom-window))
  '(prettier-enabled-parsers '(vue))
  '(prettier-js-args '("prettier"))
- '(prettier-js-command "/usr/bin/npx")
+ '(prettier-js-command "/home/jtj/.nvm/versions/node/v22.15.0/bin/npx")
  '(projectile-completion-system 'helm)
  '(projectile-create-missing-test-files t)
  '(projectile-globally-ignored-files '("TAGS"))
