@@ -135,8 +135,9 @@
    '(".projectile" ".git" ".hg" ".fslckout" "_FOSSIL_" ".bzr" "_darcs"))
  '(projectile-project-root-files-top-down-recurring '(".svn" "CVS"))
  '(projectile-tags-command "find . -name '*.rb' | xargs etags -o TAGS")
- '(rspec-spec-command "rspec")
- '(rspec-use-bundler-when-possible t)
+ '(rspec-spec-command "../dev/rspec")
+ '(rspec-use-bundler-when-possible nil)
+ '(rspec-use-relative-path t)
  '(ruby-insert-encoding-magic-comment nil)
  '(safe-local-variable-values
    '((cider-shadow-default-options . "app")
