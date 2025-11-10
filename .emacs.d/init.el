@@ -192,6 +192,9 @@
 (use-package emacs-everywhere
   :ensure t)
 
+(use-package elfeed
+  :ensure t)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Customizations
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

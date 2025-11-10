@@ -40,6 +40,64 @@
  '(completion-styles '(basic partial-completion emacs22))
  '(custom-enabled-themes '(sanityinc-tomorrow-day))
  '(display-buffer-alist '(("*Async Shell Command*" display-buffer-no-window (nil))))
+ '(elfeed-feeds
+   '("https://youtube.com/@flightradar24dotcom?si=WA2aRkZcdcQDqUKu"
+     "http://blog.fogus.me/feed/"
+     "http://feeds.feedburner.com/JakeMccrarysMusings"
+     "https://www.masteringemacs.org/feed"
+     "https://thejspr.com/feed.xml" "https://www.proctor-it.com/feed/"
+     "https://maryrosecook.com/blog/feed.xml"
+     "https://www.functionalgeekery.com/feed/"
+     "https://danielcompton.net/rss.xml" "https://waitbutwhy.com/feed"
+     "https://clojure.org/feed.xml" "http://chopmo.dk/feed.xml"
+     "https://yogthos.net/feed.xml"
+     "https://medium.com/feed/@steve.yegge"
+     "https://technomancy.us/atom.xml"
+     "http://blog.bradlucas.com/feed.xml"
+     "https://blog.taylorwood.io/feed.xml"
+     "https://metaredux.com/feed.xml" "https://batsov.com/atom.xml"
+     "https://clojuredesign.club/index.xml"
+     "https://emacsredux.com/atom.xml"
+     "https://blog.michielborkent.nl/atom.xml"
+     "https://planet.emacslife.com/atom.xml"
+     "https://tonsky.me/blog/atom.xml"
+     "https://vlaaad.github.io/feed.xml"
+     "https://sachachua.com/blog/category/emacs/feed/"
+     "http://sulami.github.io/atom.xml"
+     "https://betweentwoparens.com/rss.xml"
+     "https://oli.me.uk/feed.xml"
+     "https://lambdaisland.com/feeds/episodes.atom?2019-07-22T09:41:53.235Z"
+     "https://corfield.org/atom.xml"
+     "https://ma.ttias.be/cronweekly/index.xml"
+     "https://insideclojure.org/feed.xml"
+     "http://blog.danieljanus.pl/atom.xml"
+     "https://blog.ambrosebs.com/atom.xml"
+     "https://www.manueluberti.eu/feed.xml"
+     "http://mishadoff.com/blog/categories/clojure/atom.xml"
+     "https://040code.github.io/rss.xml"
+     "http://ingesolvoll.github.io/feed.xml"
+     "https://whynotsoftware.github.io/feed.xml"
+     "http://conjobble.velisco.com/feed.xml"
+     "https://porkostomus.gitlab.io/feed.xml"
+     "https://curiousprogrammer.net/feed/"
+     "https://thegeez.net/atom.xml"
+     "https://humorless.github.io/feed.xml"
+     "https://medium.com/feed/@peternorvig"
+     "https://blog.samaltman.com/posts.atom"
+     "http://feeds.feedburner.com/ign/game-reviews"
+     "https://ag91.github.io/rss.xml"
+     "https://occasionallycogent.com/feed.xml"
+     "https://mccormick.cx/news/index.rss"
+     "https://www.joshuawood.net/feeds/articles.xml"
+     "https://anchor.fm/s/581d4eb4/podcast/rss"
+     "https://otavio.dev/feed/" "https://blog.janetacarr.com/rss/"
+     "https://calnewport.com/feed/" "https://www.wheresyoured.at/rss/"
+     "https://www.dyerdwelling.family/categories/emacs/index.xml"
+     "https://www.fastmail.com/blog/feed.xml"
+     "https://cestlaz.zamansky.net/rss.xml" "https://emacsredux.com/"
+     "https://irreal.org/blog/?feed=rss2"))
+ '(elfeed-initial-tags nil)
+ '(elfeed-search-filter "@6-months-ago ")
  '(emacs-everywhere-frame-parameters '((name . "emacs-everywhere") (width . 180) (height . 30)))
  '(emacs-everywhere-init-hooks
    '(emacs-everywhere-set-frame-name emacs-everywhere-apply-major-mode
@@ -108,8 +166,8 @@
    '(ag auto-highlight-symbol cider cljr-helm
         clojure-mode-extra-font-locking color-theme-sanityinc-tomorrow
         company csv-mode dockerfile-mode edit-indirect edit-server
-        exec-path-from-shell eyebrowse flycheck-clj-kondo geiser
-        git-link go-mode haskell-mode helm helm-ag helm-cider
+        elfeed exec-path-from-shell eyebrowse flycheck-clj-kondo
+        geiser git-link go-mode haskell-mode helm helm-ag helm-cider
         helm-projectile hide-lines highlight-symbol ido-vertical-mode
         json-mode kotlin-mode lsp-treemacs magit magit-popup
         markdown-mode markdown-mode+ mmm-mode modus-themes
