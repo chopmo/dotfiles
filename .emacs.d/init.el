@@ -80,7 +80,12 @@
 (use-package yasnippet)
 (use-package request)
 (use-package color-theme-sanityinc-tomorrow)
+
+(use-package org
+  :config (require 'org-tempo))
+
 (use-package org-journal)
+
 (use-package olivetti)
 (use-package flycheck-clj-kondo)
 (use-package vue-html-mode)
