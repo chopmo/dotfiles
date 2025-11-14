@@ -855,6 +855,8 @@
   (setq org-default-notes-file (concat dir "/inbox.org"))
   (org-roam-db-sync))
 
+(server-start)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Key bindings
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
