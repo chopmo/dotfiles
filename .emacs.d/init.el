@@ -979,3 +979,52 @@
       '(("TODO" . (:foreground "pink" :weight bold :height 1.0))
         ("DONE" . (:foreground "green" :weight bold :height 1.0))
         ("IN-PROGRESS" . (:foreground "blue" :weight bold :height 1.0))))
+
+
+;; mu4e setup
+(add-to-list 'load-path "/usr/local/share/emacs/site-lisp/mu4e")
+
+(require 'mu4e)
+(setq send-mail-function 'smtpmail-send-it)    ; should not be modified
+(setq smtpmail-smtp-server "smtp.gmail.com") ; host running SMTP server
+(setq smtpmail-smtp-service 587)               ; SMTP service port number
+(setq smtpmail-stream-type 'starttls)          ; type of SMTP connections to use
+
+;; Mail folders:
+(setq mu4e-drafts-folder "/[Gmail]/Drafts"
+      mu4e-sent-folder   "/[Gmail]/Sent Mail"
+      mu4e-trash-folder  "/[Gmail]/Trash"
+      mu4e-refile-folder "/[Gmail]/All Mail")
+
+;; The command used to get your emails (adapt this line, see section 2.3):
+(setq mu4e-get-mail-command "mbsync --config ~/.emacs.d/.mbsyncrc gomore-gmail-channel")
+
+;; Further customization:
+(setq ;mu4e-html2text-command "w3m -T text/html" ; how to hanfle html-formatted emails
+      mu4e-update-interval 300                  ; seconds between each mail retrieval
+      mu4e-headers-auto-update t                ; avoid to type `g' to update
+      mu4e-view-show-images t                   ; show images in the view buffer
+      mu4e-compose-signature-auto-include nil   ; I don't want a message signature
+      mu4e-use-fancy-chars t                    ; allow fancy icons for mail threads
+      user-mail-address "jacob@gomore.com"
+      user-full-name "Jacob Tjørnholm"
+      mu4e-index-cleanup nil      ;; don't do a full cleanup check
+      mu4e-index-lazy-check t)    ;; don't consider up-to-date dirs)
+
+(setq mu4e-html2text-command "iconvfoo -c -t utf-8 | pandoc -f html -t plain")
+
+;; Do not reply to yourself:
+(setq mu4e-compose-reply-ignore-address '("no-?reply" "jacob@gomore.com"))
+
+;; Do not use auto-fill-mode for emails:
+(defun auto-fill-mode-off ()
+  (auto-fill-mode 0))
+(add-hook 'mu4e-compose-mode-hook 'auto-fill-mode-off)
+
+
+(setq shr-color-visible-luminance-min 80)
+
+(setq mail-user-agent 'mu4e-user-agent)
+(set-variable 'read-mail-command 'mu4e)
+
+(setq gnus-unbuttonized-mime-types nil)

@@ -147,6 +147,12 @@
                                  magit-insert-unpulled-from-upstream))
  '(markdown-header-scaling t)
  '(minimap-mode t)
+ '(mu4e-headers-fields
+   '((:human-date . 12) (:flags . 6) (:mailing-list . 10) (:from . 22)
+     (:thread-subject)))
+ '(mu4e-maildir-shortcuts '(("/INBOX" . 105) ("/[Gmail]/All Mail" . 97)))
+ '(mu4e-view-fields
+   '(:from :to :cc :subject :date :maildir :mailing-list :tags))
  '(neo-window-width 40)
  '(org-agenda-files '("/home/jtj/Dropbox/org-roam"))
  '(org-agenda-skip-deadline-if-done nil)
