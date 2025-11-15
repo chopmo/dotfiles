@@ -12,6 +12,9 @@
 ;; Consider all themes safe
 (setq custom-safe-themes t)
 
+;; Use ~/tmp for temporary files (Firefox snap can access home directory)
+(setq temporary-file-directory "~/tmp/")
+
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
@@ -1006,12 +1009,49 @@
       mu4e-view-show-images t                   ; show images in the view buffer
       mu4e-compose-signature-auto-include nil   ; I don't want a message signature
       mu4e-use-fancy-chars t                    ; allow fancy icons for mail threads
+      mu4e-attachment-dir "~/Downloads"         ; save attachments to Downloads
+      mu4e-confirm-quit nil                     ; don't ask for confirmation when quitting
       user-mail-address "jacob@gomore.com"
       user-full-name "Jacob Tjørnholm"
       mu4e-index-cleanup nil      ;; don't do a full cleanup check
-      mu4e-index-lazy-check t)    ;; don't consider up-to-date dirs)
+      mu4e-index-lazy-check t     ;; don't consider up-to-date dirs
+      mu4e-view-fields '(:from :subject :date)) ;; minimal fields, hide :to :cc :maildir :mailing-list :tags
 
-(setq mu4e-html2text-command "iconvfoo -c -t utf-8 | pandoc -f html -t plain")
+;; Prefer text/plain over HTML when both are available
+;; (setq mm-discouraged-alternatives '("text/html" "text/richtext"))
+
+;; Modern Emacs uses shr (Simple HTML Renderer) for HTML emails
+;; Configure it for better rendering
+(setq shr-use-colors nil)  ; Don't use HTML colors
+(setq shr-max-image-proportion 0.6)  ; Limit image size
+
+;; Hide To and CC fields in message view using gnus settings
+(setq gnus-visible-headers "^From:\\|^Subject:\\|^Date:")
+(setq gnus-ignored-headers "^^Maildir:\\|References:\\|^Xref:")
+
+;; (setq gnus-visible-headers
+;;       "^From:\\|^Subject:\\|^Date:\\|^Maildir:\\|^Mailing-List:\\|^Tags:")
+
+;; Toggle function to show/hide all headers
+(defun mu4e-view-toggle-headers ()
+  "Toggle between showing minimal headers and all headers."
+  (interactive)
+  (if (string= gnus-visible-headers ".*")
+      ;; Currently showing all, switch to minimal
+      (progn
+        (setq gnus-visible-headers "^From:\\|^Subject:\\|^Date:")
+        (message "Headers: minimal"))
+    ;; Currently minimal, switch to all
+    (progn
+      (setq gnus-visible-headers ".*")
+      (message "Headers: all")))
+  (when (derived-mode-p 'mu4e-view-mode)
+    (mu4e-view-refresh)))
+
+;; Bind it to 'h' in mu4e-view-mode
+(add-hook 'mu4e-view-mode-hook
+          (lambda ()
+            (local-set-key (kbd "h") 'mu4e-view-toggle-headers)))
 
 ;; Do not reply to yourself:
 (setq mu4e-compose-reply-ignore-address '("no-?reply" "jacob@gomore.com"))
@@ -1021,10 +1061,16 @@
   (auto-fill-mode 0))
 (add-hook 'mu4e-compose-mode-hook 'auto-fill-mode-off)
 
-
 (setq shr-color-visible-luminance-min 80)
 
 (setq mail-user-agent 'mu4e-user-agent)
 (set-variable 'read-mail-command 'mu4e)
 
 (setq gnus-unbuttonized-mime-types nil)
+
+(keymap-set mu4e-view-mode-map (kbd "K")
+            (lambda ()
+              (interactive)
+              (gnus-article-jump-to-part 1)
+              (gnus-article-press-button)
+              (gnus-article-press-button)))
