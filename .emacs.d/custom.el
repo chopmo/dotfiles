@@ -38,6 +38,7 @@
  '(clojure-toplevel-inside-comment-form nil)
  '(coffee-tab-width 2)
  '(completion-styles '(basic partial-completion emacs22))
+ '(csv-separators '("," ";" "\11"))
  '(custom-enabled-themes '(sanityinc-tomorrow-day))
  '(display-buffer-alist '(("*Async Shell Command*" display-buffer-no-window (nil))))
  '(elfeed-feeds
