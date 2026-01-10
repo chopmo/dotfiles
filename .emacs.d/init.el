@@ -871,6 +871,9 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
 
+(global-set-key (quote [f9])
+                (lambda () (interactive) (org-capture nil "t")))
+
 (global-set-key (kbd "M-J") 'windmove-left)
 (global-set-key (kbd "M-K") 'windmove-down)
 (global-set-key (kbd "M-I") 'windmove-up)
@@ -978,11 +981,15 @@
 
 (global-set-key (kbd "C-M-S-p") 'jpt-helm-projectile-ag-exclude-test)
 
+;; Org mode
 (setq org-todo-keyword-faces
       '(("TODO" . (:foreground "pink" :weight bold :height 1.0))
         ("DONE" . (:foreground "green" :weight bold :height 1.0))
         ("IN-PROGRESS" . (:foreground "blue" :weight bold :height 1.0))))
 
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline org-default-notes-file "Tasks")
+         "* TODO %?\nDEADLINE: %t\n%i\n%a")))
 
 ;; mu4e setup
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp/mu4e")
