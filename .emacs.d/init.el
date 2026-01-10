@@ -159,7 +159,7 @@
   :init
   (setq org-roam-v2-ack t)
   :custom
-  (org-roam-directory "~/Dropbox/org-roam")
+  (org-roam-directory "~/Sync/org-roam")
   (org-roam-completion-everywhere t)
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n f" . org-roam-node-find)
@@ -698,11 +698,11 @@
 
   ;; Notes
   (eyebrowse-switch-to-window-config-3)
-  (find-file "~/Dropbox/org-roam/20230617113329-tmp.org")
+  (find-file "~/Sync/org-roam/20230617113329-tmp.org")
 
   ;; SQL
   (eyebrowse-switch-to-window-config-9)
-  (find-file "~/Dropbox/Notes/scratch.sql")
+  (find-file "~/Sync/Notes/scratch.sql")
   (setq sql-postgres-login-params
       '((user :default "gomore")
         (database :default "gomore_development")
@@ -717,7 +717,7 @@
 ;;; Org mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq org-journal-dir "~/Dropbox/org/journal")
-(setq org-default-notes-file "~/Dropbox/org-roam/inbox.org")
+;; (setq org-default-notes-file "~/Sync/org-roam/inbox.org")
 
 (add-hook 'org-journal-mode-hook
 	(lambda ()
@@ -954,12 +954,12 @@
 (global-set-key (kbd "C-c o h")
                 (lambda ()
                   (interactive)
-                  (jpt-org-dir "~/Dropbox/org-roam/home")))
+                  (jpt-org-dir "~/Sync/org-roam/home")))
 
 (global-set-key (kbd "C-c o w")
                 (lambda ()
                   (interactive)
-                  (jpt-org-dir "~/Dropbox/org-roam/work")))
+                  (jpt-org-dir "~/Sync/org-roam/work")))
 
 (defun get-x-clipboard-content ()
   (when (display-graphic-p)

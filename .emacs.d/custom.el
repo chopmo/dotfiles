@@ -154,7 +154,7 @@
  '(mu4e-maildir-shortcuts '(("/INBOX" . 105) ("/[Gmail]/All Mail" . 97)))
  '(mu4e-view-fields '(:from :subject :date :maildir :mailing-list :tags))
  '(neo-window-width 40)
- '(org-agenda-files '("/home/jtj/Dropbox/org-roam"))
+ '(org-agenda-files '("/home/jtj/Sync/org-roam"))
  '(org-agenda-skip-deadline-if-done nil)
  '(org-journal-date-format "%A, %d-%m-%Y")
  '(org-journal-enable-encryption nil)
