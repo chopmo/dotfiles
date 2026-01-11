@@ -716,7 +716,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Org mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(setq org-journal-dir "~/Dropbox/org/journal")
+(setq org-journal-dir "~/Sync/org/journal")
 ;; (setq org-default-notes-file "~/Sync/org-roam/inbox.org")
 
 (add-hook 'org-journal-mode-hook
