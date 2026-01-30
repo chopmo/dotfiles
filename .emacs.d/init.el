@@ -466,6 +466,10 @@
 (eval-after-load 'cider
   '(progn
      (define-key clojure-mode-map (kbd "C-M-r") 'cider-switch-to-repl-buffer)
+     (define-key clojure-mode-map (kbd "C-c d") '(lambda ()
+                                                   (interactive)
+                                                   (cider-interactive-eval
+                                                    (concat  "(gomore-api.make/docs " (thing-at-point 'symbol 'no-properties) ")"))))
      (define-key cider-repl-mode-map (kbd "C-M-r") 'cider-switch-to-last-clojure-buffer)))
 
 (global-prettify-symbols-mode 1)
