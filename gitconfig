@@ -47,6 +47,7 @@ pl=pull
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
+
 [push]
 	default = current
 [pull]
@@ -58,6 +59,7 @@ protocol = https
 
 [diff]
 	algorithm = minimal
+        external = difft --display side-by-side-show-both --syntax-highlight off --context 10
 [github]
 	user = chopmo
 [remote]
