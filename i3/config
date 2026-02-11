@@ -231,3 +231,5 @@ bindsym $mod+Shift+s sticky toggle
 # Emacs everywhere
 bindsym $mod+period exec emacsclient --eval "(emacs-everywhere)"
 for_window [title="^Emacs Everywhere.*"] floating enable, resize set 1000 600, move absolute position 1420 780
+
+default_border pixel
