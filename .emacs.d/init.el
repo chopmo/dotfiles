@@ -463,13 +463,50 @@
 (add-to-list 'auto-mode-alist '("\\.lein-env$" . clojure-mode))
 (add-to-list 'auto-mode-alist '("\\.cljs.*$" . clojurescript-mode))
 
+(defun gomore--enclosing-make-symbol ()
+  "Return the second symbol in the nearest enclosing (make ...) form, or nil."
+  (ignore-errors
+    (save-excursion
+      (let ((result nil))
+        (while (and (not result)
+                    (condition-case nil
+                        (progn (backward-up-list) t)
+                      (scan-error nil)))
+          (save-excursion
+            (down-list)
+            (when (eq (symbol-at-point) 'make)
+              (forward-sexp)
+              (forward-thing 'whitespace)
+              (setq result (symbol-at-point)))))
+        result))))
+
+(defun gomore--colorize-eldoc (s)
+  "Colorize S assuming format \"name maker: opts(...) children(...)\"."
+  (if (string-match "\\`\\(.+?\\) maker: \\(.*\\)\\'" s)
+      (concat (propertize (match-string 1 s) 'face 'font-lock-function-name-face)
+              " "
+              (propertize "maker" 'face 'font-lock-type-face)
+              ": "
+              (match-string 2 s))
+    s))
+
+(defun gomore-eldoc (callback &rest _)
+  (when-let ((sym (gomore--enclosing-make-symbol)))
+    (let ((value (nrepl-dict-get
+                  (cider-nrepl-sync-request:eval
+                   (concat "(gomore-api.make/docs " (symbol-name sym) ")"))
+                  "value")))
+      (when value
+        (funcall callback (gomore--colorize-eldoc (read value)))))))
+
+(add-hook 'clojure-mode-hook
+          (lambda ()
+            (add-hook 'eldoc-documentation-functions
+                      #'gomore-eldoc -10 t)))
+
 (eval-after-load 'cider
   '(progn
      (define-key clojure-mode-map (kbd "C-M-r") 'cider-switch-to-repl-buffer)
-     (define-key clojure-mode-map (kbd "C-c d") '(lambda ()
-                                                   (interactive)
-                                                   (cider-interactive-eval
-                                                    (concat  "(gomore-api.make/docs " (thing-at-point 'symbol 'no-properties) ")"))))
      (define-key cider-repl-mode-map (kbd "C-M-r") 'cider-switch-to-last-clojure-buffer)))
 
 (global-prettify-symbols-mode 1)
