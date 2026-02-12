@@ -197,6 +197,7 @@ bar {
         tray_output primary
         mode hide
         modifier shift+control+Mod1
+        workspace_min_width 40
 }
 
 for_window [class="Pavucontrol"] floating enable
