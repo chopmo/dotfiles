@@ -27,6 +27,8 @@ ln -sf /home/jtj/c/dotfiles/gemrc /home/jtj/.gemrc
 ln -sf /home/jtj/c/dotfiles/gitconfig /home/jtj/.gitconfig
 mkdir -p /home/jtj/.config/dunst
 ln -sf /home/jtj/c/dotfiles/dunstrc /home/jtj/.config/dunst/
+mkdir -p /home/jtj/.config/rofi
+ln -sf /home/jtj/c/dotfiles/config.rasi /home/jtj/.config/rofi/config.rasi
 
 # git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 
