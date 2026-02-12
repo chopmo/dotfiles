@@ -169,20 +169,16 @@
      (wl . wl-other-frame)))
  '(org-reverse-note-order t)
  '(package-selected-packages
-   '(ag auto-highlight-symbol cider cljr-helm
+   '(ag auto-highlight-symbol clj-refactor
         clojure-mode-extra-font-locking color-theme-sanityinc-tomorrow
-        company csv-mode dockerfile-mode edit-indirect edit-server
-        elfeed exec-path-from-shell eyebrowse flycheck-clj-kondo
-        geiser git-link go-mode haskell-mode helm helm-ag helm-cider
-        helm-projectile hide-lines highlight-symbol ido-vertical-mode
-        json-mode kotlin-mode lsp-treemacs magit magit-popup
-        markdown-mode markdown-mode+ mmm-mode modus-themes
-        multiple-cursors neotree nov ocamlformat olivetti org-journal
-        org-roam paredit pr-review prettier projectile
-        projectile-rails request restclient restclient-helm rspec-mode
-        smex sml-mode solarized-theme ssass-mode swift-mode
-        tangotango-theme tuareg unfill use-package vue-html-mode
-        vue-mode yafolding yaml-mode yasnippet zoom-window))
+        company csv-mode difftastic dockerfile-mode edit-indirect
+        elfeed emacs-everywhere eyebrowse flycheck-clj-kondo git-link
+        gnu-elpa-keyring-update helm-ag helm-projectile
+        ido-vertical-mode kotlin-mode lsp-treemacs magit-gh oauth2
+        olivetti org-journal org-roam pr-review prettier prettier-js
+        projectile-rails rainbow-delimiters restclient rspec-mode
+        slack ssass-mode swift-mode tagedit vue-html-mode
+        whole-line-or-region yafolding yaml-mode zoom-window))
  '(prettier-enabled-parsers '(vue))
  '(prettier-js-args '("prettier"))
  '(prettier-js-command "/home/jtj/.nvm/versions/node/v22.15.0/bin/npx")
