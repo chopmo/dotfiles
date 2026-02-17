@@ -79,6 +79,13 @@
   :config
   (setq magit-pull-arguments '("--rebase" "--all")))
 
+(use-package magit-gh
+  :ensure t
+  :after magit
+  :bind (:map magit-gh-pr-list-mode-map
+              ("n" . next-line)
+              ("p" . previous-line)))
+
 (use-package ag)
 (use-package yasnippet)
 (use-package request)
