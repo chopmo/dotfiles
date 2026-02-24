@@ -156,6 +156,7 @@
  '(neo-window-width 40)
  '(org-agenda-files '("/home/jtj/Sync/org-roam"))
  '(org-agenda-skip-deadline-if-done nil)
+ '(org-agenda-window-setup 'current-window)
  '(org-journal-date-format "%A, %d-%m-%Y")
  '(org-journal-enable-encryption nil)
  '(org-journal-encrypt-journal t)
