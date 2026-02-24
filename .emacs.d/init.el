@@ -81,10 +81,7 @@
 
 (use-package magit-gh
   :ensure t
-  :after magit
-  :bind (:map magit-gh-pr-list-mode-map
-              ("n" . next-line)
-              ("p" . previous-line)))
+  :after magit)
 
 (use-package ag)
 (use-package yasnippet)
