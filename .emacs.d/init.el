@@ -1125,3 +1125,19 @@
               (gnus-article-jump-to-part 1)
               (gnus-article-press-button)
               (gnus-article-press-button)))
+
+(defun copy-file-location ()
+  "Copy repo-relative path:line or path:start-end if region is active."
+  (interactive)
+  (let* ((root (or (vc-root-dir) default-directory))
+         (relative (file-relative-name (buffer-file-name) root))
+         (location
+          (if (use-region-p)
+              (format "%s:%d-%d" relative
+                      (line-number-at-pos (region-beginning))
+                      (line-number-at-pos (region-end)))
+            (format "%s:%d" relative (line-number-at-pos)))))
+    (kill-new location)
+    (message "%s" location)))
+
+(global-set-key (kbd "C-c f") #'copy-file-location)
