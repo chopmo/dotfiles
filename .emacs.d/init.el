@@ -1141,3 +1141,5 @@
     (message "%s" location)))
 
 (global-set-key (kbd "C-c f") #'copy-file-location)
+
+(setq help-window-select t)
