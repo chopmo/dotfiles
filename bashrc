@@ -126,7 +126,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export CDPATH=.:/home/jtj/c/g/backend:/home/jtj/c/g
+CDPATH=.:/home/jtj/c/g/backend:/home/jtj/c/g
+cd() { builtin cd "$@" > /dev/null; }
 
 function ci() {
   if [ -n "$1" ]; then
