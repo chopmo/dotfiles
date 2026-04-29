@@ -154,3 +154,5 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:$HOME/.babashka/bbin/bin"
 
 export PYTHONPATH=/usr/lib/python3/dist-packages:/usr/lib/python3/site-packages:$PYTHONPATH
+
+[ -r ~/.bashrc.local ] && . ~/.bashrc.local
