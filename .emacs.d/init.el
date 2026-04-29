@@ -103,10 +103,6 @@
 (use-package git-link)
 (use-package restclient)
 (use-package yaml-mode
-  :config
-  (add-hook 'yaml-mode-hook (lambda ()
-                              (lsp-headerline-breadcrumb-mode t)))
-
   :bind (("C-x p" . 'jpt-yaml-show-path-to-point)))
 
 (use-package company
@@ -114,32 +110,6 @@
 (setq package-check-signature 'allow-unsigned)
 
 (use-package gnu-elpa-keyring-update)
-
-(use-package lsp-mode
-  :ensure t
-  :hook ((clojure-mode . lsp)
-         (clojurec-mode . lsp)
-         (clojurescript-mode . lsp))
-  :config
-  (dolist (m '(clojure-mode
-               clojurec-mode
-               clojurescript-mode
-               clojurex-mode))
-    (add-to-list 'lsp-language-id-configuration `(,m . "clojure")))
-
-  :custom
-  (lsp-eldoc-enable-hover nil)
-
-  :bind (("C-c e" . 'lsp-execute-code-action)
-         ("C-c l" . 'lsp-find-references)
-         ("C-c r" . 'lsp-rename)
-         ("C-c n s" . 'lsp-clojure-clean-ns)))
-
-(use-package lsp-treemacs
-  :ensure t
-  :hook ((clojure-mode . lsp)
-         (clojurec-mode . lsp)
-         (clojurescript-mode . lsp)))
 
 (use-package epa-file
   :ensure nil
@@ -424,6 +394,7 @@
   '(progn
      ;; I need the M-J keybinding for windmove
     (define-key paredit-mode-map (kbd "M-J") nil)
+    (define-key paredit-mode-map (kbd "M-?") nil)
     (define-key paredit-mode-map (kbd "RET") nil)
     (define-key paredit-mode-map (kbd "C-M-]") 'cider-doc)
     (define-key paredit-mode-map (kbd "C-M-S-u") (lambda ()
@@ -439,8 +410,22 @@
             (flycheck-mode 1)))
 
 (setq cider-repl-display-help-banner nil)
-(setq cider-use-xref nil)
+(setq cider-use-xref t)
 (setq cider-repl-display-in-current-window t)
+(setq cider-path-translations                                                                                                                        '(("/opt/api" . "/home/jtj/c/g/backend/api")))
+
+;; fn-refs walks all loaded namespaces server-side; default 10s isn't enough
+;; on large projects.
+(setq nrepl-sync-request-timeout 60)
+
+(global-set-key (kbd "C-c l") #'xref-find-references)
+
+;; Load all project namespaces on connect so cider-xref-fn-refs and
+;; xref-find-references see the whole project, not just the entry ns.
+(defun jpt-cider-load-all-project-ns-quietly ()
+  (cl-letf (((symbol-function 'y-or-n-p) (lambda (&rest _) t)))
+    (cider-load-all-project-ns)))
+(add-hook 'cider-connected-hook #'jpt-cider-load-all-project-ns-quietly)
 
 ;; Always enable paredit for clojure buffers
 ;; (add-hook 'clojure-mode-hook #'paredit-mode)
@@ -516,8 +501,6 @@
 (global-prettify-symbols-mode 1)
 ;; I use zprint for this
 ;; (setq clojure-align-forms-automatically t)
-
-(setq lsp-headerline-breadcrumb-enable nil)
 
 (setq gc-cons-threshold (* 100 1024 1024)
       read-process-output-max (* 1024 1024)
