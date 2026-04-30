@@ -446,6 +446,36 @@
 ;; enable paredit in your REPL
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
 
+;; --- Switch CIDER between the dev and test gomore REPLs ---
+;;
+;; `dev/start --with-test' starts an extra api-test container whose REPL
+;; binds API_ENVIRONMENT=test and exposes nREPL on host port 48342, alongside
+;; the regular dev REPL on 48341. These commands quit any active CIDER
+;; sessions and connect to the requested one, mirroring connect-cider.sh.
+(defun jpt-cider-connect-on-port (port label)
+  "Quit active CIDER connections and connect to localhost:PORT.
+LABEL is shown in the minibuffer message."
+  (dolist (session (sesman-sessions 'CIDER))
+    (dolist (repl (cdr session))
+      (when (buffer-live-p repl)
+        (cider--close-connection repl))))
+  (setq cider-reuse-dead-repls 'any)
+  (cider-connect-clj (list :host "localhost" :port port))
+  (message "CIDER: connecting to %s REPL on localhost:%d" label port))
+
+(defun jpt-cider-use-dev-repl ()
+  "Connect CIDER to the dev gomore REPL (port 48341)."
+  (interactive)
+  (jpt-cider-connect-on-port 48341 "dev"))
+
+(defun jpt-cider-use-test-repl ()
+  "Connect CIDER to the api-test gomore REPL (port 48342)."
+  (interactive)
+  (jpt-cider-connect-on-port 48342 "test"))
+
+(global-set-key (kbd "C-c r d") #'jpt-cider-use-dev-repl)
+(global-set-key (kbd "C-c r t") #'jpt-cider-use-test-repl)
+
 ;; Use clojure mode for other extensions
 (add-to-list 'auto-mode-alist '("\\.edn$" . clojure-mode))
 (add-to-list 'auto-mode-alist '("\\.boot$" . clojure-mode))
