@@ -412,7 +412,7 @@
 (setq cider-repl-display-help-banner nil)
 (setq cider-use-xref t)
 (setq cider-repl-display-in-current-window t)
-(setq cider-path-translations                                                                                                                        '(("/opt/api" . "/home/jtj/c/g/backend/api")))
+(setq cider-path-translations '(("/opt/api" . "/home/jtj/c/g/backend/api")))
 
 ;; fn-refs walks all loaded namespaces server-side; default 10s isn't enough
 ;; on large projects.
