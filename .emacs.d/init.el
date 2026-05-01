@@ -476,6 +476,19 @@ LABEL is shown in the minibuffer message."
 (global-set-key (kbd "C-c r d") #'jpt-cider-use-dev-repl)
 (global-set-key (kbd "C-c r t") #'jpt-cider-use-test-repl)
 
+(defun jpt-cider-repl-prompt (namespace)
+  "REPL prompt showing the gomore environment when known.
+Derives dev/test from the nREPL port; falls back to the default prompt."
+  (let* ((port (plist-get (bound-and-true-p nrepl-endpoint) :port))
+         (label (pcase port
+                  (48341 "dev")
+                  (48342 "test"))))
+    (if label
+        (format "[%s] %s> " label namespace)
+      (format "%s> " namespace))))
+
+(setq cider-repl-prompt-function #'jpt-cider-repl-prompt)
+
 ;; Use clojure mode for other extensions
 (add-to-list 'auto-mode-alist '("\\.edn$" . clojure-mode))
 (add-to-list 'auto-mode-alist '("\\.boot$" . clojure-mode))
