@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: wp
-# key: wp
-# --
-<% if !webpacker? %>
-<% end %>

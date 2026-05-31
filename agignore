@@ -1,9 +1,0 @@
-doc/csv
-log
-public/assets
-profiling
-test/jmeter
-app/assets/fonts
-app/assets/images
-app/views/admin/heatmap
-vendor

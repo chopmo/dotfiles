@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: i18n
-# key: i18n
-# --
-{{ $i18n('$0') }}

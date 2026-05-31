@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: mm
-# key: mm
-# --
-import moment from 'moment-timezone'

@@ -1,2 +1,0 @@
-#!/bin/sh
-grep $1 ~/.zsh_history | uniq

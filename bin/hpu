@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-set -e
-
-GIT_EDITOR="emacsclient -c" hub pull-request -b main

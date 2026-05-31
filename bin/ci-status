@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-status=$(hub ci-status -v)
-
-if echo $status | grep "✔︎"; then
-  echo "All good"
-else
-  echo "Problem: $status"
-fi
